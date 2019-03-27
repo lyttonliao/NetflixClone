@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
+ /* html {
+    height: 100%;
+ }
+
+ #root {
+    height: calc(100% - 100px);
+    padding: 
+ } */
