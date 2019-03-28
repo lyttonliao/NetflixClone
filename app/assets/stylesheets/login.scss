@@ -1,0 +1,99 @@
+.session {
+    height: 1000px;
+    width: 100%;
+    background: radial-gradient( rgba(43, 36, 36, 0.5), rgba(22, 13, 13, 0.76)), image_url("movies-background-2.jpg") center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+}
+
+.session-form-box {
+    height: 60%;
+    min-width: 25%;
+    box-sizing: border-box;
+    background-color: black;
+    background: rgba(3, 2, 2, 0.781);
+    margin: auto; 
+    border-radius: 5px;
+    position: relative;
+}
+
+.session-header {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 65px;
+    margin-top: 65px;
+}
+
+.session-form {
+    width: 75%;
+    z-index: 2;
+    margin: auto;
+    position: relative;
+    padding: 0 8px;
+}
+
+
+.session-form > label > input {
+    width: 100%;
+    padding: 1em;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    border: none;
+    background: rgba(61, 56, 56, 0.781);
+}
+
+// .session-form-email-input:invalid,
+// .session-form-password-input:invalid{
+//     border-bottom-color: orange;
+// }
+
+.error {
+    color: white;
+    background-color: orange;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 5px;
+    z-index: 2;
+    padding: 1em;
+    bottom: 15px;
+}
+
+
+
+.session-form-submit {
+    background-color: red;
+    color: white;
+    width: 100%;
+    padding: 14px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.login-or-signin {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    margin-left: 58px;
+    bottom: 15px;
+}
+
+@media screen and (min-width: 600px) {
+    input {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
