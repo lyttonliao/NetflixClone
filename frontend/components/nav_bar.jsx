@@ -5,29 +5,29 @@ import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
     return (
-        <div className="main-header">
+        <nav className="main-header">
             <ul className="primary-nav">
-                <li>Home</li>
-                <li>TV Shows</li>
-                <li>Movies</li>
-                <li>Recently Added</li>
-                <li>My List</li>
+                <li><p>Home</p></li>
+                <li><p>TV Shows</p></li>
+                <li><p>Movies</p></li>
+                <li><p>Recently Added</p></li>
+                <li><p>My List</p></li>
             </ul>
 
             <ul className="secondary-nav">
-                <li>Search</li>
-                <li>KIDS</li>
-                <li>DVD</li>
-                <li>Notifications</li>
+                <li><p>Search</p></li>
+                <li><p>KIDS</p></li>
+                <li><p>DVD</p></li>
+                <li><p>Notifications</p></li>
                 
                 <div className="profile-dropdown">
-                    <li>user</li>
-                    <li>Account</li>
-                    <li>Help Center</li>
-                    <li><Link to="/" onClick={props.logout}>Log Out</Link></li>
+                    <li><p>User</p></li>
+                    <li><p>Account</p></li>
+                    <li><p>Help Center</p></li>
+                    <li><Link to="/" onClick={props.logout}><p>Log Out</p></Link></li>
                 </div>
             </ul>
-        </div>
+        </nav>
     )
 }
 
