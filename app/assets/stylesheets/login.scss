@@ -1,3 +1,5 @@
+
+
 .session {
     height: 1000px;
     width: 100%;
@@ -39,10 +41,9 @@
 
 
 .session-form > label > input {
-    width: 100%;
-    padding: 1em;
     margin: 8px 0;
-    display: inline-block;
+    padding: 1em;
+    // display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 15px;
@@ -51,6 +52,7 @@
     background: rgba(61, 56, 56, 0.781);
 }
 
+
 // .session-form-email-input:invalid,
 // .session-form-password-input:invalid{
 //     border-bottom-color: orange;
@@ -58,7 +60,7 @@
 
 .error {
     color: white;
-    background-color: orange;
+    background-color: rgba(255, 166, 0, 0.582);
     width: 100%;
     font-size: 15px;
     border-radius: 5px;

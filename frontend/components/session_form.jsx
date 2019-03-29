@@ -47,11 +47,14 @@ class SessionForm extends React.Component {
 
         return (
             <div className="session">
+                <div className="frontPageHeader">
+                    <Link to="/" className="fp-logo-link"><img className="fp-logo" src={window.logo} alt="Flixit Image"/></Link>
+                </div>
 
                 <div className="session-form-box">
                     <h1 className="session-header">{this.props.formType}</h1>
                     <form className="session-form" onSubmit={this.handleSubmit}>
-                    {this.renderErrors()}
+                        {this.renderErrors()}
                         <label className="session-form-email-label">
                             <input
                                 className="session-form-email-input"
@@ -60,7 +63,7 @@ class SessionForm extends React.Component {
                                 placeholder="Email"
                             />
                         </label>
-		
+        
 
                         <label className="session-form-password-label">
                             <input
