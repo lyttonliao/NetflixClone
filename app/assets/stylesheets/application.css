@@ -14,21 +14,79 @@
  *= require_self
  */
 
- * {
-    box-sizing: border-box;
- }
+ /* * { */
+    /* box-sizing: border-box; */
+ /* } */
 
- body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    -webkit-font-smoothing: antialiased;
- }
+ /* body {
+    font-family: Arial, Helvetica, sans-serif; */
+    /* color: white; */
+    /* -webkit-font-smoothing: antialiased; */
+ /* } */
 
- html {
+ /* html {
+    height: 100%; */
+    /* background-color: black; */
+ /* } */
+
+ /* #root {
     height: 100%;
-    background-color: black;
- }
+ } */
 
- #root {
-    height: 100%;
- }
+ /* .fp-logo-link { 
+    
+ } */
+
+ /* .wordart {
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+}
+.wordart.tilt {
+    display: inline-block;
+    transform: scaleY(2) perspective(1em) rotateX(15deg) translate3d(-19%, -14%, -0.4em);
+    -webkit-transform: scaleY(2) perspective(1em) rotateX(15deg) translate3d(-19%, -14%, -0.4em);
+    -moz-transform: scaleY(2) perspective(1em) rotateX(15deg) translate3d(-19%, -14%, -0.4em);
+    -o-transform: scaleY(2) perspective(1em) rotateX(15deg) translate3d(-19%, -14%, -0.4em);
+    -ms-transform: scaleY(2) perspective(1em) rotateX(15deg) translate3d(-19%, -14%, -0.4em);
+}
+
+.wordart.tilt .text {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    background: #390c0b;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top, #390c0b 0%, #f6bf28 73%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #390c0b), color-stop(73%, #f6bf28));
+    background: -webkit-linear-gradient(top, #390c0b 0%, #f6bf28 73%);
+    background: -o-linear-gradient(top, #390c0b 0%, #f6bf28 73%);
+    background: -ms-linear-gradient(top, #390c0b 0%, #f6bf28 73%);
+    background: linear-gradient(to bottom, #390c0b 0%, #f6bf28 73%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#390c0b', endColorstr='#f6bf28', GradientType=0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.01em;
+    -webkit-text-stroke: 0.01em #A3A3A3;
+    filter: progid:DXImageTransform.Microsoft.Glow(Color=#a3a3a3, Strength=1);
+}
+
+.wordart.tilt .text:before {
+    content: attr(data-text);
+    position: absolute;
+    z-index: -1;
+    top: 0.17em;
+    -webkit-text-fill-color: #6D4916;
+    -webkit-background-clip: border-box;
+    transform: perspective(1em) rotateX(65deg) scale(0.77);
+    -webkit-transform: perspective(1em) rotateX(65deg) scale(0.77);
+    -moz-transform: perspective(1em) rotateX(65deg) scale(0.77);
+    -o-transform: perspective(1em) rotateX(65deg) scale(0.77);
+    -ms-transform: perspective(1em) rotateX(65deg) scale(0.77);
+} */

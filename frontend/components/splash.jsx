@@ -5,7 +5,9 @@ const Splash = () => {
     return (
         <div className="splashPage">
             <div className="frontPageHeader">
+                {/* <Link to="/" className="wordart tilt"><span class="text">FlixiT</span></Link> */}
                 {/* <img className="fp-logo" src={window.logo} alt="Flixit Image"/> */}
+                <Link className="fp-logo-link" to="/"><img className="fp-logo" src={window.logo} alt="Flixit Image" /></Link>
                 <Link className="auth-fp-login" to={"/login"}>Sign In</Link>
             </div>
             {/* <img className="fpImage" src={fPImage} alt="Front Page Image"/> */}

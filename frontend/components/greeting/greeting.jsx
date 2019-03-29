@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, Link} from 'react-router-dom';
+import NavBar from '../nav_bar';
 
 class Greeting extends React.Component {
     constructor(props) {
@@ -11,16 +12,9 @@ class Greeting extends React.Component {
 
         if (currentUser) {
             return (
-                <div>
-                    <button onClick={logout}>Log Out</button>
+                <div className="LandingPage">
+                    <NavBar logout={logout} />
                 </div>
-            )
-        } else {
-            return (
-                <>
-                    <Link to="/signup"> Sign Up </Link>
-                    <Link to="/login"> Log In </Link>
-                </>
             )
         }
     }
