@@ -40,9 +40,9 @@ class SessionForm extends React.Component {
         
         let link;
         if (this.props.formType === "Sign In") {
-            link = <p className="login-or-signin">New to Netflix? <Link to={this.props.otherType}>Sign up now.</Link></p>
+            link = <p className="login-or-signin">New to Netflix? <Link className="login-or-signin-link" to={this.props.otherType}>Sign up now.</Link></p>
         } else if (this.props.formType === "Sign Up") {
-            link = <p className="login-or-signin">Already have a Netflix account? <Link to={this.props.otherType}>Sign in.</Link></p>
+            link = <p className="login-or-signin">Already have a Netflix account? <Link className="login-or-signin-link" to={this.props.otherType}>Sign in.</Link></p>
         }
 
         return (
@@ -51,34 +51,36 @@ class SessionForm extends React.Component {
                     <Link to="/" className="fp-logo-link"><img className="fp-logo" src={window.logo} alt="Flixit Image"/></Link>
                 </div>
 
-                <div className="session-form-box">
-                    <h1 className="session-header">{this.props.formType}</h1>
-                    <form className="session-form" onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
-                        <label className="session-form-email-label">
-                            <input
-                                className="session-form-email-input"
-                                type="email"
-                                onChange={this.update('email')}
-                                placeholder="Email"
-                            />
-                        </label>
-        
+                {/* <div className="session-form-container"> */}
+                    <div className="session-form-box">
+                        <h1 className="session-header">{this.props.formType}</h1>
+                        <form className="session-form" onSubmit={this.handleSubmit}>
+                            {this.renderErrors()}
+                            <label className="session-form-email-label">
+                                <input
+                                    className="session-form-email-input"
+                                    type="email"
+                                    onChange={this.update('email')}
+                                    placeholder="Email"
+                                />
+                            </label>
+            
 
-                        <label className="session-form-password-label">
-                            <input
-                                className="session-form-password-input"
-                                type="password"
-                                onChange={this.update('password')}
-                                placeholder="Password"
-                            />
-                        </label>
+                            <label className="session-form-password-label">
+                                <input
+                                    className="session-form-password-input"
+                                    type="password"
+                                    onChange={this.update('password')}
+                                    placeholder="Password"
+                                />
+                            </label>
 
-                        <input className="session-form-submit" type="submit" value={this.props.formType} />
-                    </form>
+                            <input className="session-form-submit" type="submit" value={this.props.formType} />
+                        </form>
 
-                    {link}
-                </div>
+                        {link}
+                    </div>
+                {/* </div> */}
             </div>
         );
     };

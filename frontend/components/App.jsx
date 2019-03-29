@@ -8,7 +8,7 @@ import Splash from './splash';
 import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
-    <div id="root-container">
+    <div>
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
