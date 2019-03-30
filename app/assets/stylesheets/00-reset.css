@@ -1,0 +1,25 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,
+a, form, label, article, aside, canvas, figure, footer, 
+header nav, section ,ul, ol, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    /* background: white; */
+}
+
+body {
+    min-height: 100%; 
+    min-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+}

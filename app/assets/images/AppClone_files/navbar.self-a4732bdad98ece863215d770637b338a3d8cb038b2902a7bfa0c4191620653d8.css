@@ -1,0 +1,128 @@
+/* line 1, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+p {
+  font-size: 100%;
+}
+
+/* line 5, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  background-color: rgba(46, 39, 39, 0.267);
+  transition: background-color .4s;
+  height: 9vh;
+}
+
+/* line 17, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.prim-nav-logo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+/* line 23, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.primary-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* line 33, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.landing-page-logo {
+  display: flex;
+  cursor: pointer;
+  height: 30%;
+}
+
+/* line 40, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.primary-nav li {
+  display: flex;
+  margin-left: 20px;
+  height: 100%;
+}
+
+/* line 63, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.secondary-nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* line 74, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.secondary-nav li {
+  margin-right: 20px;
+  height: 100%;
+}
+
+/* line 79, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* line 89, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.profile-icon {
+  height: auto;
+  width: auto;
+}
+
+/* line 94, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.profile-icon:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+/* line 107, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.dropdown-content {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  padding: 3% 3% 0 0;
+  z-index: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: black;
+  align-content: center;
+}
+
+/* line 124, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.dropdown-content li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* line 131, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* line 135, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.profile-dropdown-divider {
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* line 140, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/navbar.scss */
+.sec-nav-dropdown {
+  display: flex;
+  align-items: center;
+}
