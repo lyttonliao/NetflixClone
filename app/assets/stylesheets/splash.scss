@@ -7,8 +7,6 @@ html {
     background: radial-gradient(circle farthest-side, rgba(37, 33, 33, 0.6), rgba(7, 5, 5, 0.829)), image_url("movies-background.jpg") no-repeat 100% 100% fixed;
     width: 100%;
     height: 1000px;
-    margin: 0;
-    padding: 0;
     background-size: cover;
     /* background-repeat: no-repeat; */
     -webkit-background-size: cover;
@@ -32,7 +30,7 @@ html {
 }
 
 .fp-logo {
-    width: 150px;
+    width: 200px;
 }
 
 .auth-fp-login {
@@ -61,7 +59,7 @@ html {
     transform: translateX(-50%);
     font-size: 30px;
     font-weight: bold;
-    color: white;
+    // color: white;
 }
 
 .fp-p1 {
@@ -72,14 +70,15 @@ html {
     left: 50%;
     align-content: center;
     font-family: Arial, Helvetica, sans-serif;
-
+    margin: 0 0 30px;
 }
 
 .fp-p2 {
     text-shadow: 3px 3px 0 black;
     font-weight: initial;
     font-family: Arial, Helvetica, sans-serif;
-
+    text-align: center;
+    margin: 0 0 30px;
 }
 
 .auth-fp-signup {
@@ -94,6 +93,7 @@ html {
     text-decoration: none;
     height: 50px;
     font-family: Arial, Helvetica, sans-serif;
-
+    margin: 40px;
+    padding: 15px 45px 15px 45px;
 }
 

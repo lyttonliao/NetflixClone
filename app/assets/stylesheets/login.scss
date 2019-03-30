@@ -21,24 +21,22 @@
     position: relative;
 }
 
-
-.session-header {
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    margin-left: 65px;
-    margin-top: 65px;
-    box-sizing: border-box;
-}
-
 .session-form {
-    width: 75%;
+    width: 65%;
     z-index: 2;
     margin: auto;
     position: relative;
     padding: 0 8px;
+    top: 65px;
 }
 
+.session-header {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+}
 
 .session-form > label > input {
     // width: 91.5%;
@@ -73,7 +71,6 @@
 }
 
 
-
 .session-form-submit {
     background-color: red;
     color: white;
@@ -103,6 +100,10 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+}
+
+.login-or-signin-link:hover {
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {

@@ -1,0 +1,116 @@
+/* line 1, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session {
+  height: 1000px;
+  width: 100%;
+  background: radial-gradient(rgba(43, 36, 36, 0.5), rgba(22, 13, 13, 0.76)), url(/assets/movies-background-2-92e769c503cd6e9cd597057e3e97233ffc72030b9c406e2232fff22659b05a8e.jpg) center center fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+}
+
+/* line 13, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session-form-box {
+  height: 60%;
+  min-width: 25%;
+  box-sizing: border-box;
+  background-color: black;
+  background: rgba(3, 2, 2, 0.781);
+  margin: auto;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* line 24, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session-form {
+  width: 65%;
+  z-index: 2;
+  margin: auto;
+  position: relative;
+  padding: 0 8px;
+  top: 65px;
+}
+
+/* line 33, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session-header {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-bottom: 35px;
+}
+
+/* line 41, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session-form > label > input {
+  margin: 8px 0;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  background: rgba(61, 56, 56, 0.781);
+  box-sizing: border-box;
+}
+
+/* line 61, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.error {
+  color: white;
+  background-color: rgba(255, 166, 0, 0.582);
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 5px;
+  z-index: 2;
+  padding: 1em;
+  margin: 8px 0;
+  bottom: 15px;
+}
+
+/* line 74, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.session-form-submit {
+  background-color: red;
+  color: white;
+  width: 100%;
+  padding: 14px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+/* line 86, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.login-or-signin {
+  color: gray;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+  margin-left: 58px;
+  font-size: 15px;
+  bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 98, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.login-or-signin-link {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+/* line 105, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+.login-or-signin-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+  /* line 110, /Users/lyttonliao/Desktop/FlixIt/app/assets/stylesheets/login.scss */
+  input {
+    width: 100%;
+    margin-top: 0;
+  }
+}
