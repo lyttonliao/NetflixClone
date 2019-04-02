@@ -8631,3 +8631,698 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1969ms (Views: 1963.5ms | ActiveRecord: 3.0ms)
 
 
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMovies (20190331162718)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (106.2ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying NOT NULL, "year" integer NOT NULL, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190331162718_create_movies.rb:3
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_title" ON "movies"  ("title")[0m
+  ↳ db/migrate/20190331162718_create_movies.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190331162718"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (24.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Captain Marvel"], ["year", 2019], ["description", "Captain Marvel comes out of hiding and whoops ass"], ["created_at", "2019-04-01 13:46:19.398596"], ["updated_at", "2019-04-01 13:46:19.398596"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveStorageTables (20190401143407)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190401143407_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20190401143407_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20190401143407_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20190401143407_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20190401143407_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190401143407"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+[36m  S3 Storage (2290.5ms) [0m[32mUploaded file to key: PoQxhzUX8V8TP5wrzkLVniVy (checksum: bZ0tG8tayzsfsWePpPv8nQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (8.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "PoQxhzUX8V8TP5wrzkLVniVy"], ["filename", "Captain Marvel (TV Spot).mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 3527299], ["checksum", "bZ0tG8tayzsfsWePpPv8nQ=="], ["created_at", "2019-04-01 15:49:22.197855"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (10.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "movie"], ["record_type", "Movie"], ["record_id", 1], ["blob_id", 1], ["created_at", "2019-04-01 15:49:22.227086"]]
+  [1m[36mMovie Update (2.0ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-01 15:49:22.238876"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f6069fba-d823-4de6-9274-bc218b924873) to Async(default) with arguments: #<GlobalID:0x00007ff82fda9970 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873] Performing ActiveStorage::AnalyzeJob (Job ID: f6069fba-d823-4de6-9274-bc218b924873) from Async(default) with arguments: #<GlobalID:0x00007ff82c44e1a8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873] [36m  S3 Storage (391.5ms) [0m[34mDownloaded file from key: PoQxhzUX8V8TP5wrzkLVniVy[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873]   [1m[36mActiveStorage::Blob Update (2.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f6069fba-d823-4de6-9274-bc218b924873] Performed ActiveStorage::AnalyzeJob (Job ID: f6069fba-d823-4de6-9274-bc218b924873) from Async(default) in 480.71ms
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (2.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTables (20190401175408)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190401175408"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-04-01 16:30:16 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (3.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 1627ms (Views: 1615.0ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 16:30:19 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (3.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (123.0ms)
+Completed 200 OK in 146ms (Views: 114.5ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:30:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 16:30:26 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (7.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (18.6ms)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:31:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 16:31:49 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (22.0ms)
+Completed 200 OK in 34ms (Views: 24.7ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:32:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 809ms (Views: 791.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:33:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:33:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:34:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 967ms (Views: 963.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 16:34:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 936ms (Views: 932.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 16:34:56 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (11.8ms)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-01 16:35:10 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.9ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T203510Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=40a17bc8e49f6f71553ef3e32efddb102cf54ebe61f20ba324cd075f04d704f3)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T203510Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=40a17bc8e49f6f71553ef3e32efddb102cf54ebe61f20ba324cd075f04d704f3
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 17:02:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 1065ms (Views: 1052.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:02:17 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  Rendered api/movies/index.json.jbuilder (89.6ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 18.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/movies/index.json.jbuilder:5:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder__1996163890379249493_70093604855940'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder__1996163890379249493_70093604855940'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder__1996163890379249493_70093604855940'
+  app/controllers/api/movies_controller.rb:14:in `index'
+
+Started GET "/" for ::1 at 2019-04-01 17:03:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:03:51 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (13.9ms)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-01 17:03:52 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.9ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T210352Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=773bce8f20015ccb49c0729de41c31fd4c0ef8d0bd4d41344247a3a6cceb6f2c)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T210352Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=773bce8f20015ccb49c0729de41c31fd4c0ef8d0bd4d41344247a3a6cceb6f2c
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 17:06:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 857ms (Views: 853.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:06:06 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  Rendered api/movies/index.json.jbuilder (10.8ms)
+Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-01 17:06:06 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T210606Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=509ce7ecf8858ac1d1ad465558b69327ec43b61e370908713b32ee340936b6b1)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T210606Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=509ce7ecf8858ac1d1ad465558b69327ec43b61e370908713b32ee340936b6b1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+[36m  S3 Storage (641.4ms) [0m[32mUploaded file to key: cttyFRfA3C4b3va8u4NXpnYa (checksum: v00P5UI6IfSKGTONfebEWQ==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (9.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "cttyFRfA3C4b3va8u4NXpnYa"], ["filename", "Captain_marvel_poster.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 138675], ["checksum", "v00P5UI6IfSKGTONfebEWQ=="], ["created_at", "2019-04-01 21:14:07.365131"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (8.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 1], ["blob_id", 2], ["created_at", "2019-04-01 21:14:07.388417"]]
+  [1m[36mMovie Update (2.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-01 21:14:07.404436"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b8dd1957-1e89-4535-b56a-5b7394fd0b4f) to Async(default) with arguments: #<GlobalID:0x00007ff92cb4fb90 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8dd1957-1e89-4535-b56a-5b7394fd0b4f] Performing ActiveStorage::AnalyzeJob (Job ID: b8dd1957-1e89-4535-b56a-5b7394fd0b4f) from Async(default) with arguments: #<GlobalID:0x00007ff92dea3598 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8dd1957-1e89-4535-b56a-5b7394fd0b4f] [36m  S3 Storage (136.9ms) [0m[34mDownloaded file from key: cttyFRfA3C4b3va8u4NXpnYa[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b8dd1957-1e89-4535-b56a-5b7394fd0b4f] Error performing ActiveStorage::AnalyzeJob (Job ID: b8dd1957-1e89-4535-b56a-5b7394fd0b4f) from Async(default) in 224.39ms: MiniMagick::Error (You must have ImageMagick or GraphicsMagick installed):
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/configuration.rb:140:in `cli'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick.rb:38:in `imagemagick7?'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/tool.rb:133:in `executable'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/tool.rb:108:in `command'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/tool.rb:90:in `call'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/tool.rb:38:in `new'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/image/info.rb:171:in `identify'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/image/info.rb:115:in `raw'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/image/info.rb:35:in `[]'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/mini_magick-4.9.3/lib/mini_magick/image.rb:300:in `[]'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/analyzer/image_analyzer.rb:42:in `rotated_image?'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/analyzer/image_analyzer.rb:22:in `block in metadata'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/analyzer/image_analyzer.rb:37:in `block in read_image'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/downloading.rb:12:in `block in download_blob_to_tempfile'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.2.1/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/execution.rb:39:in `block in perform_now'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/i18n-1.6.0/lib/i18n.rb:297:in `with_locale'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/notifications.rb:168:in `block in instrument'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/notifications.rb:168:in `instrument'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/logging.rb:46:in `block in tag_logger'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/tagged_logging.rb:71:in `tagged'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/logging.rb:46:in `tag_logger'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/execution.rb:38:in `perform_now'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/execution.rb:24:in `block in execute'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/reloader.rb:73:in `block in wrap'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/reloader.rb:72:in `wrap'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `instance_exec'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activesupport-5.2.2.1/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/execution.rb:22:in `execute'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activejob-5.2.2.1/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+[36m  S3 Storage (282.8ms) [0m[32mUploaded file to key: dFpwwHqJrxniCgqoAq9EYhKD (checksum: 1B2M2Y8AsgTpgAmY7PhCfg==)[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  S3 Storage (241.0ms) [0m[32mUploaded file to key: CYSBkAKmqFt4kifsGLbVB2aw (checksum: v00P5UI6IfSKGTONfebEWQ==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "CYSBkAKmqFt4kifsGLbVB2aw"], ["filename", "Captain_Marvel_poster.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 138675], ["checksum", "v00P5UI6IfSKGTONfebEWQ=="], ["created_at", "2019-04-01 21:19:40.934507"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (1.9ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 1], ["blob_id", 3], ["created_at", "2019-04-01 21:19:40.942757"]]
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-01 21:19:40.944691"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9a2dbefa-6267-49f2-891f-7b3d84503984) to Async(default) with arguments: #<GlobalID:0x00007fbbae01a0d8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/3>>
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 0492a626-9f83-4ad9-acd4-e86c0182a641) to Async(default) with arguments: #<GlobalID:0x00007fbbae0f16a0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984] Performing ActiveStorage::AnalyzeJob (Job ID: 9a2dbefa-6267-49f2-891f-7b3d84503984) from Async(default) with arguments: #<GlobalID:0x00007fbba9a62540 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984] [36m  S3 Storage (165.6ms) [0m[34mDownloaded file from key: CYSBkAKmqFt4kifsGLbVB2aw[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984]   [1m[36mActiveStorage::Blob Update (1.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a2dbefa-6267-49f2-891f-7b3d84503984] Performed ActiveStorage::AnalyzeJob (Job ID: 9a2dbefa-6267-49f2-891f-7b3d84503984) from Async(default) in 188.65ms
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641] Performing ActiveStorage::PurgeJob (Job ID: 0492a626-9f83-4ad9-acd4-e86c0182a641) from Async(default) with arguments: #<GlobalID:0x00007fbbaa206530 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641]   [1m[36mActiveStorage::Attachment Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641]   [1m[36mActiveStorage::Blob Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641]   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641]   [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641] [36m  S3 Storage (34.5ms) [0m[31mDeleted file from key: cttyFRfA3C4b3va8u4NXpnYa[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641] [36m  S3 Storage (46.9ms) [0m[31mDeleted files by key prefix: variants/cttyFRfA3C4b3va8u4NXpnYa/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0492a626-9f83-4ad9-acd4-e86c0182a641] Performed ActiveStorage::PurgeJob (Job ID: 0492a626-9f83-4ad9-acd4-e86c0182a641) from Async(default) in 117.43ms
+Started GET "/" for ::1 at 2019-04-01 17:20:46 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 1657ms (Views: 1648.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:20:50 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (3.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  Rendered api/movies/index.json.jbuilder (127.2ms)
+Completed 200 OK in 151ms (Views: 112.6ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-01 17:20:51 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.9ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T212051Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bb7ab3cc1febfd6f81b3726831ec27a28155bf3b503572e19741b4db38997bba)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T212051Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bb7ab3cc1febfd6f81b3726831ec27a28155bf3b503572e19741b4db38997bba
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 17:21:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 141ms (Views: 138.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:21:11 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (4.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  Rendered api/movies/index.json.jbuilder (32.6ms)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-01 17:21:12 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.3ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T212112Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=322ca7f3e9b0a05de79bd8b7b68c46c5e36f4f40be226d72ad13aee17eb6026c)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190401%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190401T212112Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=322ca7f3e9b0a05de79bd8b7b68c46c5e36f4f40be226d72ad13aee17eb6026c
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-01 17:21:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YsUJAzL5Lhv2zQlYWL8KYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 619ms (Views: 617.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-01 17:21:58 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (3.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:5
+  Rendered api/movies/index.json.jbuilder (165.5ms)
+Completed 200 OK in 176ms (Views: 170.0ms | ActiveRecord: 5.3ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20190402013553)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402013553_create_genres.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_genres_on_type" ON "genres"  ("type")[0m
+  ↳ db/migrate/20190402013553_create_genres.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402013553"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenreMovies (20190402013607)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "genre_movies" ("id" bigserial primary key, "movie_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402013607_create_genre_movies.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_genre_movies_on_genre_id" ON "genre_movies"  ("genre_id")[0m
+  ↳ db/migrate/20190402013607_create_genre_movies.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_genre_movies_on_movie_id" ON "genre_movies"  ("movie_id")[0m
+  ↳ db/migrate/20190402013607_create_genre_movies.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402013607"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateLists (20190402013620)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "list_name" character varying NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402013620_create_lists.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_lists_on_user_id" ON "lists"  ("user_id")[0m
+  ↳ db/migrate/20190402013620_create_lists.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402013620"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateListMovies (20190402013634)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "list_movies" ("id" bigserial primary key, "list_id" integer NOT NULL, "movie_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402013634_create_list_movies.rb:3
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateListMovies (20190402013634)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "list_movies" ("id" bigserial primary key, "list_id" integer NOT NULL, "movie_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402013634_create_list_movies.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_list_movies_on_list_id" ON "list_movies"  ("list_id")[0m
+  ↳ db/migrate/20190402013634_create_list_movies.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_list_movies_on_movie_id" ON "list_movies"  ("movie_id")[0m
+  ↳ db/migrate/20190402013634_create_list_movies.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402013634"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameGenreMovies (20190402020723)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "genre_movies" RENAME TO "movie_genres"[0m
+  ↳ db/migrate/20190402020723_rename_genre_movies.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER INDEX "genre_movies_pkey" RENAME TO "movie_genres_pkey"[0m
+  ↳ db/migrate/20190402020723_rename_genre_movies.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "public"."genre_movies_id_seq" RENAME TO "movie_genres_id_seq"[0m
+  ↳ db/migrate/20190402020723_rename_genre_movies.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER INDEX "index_genre_movies_on_genre_id" RENAME TO "index_movie_genres_on_genre_id"[0m
+  ↳ db/migrate/20190402020723_rename_genre_movies.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER INDEX "index_genre_movies_on_movie_id" RENAME TO "index_movie_genres_on_movie_id"[0m
+  ↳ db/migrate/20190402020723_rename_genre_movies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402020723"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7501952932086349065)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
