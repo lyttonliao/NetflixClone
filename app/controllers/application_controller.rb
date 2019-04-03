@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
+    def ensure_logged_in
+        unless logged_in?
+            render json: ['You are not logged in'], status: unauthorized
+        end
+    end
+
     def login!(user)
         session[:session_token] = user.reset_session_token!
     end

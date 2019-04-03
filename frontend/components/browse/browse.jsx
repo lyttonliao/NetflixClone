@@ -1,27 +1,27 @@
 import React from 'react';
-import { withRouter, Link} from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 import NavBar from '../nav_bar';
-import Movie from '../movie/movie_index_container'
-// import Movie from '../movie/movie_container';
+// import MovieIndexContainer from '../movie/movie_index_container';
 
 class Browse extends React.Component {
     constructor(props) {
         super(props);
     }
+ 
+    //  <div className="My List">My List</div> ADD THIS LATER WHEN YOU DO LIST
 
     render() {
         const { currentUser, logout } = this.props;
+        debugger
+        // const frontPageMovie = movies[1];
+        
+        return (
+            <div className="LandingPage">
+                <NavBar logout={logout} />
 
-        if (currentUser) {
-            return (
-                <div className="LandingPage">
-                    <NavBar logout={logout} />
-                    
-                    <Movie />
-                </div>
-            )
-        }
+            </div>
+        )
     }
 }
 
-export default withRouter(Browse);
+export default Browse;

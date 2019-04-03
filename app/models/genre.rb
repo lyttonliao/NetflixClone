@@ -9,7 +9,12 @@
 #
 
 class Genre < ApplicationRecord
-    validates :type, presence: true, unique: true
+    
+    # validates :name, presence: true, unique: true
 
     has_many :movie_genres
+    
+    has_many :movies,
+    through: :movie_genres,
+    source: :movies
 end

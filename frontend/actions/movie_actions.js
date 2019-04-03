@@ -3,10 +3,10 @@ import * as MovieAPIUtil from '../util/movie_api_util';
 export const RECEIVE_ALL_MOVIES = "RECEIVE_ALL_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 
-export const receiveAllMovies = movies => {
+export const receiveAllMovies = data => {
     return {
         type: RECEIVE_ALL_MOVIES,
-        movies
+        data
     };
 };
 
@@ -25,6 +25,6 @@ export const fetchMovies = () => dispatch => {
 
 export const fetchMovie = id => dispatch => {
     return (
-        MovieAPIUtil.fetchMovie(id).then(movie => dispatch(fetchMovie(movie)))
+        MovieAPIUtil.fetchMovie(id).then(movie => dispatch(receiveMovie(movie)))
     );
 };
