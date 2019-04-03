@@ -7,22 +7,28 @@ class MovieShow extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchMovie(this.props.match.params.movieId)
     }
 
     render() {
         if (this.props.movie === undefined) return null;
-
+        // debugger
         return (
-            <div>
-                <div className="movie-show-display">
+            <div className="video-container">
+                <video controls>
+                    <source src={this.props.movie.movieUrl} type="video/mp4"/>
+                </video>
+                <div className="show-back-btn">
                     <Link to='/browse'>
-                        <div className='show-to-browse'></div>
+                        <i className="fas fa-arrow-left">
+                            <p className='show-to-browse'>Back To Browse</p>
+                        </i>
                     </Link>
-
-                    <video src={this.props.movie.video} autoPlay controls ></video>
                 </div>
             </div>
         )
     }
 }
+
+export default MovieShow;

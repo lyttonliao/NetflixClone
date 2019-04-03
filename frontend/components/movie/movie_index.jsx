@@ -1,33 +1,37 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import AllMovies from './all_movies';
+import { genreSelector } from '../../reducers/selectors';
+// import AllMoviesPage from './all_movies_page'
 
-class Movie extends React.Component {
+class MovieIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     componentDidMount() {
-        // debugger
+        // this.props.fetchGenres();
         this.props.fetchMovies();
     }
 
-    render() {
-        debugger
-        const movies = Object.values(this.props.movies);
 
+    render() {
+        const movies = Object.values(this.props.movies);
         if (movies.length === 0) return null;
 
         return (
-            <div>
-                <div className="primary-movie">
-                    
-                    {/* <video src={this.props.movie[1].movieUrl} autoPlay="autoPlay" controls /> */}
+            <div className="movies-index-genres">
+                <div>
+                    <AllMovies
+                        actionVideos={genreSelector(movies, 'action')}
+                        danceVideos={genreSelector(movies, 'dance')}
+                        scifiVideos={genreSelector(movies,'scifi')}
+                        dramaVideos={genreSelector(movies,'drama')}
+                        superheroVideos={genreSelect(movies,'superhero')}
+                        movies={this.props.movies} />
                 </div>
             </div>
         )
     }
-
 }
 
-
-export default Movie;
+export default MovieIndex;

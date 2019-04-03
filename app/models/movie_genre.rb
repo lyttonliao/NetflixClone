@@ -10,6 +10,7 @@
 #
 
 class MovieGenre < ApplicationRecord
+    # self.table_name = "movie_genres"
     validates :movie_id, :genre_id, presence: true
 
     belongs_to :movie

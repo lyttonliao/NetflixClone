@@ -17,7 +17,10 @@ class Movie < ApplicationRecord
     has_one_attached :image
 
     has_many :list_movies
-    has_many :genres
     has_many :movie_genres
+
+    has_many :genres,
+    through: :movie_genres,
+    source: :genre
 end
     

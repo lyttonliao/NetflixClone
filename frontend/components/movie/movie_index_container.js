@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
-import Movie from './movie_index';
 import { fetchMovies } from '../../actions/movie_actions';
+// import { fetchGenres } from '../../actions/genre_actions';
+import MovieIndex from './movie_index';
 
-const msp = (state) => {
-    // debugger
-    return ({
-        movie: state.entities.movies
-    })
+const mapStateToProps = (state, ownProps) => {
+    return {
+        movies: state.entities.movies,
+        genres: state.entities.genres
+    }
 }
 
-const mdp = dispatch => {
-    return ({
+const mapDispatchToProps = (dispatch) => {
+    return {
         fetchMovies: () => dispatch(fetchMovies()),
-    })
+        // fetchGenres: () => dispatch(fetchGenres()),
+    }
 }
 
-export default connect(msp, mdp)(Movie);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieIndex);

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MovieShow from './movie_index';
+import MovieShow from './movie_show';
 import { fetchMovie } from '../../actions/movie_actions';
 import { withRouter } from 'react-router-dom';
 
