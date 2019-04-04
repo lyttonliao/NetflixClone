@@ -2,33 +2,58 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
+class NavBar extends React.Component {
+    render() {
+        
+        $(window).scroll(function () {
+            const header = $(".main-header");
+            const scroll = $(window).scrollTop();
+            if (scroll >= 50) {
+                header.addClass("scrolled");
+            } else {
+                header.removeClass("scrolled");
+            }
+        });
 
-const NavBar = (props) => {
-    return (
-        <div className="main-header">
-            <ul className="primary-nav">
-                <li>Home</li>
-                <li>TV Shows</li>
-                <li>Movies</li>
-                <li>Recently Added</li>
-                <li>My List</li>
-            </ul>
-
-            <ul className="secondary-nav">
-                <li>Search</li>
-                <li>KIDS</li>
-                <li>DVD</li>
-                <li>Notifications</li>
-                
-                <div className="profile-dropdown">
-                    <li>user</li>
-                    <li>Account</li>
-                    <li>Help Center</li>
-                    <li><Link to="/" onClick={props.logout}>Log Out</Link></li>
+        return(
+            <nav className="main-header">
+                <div className="prim-nav-logo">
+                    <img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo"/>
+                    <ul className="primary-nav">
+                        <li><p>Home</p></li>
+                        <li><p>TV Shows</p></li>
+                        <li><p>Movies</p></li>
+                        <li><p>Recently Added</p></li>
+                        <li><p>My List</p></li>
+                    </ul>
                 </div>
-            </ul>
-        </div>
-    )
+
+                <div className="sec-nav-dropdown">
+                    <ul className="secondary-nav">
+                        <li><p>Search</p></li>
+                        <li><p>KIDS</p></li>
+                        <li><p>DVD</p></li>
+                        <li><p>Notifications</p></li>
+                        
+                    </ul>
+                    <div className="profile-dropdown">
+                        <img className="profile-icon" src={window.icon} alt="icon"/>
+                        <div className="dropdown-content">
+                            <div className="dropdown-section-1">
+                                <li><p>User</p></li>
+                            </div>
+                            <li className="profile-dropdown-divider"></li>
+                            <div className="dropdown-section-2">
+                                <li><p>Account</p></li>
+                                <li><p>Help Center</p></li>
+                                <li><Link to="/" onClick={this.props.logout}><p>Sign out of Netflix</p></Link></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        )
+    }   
 }
 
 export default NavBar;

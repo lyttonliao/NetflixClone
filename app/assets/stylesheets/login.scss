@@ -1,5 +1,3 @@
-
-
 .session {
     height: 1000px;
     width: 100%;
@@ -23,24 +21,25 @@
     position: relative;
 }
 
-.session-header {
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    margin-left: 65px;
-    margin-top: 65px;
-}
-
 .session-form {
-    width: 75%;
+    width: 65%;
     z-index: 2;
     margin: auto;
     position: relative;
     padding: 0 8px;
+    top: 65px;
 }
 
+.session-header {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+}
 
 .session-form > label > input {
+    // width: 91.5%;
     margin: 8px 0;
     padding: 1em;
     // display: inline-block;
@@ -50,6 +49,7 @@
     color: white;
     border: none;
     background: rgba(61, 56, 56, 0.781);
+    box-sizing: border-box;
 }
 
 
@@ -61,14 +61,14 @@
 .error {
     color: white;
     background-color: rgba(255, 166, 0, 0.582);
-    width: 100%;
+    box-sizing: border-box;
     font-size: 15px;
     border-radius: 5px;
     z-index: 2;
     padding: 1em;
+    margin: 8px 0;
     bottom: 15px;
 }
-
 
 
 .session-form-submit {
@@ -84,12 +84,26 @@
 }
 
 .login-or-signin {
+    color: gray;
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 1em;
     margin-left: 58px;
+    font-size: 15px;
     bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-or-signin-link {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.login-or-signin-link:hover {
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {
