@@ -18,36 +18,37 @@ class AllMovies extends React.Component {
         this.props.history.push(path);
     }
 
-    genreList(movie) {
-
-        movie.genre_ids.map(id => {
-            return <li className="genre-list{" key={id}>{this.props.genres[id]}</li>
-            // return this.props.genres[id];
+    genreList() {
+        debugger
+        return Object.values(this.props.genres).map(genre => {
+            // return <li className="genre-list{" key={id}>{this.props.genres[id]}</li>
+            return genre.name;
         })
 
-        // return movieGenreList.map((genre, idx) => {
-        //     return <li className="genre-list" key={idx}>{genre}</li>;
-        // }
+    //     // return movieGenreList.map((genre, idx) => {
+    //     //     return <li className="genre-list" key={idx}>{genre}</li>;
+    //     // }
     }
 
     render() {
-        // debugger
+        debugger
         const frontPageMovie = this.props.movies[1];
+        const genres = this.genreList();
 
         let actionVideos = this.props.actionVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={this.genreList(movie)}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
         let danceVideos = this.props.danceVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={this.genreList(movie)}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
         let scifiVideos = this.props.scifiVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={this.genreList(movie)}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
         let dramaVideos = this.props.dramaVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={this.genreList(movie)}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
         let superheroVideos = this.props.superheroVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={this.genreList(movie)}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
 
         // debugger
