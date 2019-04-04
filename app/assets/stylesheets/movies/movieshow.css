@@ -1,0 +1,105 @@
+.video-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1 !important;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* @media (min-aspect-ratio: 16/9) {
+  .video-container video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-container video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .video-container video {
+    display: none;
+  }
+} */
+/* 
+.movie-show-display {
+    width: 100%;
+    height: 100%;
+} */
+
+.show-back-btn {
+    z-index: 4;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    text-shadow: 1px 1px 1px #ccc;
+    padding: 2.5% 3.5%;
+    font-size: 2.3em;
+    font-weight: lighter;
+    font-style: none;
+    transition: .4s ease-in-out;
+
+    /* -moz-animation: cssAnimation 0s ease-in 5s forwards; */
+    /* Firefox */
+    /* -webkit-animation: cssAnimation 0s ease-in 5s forwards; */
+    /* Safari and Chrome */
+    /* -o-animation: cssAnimation 0s ease-in 5s forwards; */
+    /* Opera */
+    /* animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
+}
+
+/* @keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+} */
+
+.fa-arrow-left > p {
+    opacity: 0;
+}
+
+.fa-arrow-left:hover > p {
+    opacity: 1;
+}
+
+.fa-arrow-left:hover {
+    transform: scale(1.1);
+}
+
+.show-to-browse {
+    position: relative;
+    display: inline;
+    left: 30px;
+}
+
+
+
