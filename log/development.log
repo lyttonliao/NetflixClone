@@ -43886,3 +43886,40 @@ Started GET "/api/movies" for ::1 at 2019-04-04 17:34:48 -0400
 Processing by Api::MoviesController#index as JSON
   [1m[36mUser Load (165.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:7
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (33.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/index.json.jbuilder (130.3ms)
+Completed 200 OK in 801028ms (Views: 37.3ms | ActiveRecord: 119.3ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (113.7ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (130.9ms)
+Completed 200 OK in 801056ms (Views: 124.4ms | ActiveRecord: 179.5ms)
+
+
