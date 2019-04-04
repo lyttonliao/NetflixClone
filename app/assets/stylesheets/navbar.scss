@@ -11,6 +11,7 @@ p {
     background-color: rgba(46, 39, 39, 0.267);
     transition: background-color .4s;
     height: 9vh;
+    z-index: 2;
     // max-height: px;
 }
 
@@ -43,22 +44,6 @@ p {
     height: 100%;
 }
 
-// .secondary-nav {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     display: flex;
-//     -webkit-box-align: center;
-//     align-items: center;
-//     flex-grow: 1;
-//     -webkit-box-flex: 1;
-//     -webkit-box-pack: end;
-//     justify-content: flex-end;
-//     position: absolute;
-//     right: 4%;
-//     align-items: center;
-//     height: 100%;
-// }
 
 .secondary-nav {
     list-style-type: none;
@@ -93,18 +78,18 @@ p {
     width: auto;
 }
 
-// .profile-icon::after {
-//   content: '';
-//   position: absolute;
-//   top: 50%;
-//   right: 15px;
-//   transform: translateY(-50%);
-//   width: 0; 
-//   height: 0; 
-//   border-left: 5px solid transparent;
-//   border-right: 5px solid transparent;
-//   border-top: 5px solid black;
-// }
+.profile-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
 
 .dropdown-content {
     list-style-type: none;
@@ -147,10 +132,6 @@ p {
     text-decoration: underline;
 }
 
-// .dropdown-content:hover {
-//     text-decoration: underline;
-// }
-
 
 .profile-dropdown .dropdown-content {
     display: none;
@@ -171,59 +152,3 @@ p {
     align-items: center;
 }
 
-// .primary-nav
-
-// .main-header {
-//     height: 6%;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     color: white;
-//     background-color: rgba(46, 39, 39, 0.267);
-//     position: fixed;
-//     width: 100%;
-//     z-index: 3;
-// }
-
-
-
-// .primary-nav {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// .landing-page-logo {
-//     padding-left: 4%;
-//     padding-right: 3.5%;
-//     position: relative;
-//     width: 40%;
-// }
-
-// .primary-nav > li {
-//     display: inline-block;
-//     // vertical-align: middle;
-// }
-
-// .primary-nav > li > p {
-//     // display: block;
-//     padding: 14px 16px;
-// }
-
-// .secondary-nav {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     overflow: hidden;
-//     // margin-right: auto;
-// }
-
-// .secondary-nav > li {
-//     display: inline-block;
-//     vertical-align: middle;
-
-// }
-
-// .secondary-nav > li > p {
-//     padding: 14px 16px;
-// }

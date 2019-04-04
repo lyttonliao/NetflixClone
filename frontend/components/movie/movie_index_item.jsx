@@ -6,21 +6,41 @@ class MovieIndexItem extends React.Component {
         super(props);
     }
 
+    playVideo() {
+
+    }
+
     render() {
+        const genreList = this.props.movies.genres.map((genre, idx) => {
+            return <li className="genre-list" key={idx}>{genre}</li>;
+        });
+
         return(
             <div className="movie-container">
                 <div className="movie-box-art">
-                    <img src={this.props.movie.movieUrl}/>
+                    <Link to={`/play/${this.props.movie.id}`}>
+                        <img className="movie-image" src={this.props.movie.imageUrl}/>
+                    </Link>
                 </div>
 
                 <div className="movie-info">
-                    <div className="">
-
+                    <div className="movie-title">
+                        {this.props.movie.title}
                     </div>
 
-                    <div>
-
+                    <div className="movie-genre">
+                        <ul className="movie-genre-horizontal-list">
+                            {genreList}
+                        </ul>
                     </div>
+                </div>
+
+                <div className="dropdown-info">
+                    <i class="fal fa-chevron-down"></i>
+                </div>
+                
+                <div className="add-to-likes">
+                    <i class="fal fa-plus-circle"></i>
                 </div>
             </div>
         )

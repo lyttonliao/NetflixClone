@@ -1,4 +1,10 @@
 .landingPage {
-    height: 100px;
+    height: 100%;
     background-color: rgba(15, 12, 12, 0.767);
+    position: relative;
+}
+
+
+.landing-page-movie-distribution {
+    position: absolute;
 }
