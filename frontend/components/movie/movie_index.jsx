@@ -1,6 +1,6 @@
 import React from 'react';
 import AllMovies from './all_movies';
-import { genreSelector } from '../../reducers/selectors';
+import genreSelector from '../../reducers/selectors';
 // import AllMoviesPage from './all_movies_page'
 
 class MovieIndex extends React.Component {
@@ -9,24 +9,28 @@ class MovieIndex extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchGenres();
+        this.props.fetchGenres();
+        // debugger
         this.props.fetchMovies();
     }
 
 
     render() {
+        // debugger
         const movies = Object.values(this.props.movies);
+        const { genres } = this.props;
         if (movies.length === 0) return null;
-
+        const actionVideos = genreSelector(movies, 'action', genres)
+        debugger
         return (
             <div className="movies-index-genres">
                 <div>
                     <AllMovies
-                        actionVideos={genreSelector(movies, 'action')}
-                        danceVideos={genreSelector(movies, 'dance')}
-                        scifiVideos={genreSelector(movies,'scifi')}
-                        dramaVideos={genreSelector(movies,'drama')}
-                        superheroVideos={genreSelect(movies,'superhero')}
+                        actionVideos={genreSelector(movies, 'action', genres)}
+                        danceVideos={genreSelector(movies, 'dance', genres)}
+                        scifiVideos={genreSelector(movies,'scifi',genres)}
+                        dramaVideos={genreSelector(movies,'drama',genres)}
+                        superheroVideos={genreSelector(movies,'superhero',genres)}
                         movies={this.props.movies} />
                 </div>
             </div>
