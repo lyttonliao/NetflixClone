@@ -42560,3 +42560,1329 @@ Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAru
 Completed 302 Found in 21ms (ActiveRecord: 2.2ms)
 
 
+Started GET "/" for ::1 at 2019-04-04 17:11:55 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 2112ms (Views: 2099.9ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-04-04 17:11:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/genres"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/movies" for ::1 at 2019-04-04 17:11:57 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (115.9ms)
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.6ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (146.8ms)
+Completed 200 OK in 180ms (Views: 127.2ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:12:02 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.3ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T211202Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d2eba5014b4ff1642713ac56ed7f08ef61ec6778fc6706ef4a0cca084d5e63e3)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T211202Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d2eba5014b4ff1642713ac56ed7f08ef61ec6778fc6706ef4a0cca084d5e63e3
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:12:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-04-04 17:12:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/genres"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/movies" for ::1 at 2019-04-04 17:12:09 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (71.1ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.3ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (85.7ms)
+Completed 200 OK in 97ms (Views: 28.6ms | ActiveRecord: 66.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:13:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 58ms (Views: 52.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-04-04 17:13:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/genres"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/movies" for ::1 at 2019-04-04 17:13:03 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (72.8ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.2ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (96.3ms)
+Completed 200 OK in 121ms (Views: 77.3ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:13:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 63ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-04-04 17:13:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/genres"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/movies" for ::1 at 2019-04-04 17:13:19 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (356.4ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.6ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (394.5ms)
+Completed 200 OK in 422ms (Views: 373.4ms | ActiveRecord: 32.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:16:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 714ms (Views: 710.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:16:08 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:16:08 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (114.9ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (146.6ms)
+Completed 200 OK in 173ms (Views: 123.9ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:18:58 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.1ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T211858Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5a6f7ec155bc2a4c99dfd26d66fb0783ae5d21659ded2609874094dc5871556b)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T211858Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5a6f7ec155bc2a4c99dfd26d66fb0783ae5d21659ded2609874094dc5871556b
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:19:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 98ms (Views: 94.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:19:35 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:19:35 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+
+NameError - uninitialized constant Api::GenreController:
+
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (25.7ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (37.0ms)
+Completed 200 OK in 77ms (Views: 40.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:19:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 77ms (Views: 74.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:19:57 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:19:57 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (148.7ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (166.6ms)
+Completed 200 OK in 181ms (Views: 175.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:20:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:20:10 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:20:10 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (139.5ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.5ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (151.0ms)
+Completed 200 OK in 160ms (Views: 154.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:20:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:20:30 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:20:30 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (42.8ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (51.8ms)
+Completed 200 OK in 61ms (Views: 56.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:21:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 74ms (Views: 71.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:21:31 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:21:31 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Attachment Load (9.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (28.9ms)
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.5ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (70.1ms)
+Completed 200 OK in 82ms (Views: 61.2ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:22:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 692ms (Views: 685.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/movies/1" for ::1 at 2019-04-04 17:22:26 -0400
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:11
+  Rendering api/movies/show.json.jbuilder
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (50.6ms)
+  Rendered api/movies/show.json.jbuilder (52.3ms)
+Completed 200 OK in 64ms (Views: 58.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-04 17:22:26 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212226Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8640fbd3f51cefd07124d6a7b367abee1101a99309d53428d59d668b1f8f549c)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212226Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8640fbd3f51cefd07124d6a7b367abee1101a99309d53428d59d668b1f8f549c
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:22:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 821ms (Views: 818.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies/1" for ::1 at 2019-04-04 17:22:47 -0400
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:11
+  Rendering api/movies/show.json.jbuilder
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (135.4ms)
+  Rendered api/movies/show.json.jbuilder (138.0ms)
+Completed 200 OK in 151ms (Views: 145.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-04 17:22:48 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212248Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=94ce2a9dee8b4381552e8287dcb08c3b5f88885df136ab3701a6c354a9267b23)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212248Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=94ce2a9dee8b4381552e8287dcb08c3b5f88885df136ab3701a6c354a9267b23
+Completed 302 Found in 49ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:23:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 893ms (Views: 890.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:23:23 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:23:23 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+
+NameError - uninitialized constant Api::GenreController:
+
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (290.1ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (302.2ms)
+Completed 200 OK in 312ms (Views: 304.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:23:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 1092ms (Views: 1089.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:23:48 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:23:48 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (284.7ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (295.0ms)
+Completed 200 OK in 306ms (Views: 301.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:24:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:24:03 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:24:03 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (24.4ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.3ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (35.1ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:24:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 1761ms (Views: 1757.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:24:30 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:24:30 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (213.2ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (307.3ms)
+Completed 200 OK in 321ms (Views: 315.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:24:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:24:53 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+Started GET "/api/genre" for ::1 at 2019-04-04 17:24:53 -0400
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (4.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Attachment Load (13.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (170.9ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.3ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (180.1ms)
+Completed 200 OK in 189ms (Views: 167.7ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:25:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 1326ms (Views: 1322.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:25:09 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:25:09 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (274.4ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.6ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (341.1ms)
+Completed 200 OK in 353ms (Views: 346.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:25:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 1241ms (Views: 1237.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:25:32 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+Started GET "/api/genre" for ::1 at 2019-04-04 17:25:32 -0400
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (173.8ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.3ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (183.8ms)
+Completed 200 OK in 194ms (Views: 187.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:26:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 972ms (Views: 967.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:26:12 -0400
+Processing by Api::MoviesController#index as JSON
+Started GET "/api/genre" for ::1 at 2019-04-04 17:26:12 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (148.9ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (440.9ms)
+Completed 200 OK in 452ms (Views: 446.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:26:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 1382ms (Views: 1378.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:26:35 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:26:35 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (390.8ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (401.4ms)
+Completed 200 OK in 415ms (Views: 408.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:27:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 992ms (Views: 989.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:27:07 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:27:07 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (4.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Attachment Load (10.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (65.3ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.5ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (1019.5ms)
+Completed 200 OK in 1030ms (Views: 1011.1ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:27:20 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212720Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=39aac7bc0c922983d562bd1f41795c330cebe586fb763d08509d783fe90597e9)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T212720Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=39aac7bc0c922983d562bd1f41795c330cebe586fb763d08509d783fe90597e9
+Completed 302 Found in 46ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:30:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 881ms (Views: 877.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:30:27 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:30:27 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (105.8ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (122.5ms)
+Completed 200 OK in 135ms (Views: 128.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:33:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:33:30 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (4.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213330Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3e7f737ce5344a791a635f5776fa5b5c03357c82c40e8c419742c33f3a87064e)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213330Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3e7f737ce5344a791a635f5776fa5b5c03357c82c40e8c419742c33f3a87064e
+Completed 302 Found in 171ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:33:30 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:33:30 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (77.0ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (116.2ms)
+Completed 200 OK in 145ms (Views: 95.4ms | ActiveRecord: 36.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:33:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:33:40 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213340Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ca2c6c15f4fd96d8f68e6d03ebfb49fef4d84d8a6556c90fd626b732b2e79648)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213340Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ca2c6c15f4fd96d8f68e6d03ebfb49fef4d84d8a6556c90fd626b732b2e79648
+Completed 302 Found in 136ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-04 17:33:41 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+Started GET "/api/genre" for ::1 at 2019-04-04 17:33:41 -0400
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+
+NameError - uninitialized constant Api::GenreController:
+
+  [1m[36mActiveStorage::Attachment Load (6.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (190.5ms)
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (202.7ms)
+Completed 200 OK in 213ms (Views: 199.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:34:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:34:17 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.1ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213417Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f3f9f256ba8f9f229039055eefb73b8d15e03aac0bad7c9e3ac0929244c11650)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213417Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f3f9f256ba8f9f229039055eefb73b8d15e03aac0bad7c9e3ac0929244c11650
+Completed 302 Found in 30ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/api/genre" for ::1 at 2019-04-04 17:34:17 -0400
+Started GET "/api/movies" for ::1 at 2019-04-04 17:34:17 -0400
+
+NameError - uninitialized constant Api::GenreController:
+
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (58.0ms)
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.6ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (98.1ms)
+Completed 200 OK in 128ms (Views: 80.7ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 17:34:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 1494ms (Views: 1481.5ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:34:47 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-04 17:34:47 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213447Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=974ee954d6b9f97d4f08508186c7750550569cec1a40a5b74b190ac7dfc34153)[0m
+  [1m[36mActiveStorage::Blob Load (16.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213447Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=974ee954d6b9f97d4f08508186c7750550569cec1a40a5b74b190ac7dfc34153
+Completed 302 Found in 33ms (ActiveRecord: 1.9ms)
+
+
+[36m  S3 Storage (1.2ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213447Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=974ee954d6b9f97d4f08508186c7750550569cec1a40a5b74b190ac7dfc34153)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190404T213447Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=974ee954d6b9f97d4f08508186c7750550569cec1a40a5b74b190ac7dfc34153
+Completed 302 Found in 24ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-04-04 17:34:48 -0400
+Processing by Api::GenresController#index as JSON
+Started GET "/api/movies" for ::1 at 2019-04-04 17:34:48 -0400
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (165.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uNoTarj6CuB0SM1MTE3jtg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
