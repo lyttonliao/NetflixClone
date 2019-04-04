@@ -1,9 +1,13 @@
 .movie-display {
-    position: absolute;
+    /* position: absolute; */
+    display: flex;
+    /* flex-direction: column; */
+    height: 100vh;
+    width: 100%;
 }
 
 .front-page-movie {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -38,15 +42,15 @@
 }
 
 .front-page-movie-quote {
-    font-size: 3.33vh;
+    font-size: 5vh;
 }
 
 .front-page-movie-title {
-    font-size: 6vh;
+    font-size: 8vh;
 }
 
 .front-page-movie-desc {
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 /* .front-page-movie-play {
