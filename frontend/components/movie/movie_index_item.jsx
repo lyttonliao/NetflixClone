@@ -14,11 +14,11 @@ class MovieIndexItem extends React.Component {
 
         return(
             <div className="movie-container">
-                <div className="movie-box-art">
+                {/* <div className="movie-box-art"> */}
                     <Link to={`/play/${this.props.movie.id}`}>
                         <img className="movie-image" src={this.props.movie.imageUrl}/>
                     </Link>
-                </div>
+                {/* </div> */}
 
                 <div className="movie-info">
                     <div className="movie-title">
