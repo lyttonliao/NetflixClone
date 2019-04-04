@@ -38,6 +38,10 @@
     cursor: pointer;
 }
 
+/* .movie-container:hover {
+    transform: scale(1.5);
+} */
+
 .movie-container a {
     width: 100px;
 }
@@ -49,4 +53,9 @@
 .movie-image {
     max-width: 100%;
     max-height: 100%;
+}
+
+.movie-image:hover {
+    transform: scale(1.8);
+    transition: .5s ease;
 }

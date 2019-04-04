@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :movies, only: [:index, :show]
     resources :lists, only: [:show]
     resources :list_items, only: [:create, :destroy, :show, :index]
-    resources :genre, only: [:index, :show]
+    resources :genres, only: [:index, :show]
   end
 end
