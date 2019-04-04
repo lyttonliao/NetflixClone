@@ -11,25 +11,27 @@ const genreSelector = (movies, genre, genreList) => {
     //     movie[j].genre_ids.map(id => {
     //         return genreList[id].name;
     // })}
-    
+    // debugger
+    let movieList = []
 
     movies.filter(movie => {
+        // debugger
 
         const movieGenreList = movie.genre_ids.map(id => {
             return genreList[id].name;
         })
 
-        debugger
+        // debugger
 
         for(let i = 0; i < movieGenreList.length; i++) {
-            debugger
+            // debugger
             if (movieGenreList[i] === genre) {
-                return movie;
+                movieList.push(movie);
             };
         };
-
-        debugger
+        
     });
+    return movieList;
 };
 
 export default genreSelector;

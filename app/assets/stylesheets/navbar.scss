@@ -2,23 +2,35 @@ p {
     font-size: 100%;
 }
 
+// .nav-bar-container {
+//     padding-left: 4%;
+//     padding-right: 4%;
+// }
+
 .main-header {
-    // position: relative;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
-    background-color: rgba(46, 39, 39, 0.267);
-    transition: background-color .4s;
+    // padding: 4%;
+    width: 100%;
+    background: transparent;
+    // transition: background-color .4s;
     height: 9vh;
-    z-index: 2;
+    z-index: 5;
     // max-height: px;
+}
+
+.scrolled {
+    background-color: black;
+    transition: 1s;
 }
 
 .prim-nav-logo {
     display: flex;
     width: 100%;
     align-items: center;
+    padding-left: 4%;
 }
 
 .primary-nav {
@@ -150,5 +162,6 @@ p {
 .sec-nav-dropdown {
     display: flex;
     align-items: center;
+    padding-right: 4%;
 }
 

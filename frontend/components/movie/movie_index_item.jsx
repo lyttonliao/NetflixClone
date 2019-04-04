@@ -11,9 +11,6 @@ class MovieIndexItem extends React.Component {
     }
 
     render() {
-        const genreList = this.props.movies.genres.map((genre, idx) => {
-            return <li className="genre-list" key={idx}>{genre}</li>;
-        });
 
         return(
             <div className="movie-container">
@@ -30,17 +27,17 @@ class MovieIndexItem extends React.Component {
 
                     <div className="movie-genre">
                         <ul className="movie-genre-horizontal-list">
-                            {genreList}
+                            {this.props.genres}
                         </ul>
                     </div>
                 </div>
 
                 <div className="dropdown-info">
-                    <i class="fal fa-chevron-down"></i>
+                    <i className="fal fa-chevron-down"></i>
                 </div>
                 
                 <div className="add-to-likes">
-                    <i class="fal fa-plus-circle"></i>
+                    <i className="fal fa-plus-circle"></i>
                 </div>
             </div>
         )

@@ -17,7 +17,7 @@ class MovieShow extends React.Component {
         return (
             <div className="video-container">
                 <video controls>
-                    <source src={this.props.movie.movieUrl} type="video/mp4"/>
+                    <source src={this.props.movie.movieUrl} poster={frontPageMovie.imageUrl} preload="metadata" />
                 </video>
                 <div className="show-back-btn">
                     <Link to='/browse'>
