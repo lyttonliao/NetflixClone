@@ -19,7 +19,7 @@ class AllMovies extends React.Component {
     }
 
     genreList() {
-        debugger
+        // debugger
         return Object.values(this.props.genres).map(genre => {
             // return <li className="genre-list{" key={id}>{this.props.genres[id]}</li>
             return genre.name;
@@ -31,7 +31,7 @@ class AllMovies extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         const frontPageMovie = this.props.movies[1];
         const genres = this.genreList();
 
