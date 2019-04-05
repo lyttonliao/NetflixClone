@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     };
 
     handleSubmit(e) {
@@ -17,6 +18,13 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(() => this.props.history.push('/'));
     };
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demo = Object.assign({}, { email: "freetrial@gmail.com", password:"password"})
+        debugger
+        this.props.processForm(demo);
+    }
 
     update(field) {
         return (e) => {
@@ -40,7 +48,7 @@ class SessionForm extends React.Component {
         
         let link;
         if (this.props.formType === "Sign In") {
-            link = <p className="login-or-signin">New to Netflix? <Link className="login-or-signin-link" to={this.props.otherType}>Sign up now.</Link></p>
+            link = <p className="login-or-signin">New to Netflix? <Link className="login-or-signin-link" to={this.props.otherType}>Sign up now.</Link> Or use this <span className="demo-link" onClick={this.handleDemo}>Demo</span></p>
         } else if (this.props.formType === "Sign Up") {
             link = <p className="login-or-signin">Already have a Netflix account? <Link className="login-or-signin-link" to={this.props.otherType}>Sign in.</Link></p>
         }

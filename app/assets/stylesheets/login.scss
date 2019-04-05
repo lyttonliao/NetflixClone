@@ -89,7 +89,7 @@
     bottom: 0;
     width: 100%;
     padding: 1em;
-    margin-left: 58px;
+    margin-left: 68px;
     font-size: 15px;
     bottom: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -104,6 +104,18 @@
 
 .login-or-signin-link:hover {
     text-decoration: underline;
+}
+
+.demo-link {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.demo-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
