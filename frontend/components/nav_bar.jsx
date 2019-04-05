@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                         <li><p>TV Shows</p></li>
                         <li><p>Movies</p></li>
                         <li><p>Recently Added</p></li>
-                        <li><p>My List</p></li>
+                        <li><Link to='/browse/my-list'><p>My List</p></Link></li>
                     </ul>
                 </div>
 

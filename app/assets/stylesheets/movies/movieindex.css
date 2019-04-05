@@ -124,3 +124,30 @@
 
 } */
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa-github, .fa-linkedin {
+  font-size: 1.8em; 
+  color: grey; 
+  padding: 10px 20px 0px 0px; 
+}
+
+.personal-info {
+  display: flex; 
+  /* justify-content: flex-start;  */
+}
+
+.personal-info p {
+  color: grey; 
+  font-size: 15px; 
+}
+
+.copyright {
+  /* padding: 0px 40px 10px 350px;  */
+  color: grey; 
+  font-size: 12px; 
+}

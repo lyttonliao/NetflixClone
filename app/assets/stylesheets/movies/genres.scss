@@ -1,15 +1,19 @@
 .movie-categories {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 8%;
+    text-shadow: 3px;
 }
 
 .movie-categories .movie-categories-videos {
-    display: block;
-    position: relative;
+    display: flex;
+    // position: relative;
     margin: 0;
     padding: 0 4%;
-    touch-action: pan-y;
+    padding-bottom: 4%;
+    // touch-action: pan-y;
     z-index: 2;
 }
 
@@ -30,21 +34,36 @@
 
 .movie-container {
     display: inline-block;
-    position: relative;
+    // position: relative;
     justify-content: space-evenly;
-    width: 250px;
+    width: 18%;
     cursor: pointer;
     transition: .35s ease-in;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    
+
+}
+.movie-container:first-child {
+    border: none;
+    border-right: 3px solid transparent;
+}
+
+.movie-container:last-child {
+    border: none;
+    border-right: 3px solid transparent;
 }
 
 .movie-container:hover {
     transform: scale(1.8);
     transition-delay: .2s;
     transition: .5s ease-out;
+
 }
 
-
-.movie-container:last-child:hover {
+// .movie-categories-videos:first-child .movie-container:hover {
+    
+.movie-container:last-of-type:hover {
     transition: .5s ease;
     /* -moz-transform: scale(1.8);
     -webkit-transform: scale(1.8); */
@@ -52,15 +71,15 @@
     transform-origin: right;
     transition-delay: .2s;
 }
-
-.movie-container:first-child:hover {
+    
+.movie-container:first-of-type:hover {
     /* transform: scale(1.8); */
     transition: .5s ease;
     /* -moz-transform: scale(1.8); */
     /* -webkit-transform: scale(1.8); */
     transform: scale(1.8);
-    transition-delay: .2s;
     transform-origin: left;
+    transition-delay: .2s;
 }
 
 .movie-info-container {
@@ -130,4 +149,14 @@
     position: absolute;
     right: 5%;
     top: 50%;
+}
+
+.movie-container:first-child:hover {
+    /* transform: scale(1.8); */
+    transition: .5s ease;
+    /* -moz-transform: scale(1.8); */
+    /* -webkit-transform: scale(1.8); */
+    transform: scale(1.8);
+    transform-origin: left;
+    transition-delay: .2s;
 }
