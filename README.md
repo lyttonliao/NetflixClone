@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Flixit is inspired by Netflix. I chose my top-5 genres to display on the site. Flixit has all the same basic functionalities as Netflix. Users manage personalized accounts by adding videos to their watch list. The application displays information in different forms to engage viewers. 
 
-Things you may want to cover:
+# FEATURES
 
-* Ruby version
+## Sign In and Sign Up
 
-* System dependencies
+The user authentication process takes place in a single form. The user has access to both sign in and sign out forms based on the current path.
 
-* Configuration
+## Streaming
 
-* Database creation
+Flixit uses the default video player framework with additional features (i.e., back to browser button).
 
-* Database initialization
+## Slide Bars (Work in progress)
 
-* How to run the test suite
+Each item on the slide bars are links to the video's play page. The sliding bars have an infinite scroll feature. When hovering over an item, the item expands and displays its title, genres, and year; as it expands, its sibling containers will move while maintaining its shape. There is also a drop-down button that will display an indepth description of the movie.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Search (Work in progress)
 
-* Deployment instructions
+The search bar continuously detects live changes to the input field to look for matches with similar title or the specified genre.
 
-* ...
+## My List (Work in progress)
+
+The user has the ability to add any video present from the database to their personalized page, 'My List'. Once the video has been added to their list, they can remove or view the video from their page.
+
+## Profiles (Bonus Feature)
+
+All accounts can store up to five individual profiles.
