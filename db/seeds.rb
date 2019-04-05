@@ -64,19 +64,19 @@ g3 = Genre.create!(name: 'scifi')
 g4 = Genre.create!(name: 'drama')
 g5 = Genre.create!(name: 'superhero')
 
-mg1 = MovieGenre.create!(movie_id: 1, genre_id: 1)
-mg2 = MovieGenre.create!(movie_id: 1, genre_id: 5)
+mg1 = MovieGenre.create!(movie_id: m1.id, genre_id: g1.id)
+mg2 = MovieGenre.create!(movie_id: m1.id, genre_id: g5.id)
 
-mg3 = MovieGenre.create!(movie_id: 2, genre_id: 1)
-mg4 = MovieGenre.create!(movie_id: 1, genre_id: 3)
+mg3 = MovieGenre.create!(movie_id: m2.id, genre_id: g1.id)
+mg4 = MovieGenre.create!(movie_id: m2.id, genre_id: g3.id)
 
-mg5 = MovieGenre.create!(movie_id: 3, genre_id: 1)
-mg6 = MovieGenre.create!(movie_id: 3, genre_id: 3)
-mg7 = MovieGenre.create!(movie_id: 3, genre_id: 5)
+mg5 = MovieGenre.create!(movie_id: m3.id, genre_id: g1.id)
+mg6 = MovieGenre.create!(movie_id: m3.id, genre_id: g3.id)
+mg7 = MovieGenre.create!(movie_id: m3.id, genre_id: g5.id)
 
-mg10 = MovieGenre.create!(movie_id: 4, genre_id: 4)
-mg11 = MovieGenre.create!(movie_id: 4, genre_id: 3)
+mg10 = MovieGenre.create!(movie_id: m4.id, genre_id: g4.id)
+mg11 = MovieGenre.create!(movie_id: m4.id, genre_id: g3.id)
 
-mg12 = MovieGenre.create!(movie_id: 5, genre_id: 1)
+mg12 = MovieGenre.create!(movie_id: m5.id, genre_id: g1.id)
 
-mg13 = MovieGenre.create!(movie_id: 6, genre_id: 4)
+mg13 = MovieGenre.create!(movie_id: m6.id, genre_id: g4.id)
