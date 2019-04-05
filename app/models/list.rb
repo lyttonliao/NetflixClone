@@ -10,7 +10,7 @@
 #
 
 class List < ApplicationRecord
-    validates :user_id, presence: true, unique: true
+    # validates :user_id, presence: true, unique: true
 
     belongs_to :user
     
