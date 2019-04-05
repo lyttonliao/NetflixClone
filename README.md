@@ -8,9 +8,13 @@ Flixit is inspired by Netflix. I chose my top-5 genres to display on the site. F
 
 The user authentication process takes place in a single form. The user has access to both sign in and sign out forms based on the current path.
 
+<img src={window.auth} />
+
 ## Streaming
 
 Flixit uses the default video player framework with additional features (i.e., back to browser button).
+
+<img src={window.show} />
 
 ## Slide Bars (Work in progress)
 
