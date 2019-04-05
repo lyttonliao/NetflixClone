@@ -50667,3 +50667,373 @@ Completed 200 OK in 304ms (Views: 242.5ms | ActiveRecord: 49.4ms)
   [1m[35m (7.8ms)[0m  [1m[35mBEGIN[0m
   [1m[36mMovie Create (28.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Nutcracker and the Four Realms"], ["year", 2019], ["description", "Young Clara needs a magical, one-of-a-kind key to unlock a box that contains a priceless gift. A golden thread leads her to the coveted key, but it soon disappears into a strange and mysterious parallel world."], ["created_at", "2019-04-05 13:55:58.151314"], ["updated_at", "2019-04-05 13:55:58.151314"]]
   [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-04-05 10:15:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 687ms (Views: 679.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-05 10:15:27 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (15.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (21.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (5.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (5.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (5.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (5.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  Rendered api/movies/_movie.json.jbuilder (22.3ms)
+  Rendered api/movies/index.json.jbuilder (93.2ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 22.1ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/movies/_movie.json.jbuilder:3:in `_app_views_api_movies__movie_json_jbuilder__3531991669146142233_70363463795340'
+  app/views/api/movies/index.json.jbuilder:4:in `block (3 levels) in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363463650560'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363463650560'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363463650560'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder__3637724983863352335_70363463650560'
+  app/controllers/api/movies_controller.rb:7:in `index'
+
+Started GET "/" for ::1 at 2019-04-05 10:18:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (7.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-05 10:18:08 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (9.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (8.9ms)
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (25.0ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (9.4ms)
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (16.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (13.8ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  Rendered api/movies/_movie.json.jbuilder (15.6ms)
+  Rendered api/movies/index.json.jbuilder (28071.4ms)
+Completed 500 Internal Server Error in 28083ms (ActiveRecord: 42.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/movies/_movie.json.jbuilder:3:in `_app_views_api_movies__movie_json_jbuilder__3531991669146142233_70363431622060'
+  app/views/api/movies/index.json.jbuilder:5:in `block (3 levels) in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363481887060'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363481887060'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder__3637724983863352335_70363481887060'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder__3637724983863352335_70363481887060'
+  app/controllers/api/movies_controller.rb:7:in `index'
+
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMovie Destroy (15.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 7]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+Started GET "/" for ::1 at 2019-04-05 10:19:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-04-05 10:19:20 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnX38JOdOZwGZlT5JkD5xw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (29.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:2
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (10.8ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (11.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (9.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (9.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (17.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (7.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "genres"."id" FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/api/movies/_movie.json.jbuilder:4
+  Rendered api/movies/_movie.json.jbuilder (33.6ms)
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:10
+  Rendered api/genres/_genre.json.jbuilder (0.4ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.1ms)
+  Rendered api/genres/_genre.json.jbuilder (0.0ms)
+  Rendered api/movies/index.json.jbuilder (137.1ms)
+Completed 200 OK in 147ms (Views: 90.4ms | ActiveRecord: 55.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2/captain_marvel_poster.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48f17487ae041194d241669888028ccde90363bd/hellboy_poster.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a122e98757b5791c9f899a207631e0710bf28de7/silence_poster.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c199c310bf39618f24e03a0c572323435c5cddc9/triple_frontier.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb0977603c1c1b84d672693dd64340ca0708fc09/alita_poster.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b88e487fbb337b0ccb6f3b4454a6fde4cfbc6ea2", "filename"=>"captain_marvel_poster"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.0ms) [0m[34mGenerated URL for file at key: RKftvZCLpCttdrQjqDpWAruY (https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0d6fbc76e5dc4fa4afe9dd6871ab1e95f6dccf29ade69295ab27bff65b8800bd)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/RKftvZCLpCttdrQjqDpWAruY?response-content-disposition=inline%3B%20filename%3D%22captain_marvel_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27captain_marvel_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0d6fbc76e5dc4fa4afe9dd6871ab1e95f6dccf29ade69295ab27bff65b8800bd
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48f17487ae041194d241669888028ccde90363bd", "filename"=>"hellboy_poster"}
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c199c310bf39618f24e03a0c572323435c5cddc9", "filename"=>"triple_frontier"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a122e98757b5791c9f899a207631e0710bf28de7", "filename"=>"silence_poster"}
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: hgXPdA6CaUHzuftzCWZ6oGhM (https://flixit-videos-dev.s3.amazonaws.com/hgXPdA6CaUHzuftzCWZ6oGhM?response-content-disposition=inline%3B%20filename%3D%22triple_frontier.jpg%22%3B%20filename%2A%3DUTF-8%27%27triple_frontier.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6b3b9c658c08136ed230e88943dc3feeb371b12952cfd6d5a7c41fc855f1caa0)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/hgXPdA6CaUHzuftzCWZ6oGhM?response-content-disposition=inline%3B%20filename%3D%22triple_frontier.jpg%22%3B%20filename%2A%3DUTF-8%27%27triple_frontier.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6b3b9c658c08136ed230e88943dc3feeb371b12952cfd6d5a7c41fc855f1caa0
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: cuU4pGedsfNnpKDsAwPbKVQq (https://flixit-videos-dev.s3.amazonaws.com/cuU4pGedsfNnpKDsAwPbKVQq?response-content-disposition=inline%3B%20filename%3D%22hellboy_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27hellboy_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bff09dad0f94b4b1c08177cbc18c4ec45ad75b2abfad0a887ab63f522fad47e9)[0m
+Completed 302 Found in 20ms (ActiveRecord: 12.9ms)
+
+
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/cuU4pGedsfNnpKDsAwPbKVQq?response-content-disposition=inline%3B%20filename%3D%22hellboy_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27hellboy_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bff09dad0f94b4b1c08177cbc18c4ec45ad75b2abfad0a887ab63f522fad47e9
+Completed 302 Found in 26ms (ActiveRecord: 19.0ms)
+
+
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: ob5Ha7tRaDgcxqTCcWMGwivn (https://flixit-videos-dev.s3.amazonaws.com/ob5Ha7tRaDgcxqTCcWMGwivn?response-content-disposition=inline%3B%20filename%3D%22silence_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27silence_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9140ce765426392f231004288ffe67aecbdcf4740c6da660a26cf8540551d64b)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/ob5Ha7tRaDgcxqTCcWMGwivn?response-content-disposition=inline%3B%20filename%3D%22silence_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27silence_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9140ce765426392f231004288ffe67aecbdcf4740c6da660a26cf8540551d64b
+Completed 302 Found in 25ms (ActiveRecord: 20.9ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fb0977603c1c1b84d672693dd64340ca0708fc09", "filename"=>"alita_poster"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.4ms) [0m[34mGenerated URL for file at key: pwwuMWM81DuhRzMm4GY66diS (https://flixit-videos-dev.s3.amazonaws.com/pwwuMWM81DuhRzMm4GY66diS?response-content-disposition=inline%3B%20filename%3D%22alita_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27alita_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1fe088a37198eb287f3a574b6b44df652a919a79cdaf33c07f7d97a61fa3f76e)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/pwwuMWM81DuhRzMm4GY66diS?response-content-disposition=inline%3B%20filename%3D%22alita_poster.jpg%22%3B%20filename%2A%3DUTF-8%27%27alita_poster.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1fe088a37198eb287f3a574b6b44df652a919a79cdaf33c07f7d97a61fa3f76e
+Completed 302 Found in 17ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2dfec96a36fdd9ee6042a3bb7db8bc755e0a161b/wake_of_light.jpg" for ::1 at 2019-04-05 10:19:21 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2dfec96a36fdd9ee6042a3bb7db8bc755e0a161b", "filename"=>"wake_of_light"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: nxxxKhNhBKcQAZRrpVHpHMGr (https://flixit-videos-dev.s3.amazonaws.com/nxxxKhNhBKcQAZRrpVHpHMGr?response-content-disposition=inline%3B%20filename%3D%22wake_of_light.jpg%22%3B%20filename%2A%3DUTF-8%27%27wake_of_light.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4e4c69e33cbf98377752a77515ab9f3b880051af98889bdc102529a0bd5556b5)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/nxxxKhNhBKcQAZRrpVHpHMGr?response-content-disposition=inline%3B%20filename%3D%22wake_of_light.jpg%22%3B%20filename%2A%3DUTF-8%27%27wake_of_light.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4e4c69e33cbf98377752a77515ab9f3b880051af98889bdc102529a0bd5556b5
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc/Captain%20Marvel%20(TV%20Spot).mp4" for ::1 at 2019-04-05 10:19:21 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--51fa2b16e746d484d834cc3a411e1fd3731b3dfc", "filename"=>"Captain Marvel (TV Spot)"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lyttonliao/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.0ms) [0m[34mGenerated URL for file at key: PoQxhzUX8V8TP5wrzkLVniVy (https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7f1b6df981bfbf475f0b9f58b310ddb59072db6c4f042734ccdc3d892c32edcb)[0m
+Redirected to https://flixit-videos-dev.s3.amazonaws.com/PoQxhzUX8V8TP5wrzkLVniVy?response-content-disposition=attachment%3B%20filename%3D%22Captain%20Marvel%20%2528TV%20Spot%2529.mp4%22%3B%20filename%2A%3DUTF-8%27%27Captain%2520Marvel%2520%2528TV%2520Spot%2529.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IYXBTRNW35PGBXQ%2F20190405%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190405T141921Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7f1b6df981bfbf475f0b9f58b310ddb59072db6c4f042734ccdc3d892c32edcb
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+

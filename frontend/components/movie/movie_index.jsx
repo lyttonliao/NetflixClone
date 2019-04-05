@@ -9,7 +9,7 @@ class MovieIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchGenres();
+        // this.props.fetchGenres();
         // debugger
         this.props.fetchMovies();
     }
