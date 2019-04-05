@@ -49522,3 +49522,201 @@ Redirected to https://flixit-videos-dev.s3.amazonaws.com/cuU4pGedsfNnpKDsAwPbKVQ
 Completed 302 Found in 15ms (ActiveRecord: 11.6ms)
 
 
+  [1m[36mMovieGenre Load (0.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Silence"], ["year", 2019], ["description", "When the world is under attack from creatures who hunt their human prey by sound, a teenager who lost her hearing at 13, and her family, seek safety in a remote refuge. However, they discover a cult who are eager to exploit her heightened senses."], ["created_at", "2019-04-05 10:20:14.836053"], ["updated_at", "2019-04-05 10:20:14.836053"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+[36m  S3 Storage (394.0ms) [0m[32mUploaded file to key: WC68XprHoowGVavPA4p6Vv25 (checksum: BfFfd3ZRE3eSA5Vkkgp5lg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "WC68XprHoowGVavPA4p6Vv25"], ["filename", "silence.mp4"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 65138], ["checksum", "BfFfd3ZRE3eSA5Vkkgp5lg=="], ["created_at", "2019-04-05 10:20:50.284445"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 4], ["blob_id", 11], ["created_at", "2019-04-05 10:20:50.311258"]]
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:20:50.313802"], ["id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 637305fc-903b-4176-98c3-6d9fd3f5485b) to Async(default) with arguments: #<GlobalID:0x00007fab9db7e238 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/11>>
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b] Performing ActiveStorage::AnalyzeJob (Job ID: 637305fc-903b-4176-98c3-6d9fd3f5485b) from Async(default) with arguments: #<GlobalID:0x00007fab99be9fa0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b] [36m  S3 Storage (172.2ms) [0m[34mDownloaded file from key: WC68XprHoowGVavPA4p6Vv25[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [637305fc-903b-4176-98c3-6d9fd3f5485b] Performed ActiveStorage::AnalyzeJob (Job ID: 637305fc-903b-4176-98c3-6d9fd3f5485b) from Async(default) in 189.19ms
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+[36m  S3 Storage (2316.2ms) [0m[32mUploaded file to key: tdqGCui7hu9v73dXDZjCVJaK (checksum: v9BTVpYpcMl69jDJ/KDEeg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "tdqGCui7hu9v73dXDZjCVJaK"], ["filename", "silence.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 7341286], ["checksum", "v9BTVpYpcMl69jDJ/KDEeg=="], ["created_at", "2019-04-05 10:21:46.448528"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "movie"], ["record_type", "Movie"], ["record_id", 4], ["blob_id", 12], ["created_at", "2019-04-05 10:21:46.465113"]]
+  [1m[36mMovie Update (0.7ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:21:46.466871"], ["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ea2cbc97-bbf2-44c2-a565-dac369caee66) to Async(default) with arguments: #<GlobalID:0x00007fab99e0b8b0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/12>>
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66] Performing ActiveStorage::AnalyzeJob (Job ID: ea2cbc97-bbf2-44c2-a565-dac369caee66) from Async(default) with arguments: #<GlobalID:0x00007fab99de8450 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66] [36m  S3 Storage (1361.4ms) [0m[34mDownloaded file from key: tdqGCui7hu9v73dXDZjCVJaK[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66]   [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ea2cbc97-bbf2-44c2-a565-dac369caee66] Performed ActiveStorage::AnalyzeJob (Job ID: ea2cbc97-bbf2-44c2-a565-dac369caee66) from Async(default) in 1379.04ms
+[36m  S3 Storage (343.6ms) [0m[32mUploaded file to key: D8oD5RVwTfShDMxg6hXFvGvB (checksum: 1B2M2Y8AsgTpgAmY7PhCfg==)[0m
+[36m  S3 Storage (305.2ms) [0m[32mUploaded file to key: ob5Ha7tRaDgcxqTCcWMGwivn (checksum: BfFfd3ZRE3eSA5Vkkgp5lg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ob5Ha7tRaDgcxqTCcWMGwivn"], ["filename", "silence_poster.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 65138], ["checksum", "BfFfd3ZRE3eSA5Vkkgp5lg=="], ["created_at", "2019-04-05 10:22:44.795301"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 11]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 4], ["blob_id", 13], ["created_at", "2019-04-05 10:22:44.802347"]]
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:22:44.803772"], ["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6af4bee9-e35e-480e-ba9b-cd99e1f6c879) to Async(default) with arguments: #<GlobalID:0x00007fab99705868 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/13>>
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879] Performing ActiveStorage::AnalyzeJob (Job ID: 6af4bee9-e35e-480e-ba9b-cd99e1f6c879) from Async(default) with arguments: #<GlobalID:0x00007fab99766e88 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/13>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879] [36m  S3 Storage (71.7ms) [0m[34mDownloaded file from key: ob5Ha7tRaDgcxqTCcWMGwivn[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 3ce0c5ce-6029-4771-8260-f570122599e1) to Async(default) with arguments: #<GlobalID:0x00007fab9c592be0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879]   [1m[35m (7.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879]   [1m[36mActiveStorage::Blob Update (1.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 13]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6af4bee9-e35e-480e-ba9b-cd99e1f6c879] Performed ActiveStorage::AnalyzeJob (Job ID: 6af4bee9-e35e-480e-ba9b-cd99e1f6c879) from Async(default) in 101.57ms
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1] Performing ActiveStorage::PurgeJob (Job ID: 3ce0c5ce-6029-4771-8260-f570122599e1) from Async(default) with arguments: #<GlobalID:0x00007fab99aa8e48 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1]   [1m[36mActiveStorage::Attachment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 11]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1] [36m  S3 Storage (36.7ms) [0m[31mDeleted file from key: WC68XprHoowGVavPA4p6Vv25[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1] [36m  S3 Storage (38.9ms) [0m[31mDeleted files by key prefix: variants/WC68XprHoowGVavPA4p6Vv25/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3ce0c5ce-6029-4771-8260-f570122599e1] Performed ActiveStorage::PurgeJob (Job ID: 3ce0c5ce-6029-4771-8260-f570122599e1) from Async(default) in 91.18ms
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Triple Frontier"], ["year", 2019], ["description", "Former Special Forces operatives reunite to plan a heist in a sparsely populated multi-border zone of South America. For the first time in their prestigious careers, these unsung heroes undertake this dangerous mission for themselves instead of the country."], ["created_at", "2019-04-05 10:24:57.579634"], ["updated_at", "2019-04-05 10:24:57.579634"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+[36m  S3 Storage (563.4ms) [0m[32mUploaded file to key: hgXPdA6CaUHzuftzCWZ6oGhM (checksum: L16gzRgOYBCcGLC1leOjjg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "hgXPdA6CaUHzuftzCWZ6oGhM"], ["filename", "triple_frontier.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 108163], ["checksum", "L16gzRgOYBCcGLC1leOjjg=="], ["created_at", "2019-04-05 10:25:43.922094"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 5], ["blob_id", 14], ["created_at", "2019-04-05 10:25:43.927611"]]
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:25:43.929515"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 970dbb0d-25fd-45fe-a982-00dd6e213226) to Async(default) with arguments: #<GlobalID:0x00007fab98eb31b0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/14>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226] Performing ActiveStorage::AnalyzeJob (Job ID: 970dbb0d-25fd-45fe-a982-00dd6e213226) from Async(default) with arguments: #<GlobalID:0x00007fab9934bdf8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/14>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226] [36m  S3 Storage (131.5ms) [0m[34mDownloaded file from key: hgXPdA6CaUHzuftzCWZ6oGhM[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 14]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [970dbb0d-25fd-45fe-a982-00dd6e213226] Performed ActiveStorage::AnalyzeJob (Job ID: 970dbb0d-25fd-45fe-a982-00dd6e213226) from Async(default) in 152.77ms
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+[36m  S3 Storage (2159.0ms) [0m[32mUploaded file to key: Gfbf6M9PSUJFMz8qDJNJqxTW (checksum: yyFIi/4T/+ORhMynzGwaNw==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Gfbf6M9PSUJFMz8qDJNJqxTW"], ["filename", "triple_frontier.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 2229035], ["checksum", "yyFIi/4T/+ORhMynzGwaNw=="], ["created_at", "2019-04-05 10:26:13.304941"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "movie"], ["record_type", "Movie"], ["record_id", 5], ["blob_id", 15], ["created_at", "2019-04-05 10:26:13.310580"]]
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:26:13.312120"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: cf3a9863-054c-4c46-b5ad-5ead8488999a) to Async(default) with arguments: #<GlobalID:0x00007fab999c66d8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/15>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a] Performing ActiveStorage::AnalyzeJob (Job ID: cf3a9863-054c-4c46-b5ad-5ead8488999a) from Async(default) with arguments: #<GlobalID:0x00007fab999f4e70 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/15>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a] [36m  S3 Storage (542.5ms) [0m[34mDownloaded file from key: Gfbf6M9PSUJFMz8qDJNJqxTW[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 15]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf3a9863-054c-4c46-b5ad-5ead8488999a] Performed ActiveStorage::AnalyzeJob (Job ID: cf3a9863-054c-4c46-b5ad-5ead8488999a) from Async(default) in 557.07ms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "year", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Wake Of Light"], ["year", 2019], ["description", " young woman slowly losing her faith while caring for her aging father meets a charismatic young man on a cross-country road trip, who falls for her."], ["created_at", "2019-04-05 10:28:16.047720"], ["updated_at", "2019-04-05 10:28:16.047720"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "image"], ["LIMIT", 1]]
+[36m  S3 Storage (285.3ms) [0m[32mUploaded file to key: nxxxKhNhBKcQAZRrpVHpHMGr (checksum: hCBKY40RkM2+s8a6qeFs+g==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "nxxxKhNhBKcQAZRrpVHpHMGr"], ["filename", "wake_of_light.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 58966], ["checksum", "hCBKY40RkM2+s8a6qeFs+g=="], ["created_at", "2019-04-05 10:30:18.761182"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Movie"], ["record_id", 6], ["blob_id", 16], ["created_at", "2019-04-05 10:30:18.767261"]]
+  [1m[36mMovie Update (0.5ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:30:18.769128"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ce63e6b3-65a7-4a93-86db-03036f90f003) to Async(default) with arguments: #<GlobalID:0x00007fab9c6ed8c8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/16>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003] Performing ActiveStorage::AnalyzeJob (Job ID: ce63e6b3-65a7-4a93-86db-03036f90f003) from Async(default) with arguments: #<GlobalID:0x00007fab9c6d67b8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/16>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003] [36m  S3 Storage (69.9ms) [0m[34mDownloaded file from key: nxxxKhNhBKcQAZRrpVHpHMGr[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 16]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ce63e6b3-65a7-4a93-86db-03036f90f003] Performed ActiveStorage::AnalyzeJob (Job ID: ce63e6b3-65a7-4a93-86db-03036f90f003) from Async(default) in 89.33ms
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+[36m  S3 Storage (7715.1ms) [0m[32mUploaded file to key: 8KsXshsmAHarAFHUVfmMVUBt (checksum: 3FfY/UpWap4d9iNFOB1PUg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "8KsXshsmAHarAFHUVfmMVUBt"], ["filename", "wake_of_light.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 8970502], ["checksum", "3FfY/UpWap4d9iNFOB1PUg=="], ["created_at", "2019-04-05 10:30:48.374467"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "movie"], ["record_type", "Movie"], ["record_id", 6], ["blob_id", 17], ["created_at", "2019-04-05 10:30:48.380090"]]
+  [1m[36mMovie Update (0.3ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2019-04-05 10:30:48.381817"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d8aa341e-b6ca-4cef-9035-11dbd7f3a566) to Async(default) with arguments: #<GlobalID:0x00007fab99c52be0 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/17>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566] Performing ActiveStorage::AnalyzeJob (Job ID: d8aa341e-b6ca-4cef-9035-11dbd7f3a566) from Async(default) with arguments: #<GlobalID:0x00007fab99c3a6a8 @uri=#<URI::GID gid://app-clone/ActiveStorage::Blob/17>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566] [36m  S3 Storage (1873.9ms) [0m[34mDownloaded file from key: 8KsXshsmAHarAFHUVfmMVUBt[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 17]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566]   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d8aa341e-b6ca-4cef-9035-11dbd7f3a566] Performed ActiveStorage::AnalyzeJob (Job ID: d8aa341e-b6ca-4cef-9035-11dbd7f3a566) from Async(default) in 1888.11ms
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (3.5ms)[0m  [1m[32mINSERT INTO "movie_genres" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 1], ["created_at", "2019-04-05 10:31:32.101941"], ["updated_at", "2019-04-05 10:31:32.101941"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 9], ["movie_id", 1], ["genre_id", 1], ["created_at", "2019-04-05 10:31:47.349306"], ["updated_at", "2019-04-05 10:31:47.349306"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 10], ["movie_id", 1], ["genre_id", 1], ["created_at", "2019-04-05 10:31:56.628705"], ["updated_at", "2019-04-05 10:31:56.628705"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 11], ["movie_id", 1], ["genre_id", 1], ["created_at", "2019-04-05 10:32:02.257087"], ["updated_at", "2019-04-05 10:32:02.257087"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovieGenre Load (0.5ms)[0m  [1m[34mSELECT  "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mMovieGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 9]]
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT  "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovieGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 10]]
+  [1m[36mMovieGenre Load (0.4ms)[0m  [1m[34mSELECT  "movie_genres".* FROM "movie_genres" WHERE "movie_genres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mMovieGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "movie_genres" WHERE "movie_genres"."id" = $1[0m  [["id", 11]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 9], ["movie_id", 4], ["genre_id", 4], ["created_at", "2019-04-05 11:06:12.943080"], ["updated_at", "2019-04-05 11:06:12.943080"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 10], ["movie_id", 4], ["genre_id", 3], ["created_at", "2019-04-05 11:06:24.475948"], ["updated_at", "2019-04-05 11:06:24.475948"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 11], ["movie_id", 5], ["genre_id", 1], ["created_at", "2019-04-05 11:06:35.251966"], ["updated_at", "2019-04-05 11:06:35.251966"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovieGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "movie_genres" ("id", "movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 12], ["movie_id", 6], ["genre_id", 4], ["created_at", "2019-04-05 11:06:52.564328"], ["updated_at", "2019-04-05 11:06:52.564328"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]

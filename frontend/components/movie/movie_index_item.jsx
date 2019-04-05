@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { createListMovie } from '../../actions/list_movie_actions';
+// import { connect } from 'react-redux';
 
 class MovieIndexItem extends React.Component {
     constructor(props) {
@@ -54,7 +56,7 @@ class MovieIndexItem extends React.Component {
                         <i className="fas fa-chevron-down"></i>
                     </div>
                     
-                    <div className="add-to-likes">
+                    <div className="add-to-likes" >
                         <i className="far fa-plus-square"></i>
                     </div>
                 </div>
@@ -64,3 +66,23 @@ class MovieIndexItem extends React.Component {
 }
 
 export default MovieIndexItem;
+
+// onClick={() => this.props.createListMovie(this.props.movie)}
+
+// const msp = (state, ownProps) => {
+//     const lists = Object.values(state.entities.lists)
+//     const currentUserId = state.session.currentUserId;
+//     const list = lists.filter(list => list.user_id === currentUserId);
+//     return ({
+//         list_movies: Object.values(state.entities.list_movies),
+//         list_id: list.id
+//     })
+// }
+
+// const mdp = dispatch => {
+//     return {
+//         createListMovie: (movie) => dispatch(createListMovie(movie))
+//     }
+// }
+
+// export default connect(msp,mdp)(MovieIndexItem);
