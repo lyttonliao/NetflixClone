@@ -8,7 +8,7 @@
 }
 
 .movie-categories .movie-categories-videos {
-    display: flex;
+    display: block;
     // position: relative;
     margin: 0;
     padding: 0 4%;
@@ -44,12 +44,12 @@
     
 
 }
-.movie-container:first-child {
+.movie-container:first-of-type {
     border: none;
     border-right: 3px solid transparent;
 }
 
-.movie-container:last-child {
+.movie-container:last-of-type {
     border: none;
     border-right: 3px solid transparent;
 }
@@ -58,7 +58,7 @@
     transform: scale(1.8);
     transition-delay: .2s;
     transition: .5s ease-out;
-
+    // display: inline-block;
 }
 
 // .movie-categories-videos:first-child .movie-container:hover {
@@ -70,6 +70,7 @@
     transform: scale(1.8);
     transform-origin: right;
     transition-delay: .2s;
+    // display: inline-block;
 }
     
 .movie-container:first-of-type:hover {
@@ -80,6 +81,7 @@
     transform: scale(1.8);
     transform-origin: left;
     transition-delay: .2s;
+    // display: inline-block;
 }
 
 .movie-info-container {
