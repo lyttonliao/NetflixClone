@@ -1,10 +1,11 @@
 import { RECEIVE_LIST_MOVIES,
         RECEIVE_LIST_MOVIE,
-        REMOVE_LIST_MOVIE
+        REMOVE_LIST_MOVIE,
 } from '../../actions/list_movie_actions';
 
 const listMoviesReducer = (state = {}, action) => {
     Object.freeze(state);
+    debugger
     switch(action.type) {
         case RECEIVE_LIST_MOVIES:
             return action.list_movies;

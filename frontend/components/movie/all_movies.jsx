@@ -8,10 +8,6 @@ class AllMovies extends React.Component {
         this.playMovie = this.playMovie.bind(this);
         // debugger
     }
-    
-    componentDidMount() {
-
-    }
 
     playMovie(movieId) {
         let path = `/play/${movieId}`;
@@ -38,7 +34,7 @@ class AllMovies extends React.Component {
         let actionVideos = this.props.actionVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
-        let danceVideos = this.props.danceVideos.map(movie => {
+        let disneyVideos = this.props.disneyVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
         });
         let scifiVideos = this.props.scifiVideos.map(movie => {
@@ -56,7 +52,7 @@ class AllMovies extends React.Component {
             <div>
                 <div className="movie-display">
                     <div className="front-page-movie">
-                        <video src={frontPageMovie.movieUrl} autoPlay controls poster={frontPageMovie.imageUrl} preload="metadata" />
+                        <video src={frontPageMovie.imageUrl} autoPlay poster={frontPageMovie.imageUrl} preload="metadata" />
                         <div className="front-page-movie-info">
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>
@@ -91,10 +87,10 @@ class AllMovies extends React.Component {
                     <div className="movie-categories-videos">
                         <h1>
                             <p>
-                                Dance
+                                Disney
                             </p>
                         </h1> 
-                        {danceVideos}
+                        {disneyVideos}
                     </div>
 
                     <div className="movie-categories-videos">

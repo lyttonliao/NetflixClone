@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { ProtectedRoute } from '../../util/route_util';
 
 
 class NavBar extends React.Component {
     render() {
-        
+        const listId = this.props.currentUser.list_id;
+
         $(window).scroll(function () {
             const header = $(".main-header");
             const scroll = $(window).scrollTop();
@@ -18,13 +20,13 @@ class NavBar extends React.Component {
         return(
             <nav className="main-header">
                 <div className="prim-nav-logo">
-                    <img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo"/>
+                    <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
                     <ul className="primary-nav">
                         <li><p>Home</p></li>
                         <li><p>TV Shows</p></li>
                         <li><p>Movies</p></li>
                         <li><p>Recently Added</p></li>
-                        <li><Link to='/browse/my-list'><p>My List</p></Link></li>
+                        <li><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
                     </ul>
                 </div>
 
