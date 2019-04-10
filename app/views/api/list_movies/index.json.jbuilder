@@ -1,8 +1,7 @@
-@list_movie.each do |list_movie|
-    json.set! list_movie.movie_id do
-        json.extract! list_movie.movie, :title, :year, :description
-        json.id list_movie.id
-        json.list_id list_movie.list_id
-        json.movie_id list_movie.movie_id
+json.list_movies do
+    @list_movies.each do |list_movie|
+        json.set! list_movie.id do
+            json.partial! 'api/list_movies/list_movie', list_movie: list_movie
+        end
     end
 end

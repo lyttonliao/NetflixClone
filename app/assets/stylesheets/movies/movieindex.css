@@ -7,7 +7,7 @@
 }
 
 .front-page-movie {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   right: 0;
   bottom: 0;
@@ -19,7 +19,7 @@
 }
 
 .front-page-movie video {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -27,7 +27,7 @@
 }
 
 .front-page-movie-info {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 40%;

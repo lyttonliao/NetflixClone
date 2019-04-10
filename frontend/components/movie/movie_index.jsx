@@ -25,7 +25,7 @@ class MovieIndex extends React.Component {
                 <div>
                     <AllMovies
                         actionVideos={genreSelector(movies, 'action', genres)}
-                        danceVideos={genreSelector(movies, 'dance', genres)}
+                        disneyVideos={genreSelector(movies, 'disney', genres)}
                         scifiVideos={genreSelector(movies,'scifi',genres)}
                         dramaVideos={genreSelector(movies,'drama',genres)}
                         superheroVideos={genreSelector(movies,'superhero',genres)}

@@ -12,7 +12,7 @@ const App = () => (
     <HashRouter>
         <div>
             <Switch>
-                {/* <ProtectedRoute path="browse/my-list" component={ListContainer} /> */}
+                <Route path='/browse/my-list/:listId' component={ListContainer} />
                 <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />

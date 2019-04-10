@@ -1,0 +1,1 @@
+json.extract! list_movie, :id, :list_id, :movie_id

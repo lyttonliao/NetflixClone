@@ -3,8 +3,9 @@ import * as ListAPIUtil from '../util/list_api_util';
 export const RECEIVE_LIST = "RECEIVE_LIST";
 
 export const receiveList = list => {
+    debugger
     return {
-        type: list,
+        type: RECEIVE_LIST,
         list
     }
 }

@@ -4,6 +4,7 @@ class Api::MoviesController < ApplicationController
     def index
         @movies = Movie.all
         @genres = Genre.all
+        @list_movies = ListMovie.all
         render :index
     end
 

@@ -14,6 +14,7 @@ export const fetchListMovie = id => {
 }
 
 export const createListMovie = movie => {
+    debugger
     return $.ajax ({
         method: "POST",
         url: `/api/list_movies`,

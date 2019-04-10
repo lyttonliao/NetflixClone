@@ -58,8 +58,32 @@ m6_image = open('https://s3.amazonaws.com/flixit-videos-dev/nxxxKhNhBKcQAZRrpVHp
 m6.movie.attach(io: m6_movie, filename: 'wake_of_light.mp4')
 m6.image.attach(io: m6_image, filename: 'wake_of_light.jpg')
 
+m7 = Movie.create(title: 'Avengers End Game', year: 2019, description: 'Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.')
+
+m8 = Movie.create(title: 'Bumblebee', year: '2018', description: 'On the run in the year of 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken.')
+
+m9 = Movie.create(title: 'Aladdin', year: 2019, description: 'Young Aladdin embarks on a magical adventure after finding a lamp that releases a wisecracking genie.')
+
+m10 = Movie.create(title: 'How to Train Your Dragon', year: 2019, description: 'What began as an unlikely friendship between an adolescent Viking and a fearsome Night Fury dragon has become an epic adventure spanning their lives.')
+
+m11 = Movie.add(title: 'Unfinished Love', year: 2019, description: "Nothing - not time, distance, or war - can keep Robert from pursuing the love of his life.")
+
+m12 = Movie.create(title: 'nutcracker', year: 2018, description: 'Young Clara needs a magical, one-of-a-kind key to unlock a box that contains a priceless gift.')
+
+m13 = Movie.create(title: 'The Black Cauldron', year: 1985, description: 'Taran must locate the magical black cauldron before the Horned King is able to use its mystical powers to summon an army of the undead.')
+
+m14 = Movie.create(title: 'Beauty and The Beast', year: 1991, description: 'A selfish prince is cursed to become a monster for the rest of his life, unless he learns to fall in love with a beautiful young woman he keeps prisoner.') 
+
+m15 = Movie.create(title: 'The Lion King', year: 1994, description: "A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.")
+
+m16 = Movie.create(title: 'Tangled', year: 2010, description: 'The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.')
+
+m17 = Movie.create(title: 'Spider-Man: Into the Spider-Verse', year: 2018, description: 'Teen Miles Morales becomes Spider-Man of his reality, crossing his path with five counterparts from other dimensions to stop a threat for all realities.')
+
+m18 = Movie.create(title: 'Iron Man 2', year: 2010, description: "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.")
+
 g1 = Genre.create!(name: 'action')
-g2 = Genre.create!(name: 'dance')
+g2 = Genre.create!(name: 'disney')
 g3 = Genre.create!(name: 'scifi')
 g4 = Genre.create!(name: 'drama')
 g5 = Genre.create!(name: 'superhero')

@@ -1,3 +1,1 @@
-json.id list_movie.id
-json.list_id list_movie.list_id
-json.movie_id list_movie.movie_id
+json.partial! 'api/list_movies/list_movie', list_movie: @list_movie
