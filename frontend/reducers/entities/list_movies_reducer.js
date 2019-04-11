@@ -3,10 +3,13 @@ import { RECEIVE_LIST_MOVIES,
         REMOVE_LIST_MOVIE,
 } from '../../actions/list_movie_actions';
 
+import { RECEIVE_LIST } from '../../actions/list_actions'
+
 const listMoviesReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
     switch(action.type) {
+        case RECEIVE_LIST:
+            return action.data.list_movies;
         case RECEIVE_LIST_MOVIES:
             return action.list_movies;
         case RECEIVE_LIST_MOVIE:

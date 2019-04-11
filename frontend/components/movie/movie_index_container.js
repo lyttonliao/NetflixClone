@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchMovies: () => dispatch(fetchMovies()),
-        fetchGenres: () => dispatch(fetchGenres()),
+        // fetchGenres: () => dispatch(fetchGenres()),
     }
 }
 

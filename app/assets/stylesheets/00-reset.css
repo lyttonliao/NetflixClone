@@ -24,3 +24,7 @@ body {
     color: white;
     text-shadow: 1.5px white;
 }
+
+#root {
+    height: 100%;
+}

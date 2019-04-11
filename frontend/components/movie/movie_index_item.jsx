@@ -1,33 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { createListMovie } from '../../actions/list_movie_actions';
+import { createListMovie, removeListMovie } from '../../actions/list_movie_actions';
 import { connect } from 'react-redux';
 
 class MovieIndexItem extends React.Component {
     constructor(props) {
         super(props);
+
+        // this.handleAddLike = this.handleAddLike.bind(this);
     }
-
-    // playVideo() {
-
-    // }
 
     genreList() {
-        // de]bugger
+        if (this.props.genres === undefined) return null;
+
         return this.props.movie.genre_ids.map(id => {
             return <li className="genre-list{" key={id}>{this.props.genre[id-1]}</li>
-            // return this.props.genres[id];
         })
-
-        // return movieGenreList.map((genre, idx) => {
-        //     return <li className="genre-list" key={idx}>{genre}</li>;
-        // }
     }
 
+    // handleAddLike() {
+    //     this.props.createListMovie(this.props.movie)
+    // }
+
     render() {
-        // debugger
-
-
         return(
             <div className="movie-container">
                 <div className="movie-box-art">
@@ -68,21 +63,22 @@ class MovieIndexItem extends React.Component {
 }
 
 
-// const msp = (state, ownProps) => {
-//     const lists = Object.values(state.entities.lists)
-//     const currentUserId = state.session.currentUserId;
-//     // const list = lists.filter(list => list.user_id === currentUserId);
-//     debugger
-//     return ({
-//         list_movies: Object.values(state.entities.list_movies),
-//         // list_id: list.id
-//     })
-// }
+const msp = state => {
+    const lists = Object.values(state.entities.lists)
+    const currentUserId = state.session.currentUserId;
+    const list = lists.filter(list => list.user_id === currentUserId);
+    debugger
+    return ({
+        list_movies: Object.values(state.entities.list_movies),
+        list
+    })
+}
 
 const mdp = dispatch => {
     return {
-        createListMovie: (movie) => dispatch(createListMovie(movie))
+        createListMovie: (movie) => dispatch(createListMovie(movie)),
+        removeListMovie: id => dispatch(removeListMovie(id))
     }
 }
 
-export default connect(null, mdp)(MovieIndexItem);
+export default connect(msp, mdp)(MovieIndexItem);
