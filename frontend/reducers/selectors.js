@@ -15,14 +15,9 @@ const genreSelector = (movies, genre, genreList) => {
     let movieList = []
 
     movies.filter(movie => {
-        // debugger
-
         const movieGenreList = movie.genre_ids.map(id => genreList[id].name)
 
-        // debugger
-
         for(let i = 0; i < movieGenreList.length; i++) {
-            // debugger
             if (movieGenreList[i] === genre) {
                 movieList.push(movie);
             };

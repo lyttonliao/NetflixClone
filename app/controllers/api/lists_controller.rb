@@ -9,12 +9,8 @@ class Api::ListsController < ApplicationController
 
     def show
         @list = List.find(params[:id])
-        # debugger
-        # unless @list.list_movies.empty?
-        #     render :show
-        # else
-        #     render json: { message: 'No movies have been added'}
-        # end
+        @list_movies = ListMovie.all
+        @movies = Movie.all
     end
   
     # private

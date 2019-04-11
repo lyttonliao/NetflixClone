@@ -12,7 +12,6 @@ class Browse extends React.Component {
 
     render() {
         const { currentUser, logout } = this.props;
-        debugger
         return (
             <div className="LandingPage">
                 <NavBar logout={logout} currentUser={currentUser} />

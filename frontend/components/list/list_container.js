@@ -1,15 +1,20 @@
 import { connect } from 'react-redux';
 import ListMovies from './list_movies';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { fetchList } from '../../actions/list_actions';
 import { fetchListMovies } from '../../actions/list_movie_actions';
+// import { fetchMovies } from '../../actions/movie_actions';
 import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
     debugger
     const currentUser = state.entities.users[state.session.currentUserId];
+    const list = state.entities.lists[ownProps.match.params.listId];
+
     return ({
-        list: state.entities.lists[ownProps.match.params.listId],
+        list,
+        movies: state.entities.movies,
+        list_movies: state.entities.list_movies,
         currentUser
     })
 }
@@ -22,4 +27,4 @@ const mdp = dispatch => {
     })
 }
 
-export default withRouter(connect(msp, mdp)(ListMovies));
+export default connect(msp, mdp)(ListMovies);

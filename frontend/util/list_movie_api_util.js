@@ -1,7 +1,8 @@
 export const fetchListMovies = () => {
     return $.ajax ({
         method: "GET",
-        url: "/api/list_movies"
+        url: "/api/list_movies",
+        error: err => console.log(err)
     })
 }
 
@@ -9,16 +10,16 @@ export const fetchListMovie = id => {
     return $.ajax ({
         method: "GET",
         url: `/api/list_movies/${id}`,
-        // error: err => console.log(err)
+        error: err => console.log(err)
     })
 }
 
 export const createListMovie = movie => {
-    debugger
     return $.ajax ({
         method: "POST",
         url: `/api/list_movies`,
-        data: { movie }
+        data: { movie },
+        error: err => console.log(err)
     })
 }
 
