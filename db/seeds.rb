@@ -82,7 +82,7 @@ m10_image = open('https://s3.amazonaws.com/flixit-videos-dev/C7zEPXi8qBGWtChnmWu
 m10.movie.attach(io: m10_movie, filename: 'how_to_train_dragon.mp4')
 m10.image.attach(io: m10_image, filename: 'how_to_train_dragon.jpg')
 
-m11 = Movie.add(title: 'Unfinished Love', year: 2019, description: "Nothing - not time, distance, or war - can keep Robert from pursuing the love of his life.")
+m11 = Movie.create(title: 'Unfinished Love', year: 2019, description: "Nothing - not time, distance, or war - can keep Robert from pursuing the love of his life.")
 m11_movie = open('https://s3.amazonaws.com/flixit-videos-dev/CRpWmRFwoc9vNLYFd9NKdT1p')
 m11_image = open('https://s3.amazonaws.com/flixit-videos-dev/udi6nVFnkRKoqVA8XNwkxj3y')
 m11.movie.attach(io: m11_movie, filename: 'unfinished_love.mp4')
