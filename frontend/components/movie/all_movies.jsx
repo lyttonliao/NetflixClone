@@ -6,7 +6,7 @@ class AllMovies extends React.Component {
     constructor(props) {
         super(props);
         this.playMovie = this.playMovie.bind(this);
-        // debugger
+
     }
 
     playMovie(movieId) {
@@ -15,7 +15,6 @@ class AllMovies extends React.Component {
     }
 
     genreList() {
-        // debugger
         return Object.values(this.props.genres).map(genre => {
             return genre.name;
         })
@@ -25,28 +24,29 @@ class AllMovies extends React.Component {
         const frontPageMovie = this.props.movies[1];
         const genres = this.genreList();
 
+        if (this.props.movies.length === 0) return null;
+
         let actionVideos = this.props.actionVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
         let disneyVideos = this.props.disneyVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
         let scifiVideos = this.props.scifiVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
         let dramaVideos = this.props.dramaVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
         let superheroVideos = this.props.superheroVideos.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genre={genres}/>;
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
 
-        // debugger
         return (
             <div>
                 <div className="movie-display">
                     <div className="front-page-movie">
-                        <video src={frontPageMovie.imageUrl} autoPlay poster={frontPageMovie.imageUrl} preload="metadata" />
+                        <video src={frontPageMovie.imageUrl} autoPlay poster={frontPageMovie.imageUrl}/>
                         <div className="front-page-movie-info">
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>
@@ -69,49 +69,59 @@ class AllMovies extends React.Component {
                 </div>
 
                 <div className="movie-categories">
-                    <div className="movie-categories-videos">
+                    <div id="movie-categories-1" className="movie-categories-videos">
                         <h1>
                             <p>
                                 Action
                             </p>
                         </h1>
-                        {actionVideos}
+                        <div id="movie-row-1" className="movie-row">
+                            {actionVideos}
+                        </div>
                     </div>                
 
-                    <div className="movie-categories-videos">
+                    <div id="movie-categories-2" className="movie-categories-videos">
                         <h1>
                             <p>
                                 Disney
                             </p>
                         </h1> 
-                        {disneyVideos}
+                        <div id="movie-row-2" className="movie-row">
+                            {disneyVideos}
+                        </div>
                     </div>
 
-                    <div className="movie-categories-videos">
+                    <div id="movie-categories-3" className="movie-categories-videos">
                         <h1>
                             <p>
                                 Sci-Fi
                             </p>
                         </h1>
-                        {scifiVideos}
+                        <div id="movie-row-3" className="movie-row">
+                            {scifiVideos}
+                        </div>
                     </div>
 
-                    <div className="movie-categories-videos">
+                    <div id="movie-categories-4" className="movie-categories-videos">
                         <h1>
                             <p>
                                 Drama
                             </p>
                         </h1>
-                        {dramaVideos}
+                        <div id="movie-row-4" className="movie-row">
+                            {dramaVideos}
+                        </div>
                     </div>
 
-                    <div className="movie-categories-videos">
+                    <div id="movie-categories-5" className="movie-categories-videos">
                         <h1>
                             <p>
                                 Superhero
                             </p>
                         </h1>
-                        {superheroVideos}
+                        <div id="movie-row-5" className="movie-row">
+                            {superheroVideos}
+                        </div>
                     </div>
                 </div>
 

@@ -11,7 +11,7 @@ const genreSelector = (movies, genre, genreList) => {
     //     movie[j].genre_ids.map(id => {
     //         return genreList[id].name;
     // })}
-    // debugger
+
     let movieList = []
 
     movies.filter(movie => {

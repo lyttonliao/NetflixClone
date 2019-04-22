@@ -20,7 +20,7 @@ class Browse extends React.Component {
                     <MovieIndexContainer />
                 </div>
 
-                <Route path='/browse/my-list/:listId' component={ListContainer} />
+                {/* <Route path='/browse/my-list/:listId' component={ListContainer} /> */}
             </div>
         )
     }

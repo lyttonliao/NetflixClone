@@ -13,20 +13,26 @@ class ListMovies extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.match.params.listId !== this.props.match.params.listId) {
-            this.props.fetchList(this.props.match.params.listId)
+        if (Object.values(prevProps.list_movies).length !== Object.values(this.props.list_movies).length) {
+            debugger
+            this.props.fetchListMovies(this.props.list)
         }
     }
-
-    // hard coding for now until i can get more help
+    
+    genreList() {
+        return Object.values(this.props.genres).map(genre => {
+            return genre.name;
+        })
+    }
 
     listMovies () {
         const { list_movies } = this.props;
         const movieIds = Object.values(list_movies).map(listMovie => listMovie.movie_id)
         const movies = movieIds.map(id => this.props.movies[id])
+        const genres = this.genreList();
 
         return movies.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} />
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} />
         })
     }
 
@@ -34,11 +40,17 @@ class ListMovies extends React.Component {
         const { logout, currentUser, list } = this.props;
         debugger
         if (list === undefined) return null;
-
+        debugger
         if (list.list_movie_ids.length === 0) {
+            debugger
             return (
                 <div className="personal-list">
                     <NavBar logout={logout} currentUser={currentUser} />
+                    <div className="movie-categories my-list-show-page">
+                        <div className="movie-categories-videos">
+                            <h1><p className="my-list-title">My List</p></h1>
+                        </div>
+                    </div>
 
                     <div className="empty-personal-list">
                         <div><p>You haven't added any titles to your list yet.</p></div>

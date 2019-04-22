@@ -7,6 +7,7 @@ export const fetchListMovies = () => {
 }
 
 export const fetchListMovie = id => {
+    debugger
     return $.ajax ({
         method: "GET",
         url: `/api/list_movies/${id}`,
@@ -24,6 +25,7 @@ export const createListMovie = movie => {
 }
 
 export const deleteListMovie = id => {
+    debugger
     return $.ajax ({
         method: "DELETE",
         url: `/api/list_movies/${id}`

@@ -31,16 +31,21 @@
     font-size: 3vh;
 } */
 
+.movie-row {
+    display: flex;
+    // position: relative;
+}
 
 .movie-container {
     display: inline-block;
-    position: static;
+    // position: relative;
     justify-content: space-evenly;
     width: 16.4%;
     cursor: pointer;
     transition: .35s ease-in;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
+    overflow: hidden;
     
     text-shadow:
         -1px -1px 0 #000,
@@ -53,20 +58,23 @@
     // text-shadow: black 0px 1px 0px;
 
 }
-.movie-container:first-of-type {
+
+.movie-container:nth-of-type(1) {
     border: none;
     border-right: 2px solid transparent;
 }
 
-.movie-container:last-of-type {
+.movie-container:nth-of-type(6) {
     border: none;
     border-left: 2px solid transparent;
 }
 
 .movie-container:hover {
     transform: scale(1.8);
+    // flex-grow: 1.8;
     transition-delay: .2s;
     transition: .5s ease-out;
+    // position: relative;
     // display: inline-block;
 }
 
@@ -79,6 +87,8 @@
     transform: scale(1.8);
     transform-origin: right;
     transition-delay: .2s;
+    // position: relative;
+
     // display: inline-block;
 }
     
@@ -90,6 +100,8 @@
     transform: scale(1.8);
     transform-origin: left;
     transition-delay: .2s;
+    // position: relative;
+
     // display: inline-block;
 }
 
@@ -164,6 +176,22 @@
     top: 50%;
 }
 
+.fa-plus-square:hover {
+    color: red;
+}
+
+.fa-check-circle:hover {
+    color: red;
+}
+
+.fa-chevron-down:hover {
+    color: red;
+}
+
+.fa-play-circle:hover {
+    color: red;
+}
+
 .movie-container:first-child:hover {
     /* transform: scale(1.8); */
     transition: .5s ease;
@@ -172,4 +200,5 @@
     transform: scale(1.8);
     transform-origin: left;
     transition-delay: .2s;
+    // position: relative;
 }

@@ -22,7 +22,6 @@ class SessionForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         const demo = Object.assign({}, { email: "freetrial@gmail.com", password:"password"})
-        debugger
         this.props.processForm(demo);
     }
 
