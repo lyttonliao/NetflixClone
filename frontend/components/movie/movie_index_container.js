@@ -8,7 +8,6 @@ const mapStateToProps = state => {
     const currentUserId = state.session.currentUserId;
     const listId = state.entities.users[currentUserId].list_id;
     const list = state.entities.lists[listId]
-    debugger
     return {
         movies: state.entities.movies,
         genres: state.entities.genres,

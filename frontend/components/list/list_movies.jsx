@@ -14,7 +14,6 @@ class ListMovies extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (Object.values(prevProps.list_movies).length !== Object.values(this.props.list_movies).length) {
-            debugger
             this.props.fetchListMovies(this.props.list)
         }
     }
@@ -38,11 +37,8 @@ class ListMovies extends React.Component {
 
     render() {
         const { logout, currentUser, list } = this.props;
-        debugger
         if (list === undefined) return null;
-        debugger
         if (list.list_movie_ids.length === 0) {
-            debugger
             return (
                 <div className="personal-list">
                     <NavBar logout={logout} currentUser={currentUser} />
