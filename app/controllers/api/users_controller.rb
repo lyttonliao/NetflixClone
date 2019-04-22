@@ -1,10 +1,9 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-        @user.list = List.new(user_id: @user.id)
         debugger
         if @user.save
-            @user.list.save
+            @user.list = List.create(user_id: @user.id)
             login!(@user)
             render :show
         else
