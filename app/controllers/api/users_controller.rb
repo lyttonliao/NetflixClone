@@ -1,12 +1,12 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-        debugger
         if @user.save
-            @user.list = List.create(user_id: @user.id)
             login!(@user)
+            @user.list = List.create(user_id: @user.id)
             render :show
         else
+            debugger
             render json: @user.errors.full_messages
         end
     end
