@@ -42,7 +42,7 @@ class NavBar extends React.Component {
                         <img className="profile-icon" src={window.icon} alt="icon"/>
                         <div className="dropdown-content">
                             <div className="dropdown-section-1">
-                                <li><p>User</p></li>
+                                <li><p>{this.props.currentUser.email}</p></li>
                             </div>
                             <li className="profile-dropdown-divider"></li>
                             <div className="dropdown-section-2">
