@@ -7,13 +7,11 @@ class MovieShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchMovie(this.props.match.params.movieId)
     }
 
     render() {
         if (this.props.movie === undefined) return null;
-        // debugger
         return (
             <div className="video-container">
                 <video controls>

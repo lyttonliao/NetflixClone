@@ -21,6 +21,7 @@ export const receiveListMovie = list_movie => {
 
 
 export const deleteListMovie = id => {
+    debugger
     return {
         type: "REMOVE_LIST_MOVIE",
         id
@@ -49,5 +50,6 @@ export const createListMovie = (movie) => dispatch => {
 }
 
 export const removeListMovie = (id) => dispatch => {
-    return ListMovieAPIUtil.deleteListMovie(id).then(id => dispatch(deleteListMovie(id)))
+    debugger
+    return ListMovieAPIUtil.deleteListMovie(id).then(() => dispatch(deleteListMovie(id)))
 }

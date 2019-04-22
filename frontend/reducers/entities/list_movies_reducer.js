@@ -9,12 +9,20 @@ const listMoviesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_LIST:
+            if (action.data.list_movies === undefined) {
+                return state;
+            }
             return action.data.list_movies;
         case RECEIVE_LIST_MOVIES:
+            debugger
+            if (action.list_movies === undefined) {
+                return state;
+            }
             return action.list_movies;
         case RECEIVE_LIST_MOVIE:
             return Object.assign({}, state, { [action.list_movie.id]: action.list_movie })
         case REMOVE_LIST_MOVIE:
+            debugger
             let newState = Object.assign({}, state);
             delete newState[action.id];
             return newState;
