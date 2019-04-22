@@ -20,7 +20,6 @@ export const receiveListMovie = list_movie => {
 
 
 export const deleteListMovie = id => {
-    debugger
     return {
         type: "REMOVE_LIST_MOVIE",
         id

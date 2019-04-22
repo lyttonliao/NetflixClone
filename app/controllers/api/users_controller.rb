@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
             @user.list = List.create(user_id: @user.id)
             render :show
         else
-            debugger
             render json: @user.errors.full_messages
         end
     end
