@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // const movieRow4 = document.getElementById('movie-categories-4')
     // const movieRow5 = document.getElementById('movie-categories-5')
 
-    // debugger
 
     // const movieContainer1 = document.getElementById('movie-row-1')
     // const movieContainer2 = document.getElementById('movie-row-2')

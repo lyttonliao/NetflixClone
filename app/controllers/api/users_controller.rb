@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         debugger
         if @user.save
+            @user.list = List.new(user_id: @user.id)
             login!(@user)
             render :show
         else

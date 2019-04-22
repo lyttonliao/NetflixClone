@@ -6,7 +6,6 @@ import { fetchListMovies } from '../../actions/list_movie_actions';
 import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     const currentUser = state.entities.users[state.session.currentUserId];
     const list = state.entities.lists[ownProps.match.params.listId];
 

@@ -10,14 +10,12 @@ class MovieIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchMovies().then(() => this.props.fetchList(this.props.listId));
-        debugger
     }
 
 
     render() {
         const movies = Object.values(this.props.movies);
         const { genres } = this.props;
-        debugger
         if (movies.length === 0 || this.props.list === undefined) return null;
         return (
             <div className="movies-index-genres">

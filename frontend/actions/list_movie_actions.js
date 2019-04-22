@@ -3,7 +3,6 @@ import * as ListMovieAPIUtil from '../util/list_movie_api_util';
 export const RECEIVE_LIST_MOVIES = "RECEIVE_LIST_MOVIES";
 export const RECEIVE_LIST_MOVIE = "RECEIVE_LIST_MOVIE";
 export const REMOVE_LIST_MOVIE = "REMOVE_LIST_MOVIE";
-// export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
 
 export const receiveListMovies = list => {
     return {
@@ -28,14 +27,6 @@ export const deleteListMovie = id => {
     }
 }
 
-// export const receiveListErrors = errors => {
-//     return {
-//         type: "RECEIVE_LIST_ERRORS",
-//         errors
-//     }
-// }
-
-
 export const fetchListMovies = () => dispatch => {
     return ListMovieAPIUtil.fetchListMovies().then(list => dispatch(receiveListMovies(list), errors => dispatch(receiveListErrors(errors.responseJSON))))
 }
@@ -50,6 +41,6 @@ export const createListMovie = (movie) => dispatch => {
 }
 
 export const removeListMovie = (id) => dispatch => {
-    debugger
+
     return ListMovieAPIUtil.deleteListMovie(id).then(() => dispatch(deleteListMovie(id)))
 }
