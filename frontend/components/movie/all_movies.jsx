@@ -23,9 +23,14 @@ class AllMovies extends React.Component {
     render() { 
         const frontPageMovie = this.props.movies[1];
         const genres = this.genreList();
-
+        
         if (this.props.movies.length === 0) return null;
+        const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => this.props.listMovieIds.includes(id))
+        const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
 
+        let playlistVideos = playlistMovies.map(movie => {
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
+        })
         let actionVideos = this.props.actionVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
@@ -41,7 +46,7 @@ class AllMovies extends React.Component {
         let superheroVideos = this.props.superheroVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={movie.title} genres={genres} list={this.props.list}/>;
         });
-
+        debugger
         return (
             <div>
                 <div className="movie-display">
@@ -51,17 +56,25 @@ class AllMovies extends React.Component {
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>
                             <div className="front-page-options">
-                                <div className="front-page-movie-play" onClick={() => this.playMovie(frontPageMovie.id)}>
+                                <div className="front-page-movie-play">
                                     <i className="fas fa-play">
                                         <p>Play</p>
                                     </i>
                                 </div>
 
-                                <div className="front-page-movie-my-list">
-                                    <i className="fas fa-plus">
-                                        <p>My List</p>
-                                    </i>
-                                </div>
+                                {frontPageListMovies.length === 1 ? 
+                                    <div className="front-page-movie-my-list" onClick={() => this.props.removeListMovie(frontPageListMovies[0])}>
+                                        <i className="fas fa-check">
+                                            <p>My List</p>
+                                        </i>
+                                    </div>
+                                    :
+                                    <div className="front-page-movie-my-list" onClick={() => this.props.createListMovie(frontPageMovie)}>
+                                        <i className="fas fa-plus">
+                                            <p>My List</p>
+                                        </i>
+                                    </div> 
+                                }
                             </div>
                             <p className="front-page-movie-desc">{frontPageMovie.description}</p>
                         </div>
@@ -69,6 +82,17 @@ class AllMovies extends React.Component {
                 </div>
 
                 <div className="movie-categories">
+                    <div id="movie-categories-0" className="movie-categories-videos">
+                        <h1>
+                            <p>
+                                My List
+                            </p>
+                        </h1>
+                        <div id="movie-row-0" className="movie-row">
+                            {playlistVideos}
+                        </div>
+                    </div>
+
                     <div id="movie-categories-1" className="movie-categories-videos">
                         <h1>
                             <p>

@@ -20,6 +20,14 @@ class User < ApplicationRecord
 
     has_one :list
 
+    has_many :list_movies,
+    through: :list,
+    source: :list_movies
+
+    has_many :movies,
+    through: :list_movies,
+    source: :movie
+
     # has_many :list_movies,
     # through: :list,
     # source: :list_movies
