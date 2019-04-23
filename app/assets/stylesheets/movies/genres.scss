@@ -59,12 +59,12 @@
 
 }
 
-.movie-container:nth-of-type(1) {
+.movie-container:nth-of-type(6n+1) {
     border: none;
     border-right: 2px solid transparent;
 }
 
-.movie-container:nth-of-type(6) {
+.movie-container:nth-of-type(6n + 6) {
     border: none;
     border-left: 2px solid transparent;
 }
@@ -80,7 +80,7 @@
 
 // .movie-categories-videos:first-child .movie-container:hover {
     
-.movie-container:last-of-type:hover {
+.movie-container:nth-of-type(6n+6):hover {
     transition: .5s ease;
     /* -moz-transform: scale(1.8);
     -webkit-transform: scale(1.8); */
@@ -92,7 +92,7 @@
     // display: inline-block;
 }
     
-.movie-container:first-of-type:hover {
+.movie-container:nth-of-type(6n+1):hover {
     /* transform: scale(1.8); */
     transition: .5s ease;
     /* -moz-transform: scale(1.8); */
@@ -192,7 +192,7 @@
     color: red;
 }
 
-.movie-container:first-child:hover {
+.movie-container:nth-child(6n+1):hover {
     /* transform: scale(1.8); */
     transition: .5s ease;
     /* -moz-transform: scale(1.8); */

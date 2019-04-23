@@ -3,23 +3,30 @@ import { withRouter } from 'react-router-dom';
 import { fetchMovies } from '../../actions/movie_actions';
 import MovieIndex from './movie_index';
 import { fetchList } from '../../actions/list_actions';
+import { createListMovie, removeListMovie } from '../../actions/list_movie_actions';
 
 const mapStateToProps = state => {
-    const currentUserId = state.session.currentUserId;
-    const listId = state.entities.users[currentUserId].list_id;
+    debugger
+    const currentUser = state.entities.users[state.session.currentUserId]
+    const listId = currentUser.list_id;
+    const listMovieIds = currentUser.list_movie_ids;
     const list = state.entities.lists[listId]
     return {
         movies: state.entities.movies,
         genres: state.entities.genres,
+        list,
         listId,
-        list
+        listMovieIds,
+        currentUser,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchMovies: () => dispatch(fetchMovies()),
-        fetchList: id => dispatch(fetchList(id))
+        fetchList: id => dispatch(fetchList(id)),
+        createListMovie: movie => dispatch(createListMovie(movie)),
+        removeListMovie: id => dispatch(removeListMovie(id))
     }
 }
 
