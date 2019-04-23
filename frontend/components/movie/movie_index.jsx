@@ -12,7 +12,6 @@ class MovieIndex extends React.Component {
         this.props.fetchMovies().then(() => this.props.fetchList(this.props.listId));
     }
 
-
     render() {
         const movies = Object.values(this.props.movies);
         const { genres } = this.props;
