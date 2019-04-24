@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                 <div className="prim-nav-logo">
                     <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
                     <ul className="primary-nav">
-                        <li><p>Home</p></li>
+                        <li><Link to='/browse'><p>Home</p></Link></li>
                         <li><p>TV Shows</p></li>
                         <li><p>Movies</p></li>
                         <li><p>Recently Added</p></li>

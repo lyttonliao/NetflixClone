@@ -1,0 +1,23 @@
+.movie-dropdown {
+
+}
+
+.movie-dropdown-details {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.movie-dropdown-options {
+    display: flex;
+}
+
+.fa-play {
+    display: flex;
+    padding: 1em;
+}
+
+.movie-dropdown-my-list {
+    display: flex;
+    padding: 1em;
+}
