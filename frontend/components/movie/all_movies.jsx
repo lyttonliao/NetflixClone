@@ -64,7 +64,6 @@ class AllMovies extends React.Component {
         if (this.props.movies.length === 0) return null;
         const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => this.props.listMovieIds.includes(id))
         const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
-        debugger
 
         // let playlistDrop = <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
         // let actionDrop = <MovieInfo movies={this.props.movies} movieId={this.state.actionId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>

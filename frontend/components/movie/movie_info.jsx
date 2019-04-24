@@ -43,6 +43,8 @@ class MovieInfo extends React.Component {
                 <div className="movie-dropdown-image">
                     <img src={movie.imageUrl}/>
                 </div>
+
+                {/* <div className="movie-dropdown-lin-gradient"></div> */}
             </div>
         )
     }

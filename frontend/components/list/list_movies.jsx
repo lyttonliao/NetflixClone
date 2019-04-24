@@ -6,6 +6,9 @@ import MovieIndexItem from '../movie/movie_index_item';
 class ListMovies extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            playlistId: null
+        }
     }
 
     componentDidMount() {
@@ -24,6 +27,15 @@ class ListMovies extends React.Component {
         })
     }
 
+    setDropDown(id) {
+        const that = this;
+        return (movieId) => {
+            that.setState({
+                [id]: movieId
+            })
+        }
+    }
+
     listMovies () {
         const { list_movies } = this.props;
         const movieIds = Object.values(list_movies).map(listMovie => listMovie.movie_id)
@@ -31,7 +43,7 @@ class ListMovies extends React.Component {
         const genres = this.genreList();
 
         return movies.map(movie => {
-            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} />
+            return <MovieIndexItem movie={movie} key={movie.title} genres={genres} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId}/>
         })
     }
 
@@ -64,6 +76,7 @@ class ListMovies extends React.Component {
                             <div className="my-list-show-page-movies">
                                 {this.listMovies()}
                             </div>
+                            {/* <MovieInfo movies={this.props.movies{}}/> */}
                         </div>
                     </div>
                 </div>
