@@ -2,23 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createListMovie, removeListMovie } from '../../actions/list_movie_actions';
 import { connect } from 'react-redux';
-import MovieInfo from './movie_info';
 
 class MovieIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title: '',
-            year: '',
-            description: '',
-        }
 
         this.handleLike = this.handleLike.bind(this);
+        this.hoverDrop = this.hoverDrop.bind(this);
+        // debugger
     }
 
-    // setDropDown() {
-    //     const that = this;
-    // }
+
 
     genreList() {
         if (this.props.genres === undefined) return null;
@@ -39,15 +33,21 @@ class MovieIndexItem extends React.Component {
         }
     }
 
+    hoverDrop() {
+        if (this.props.droppedMovie) {
+            this.props.setDropDown(this.props.movie.id)
+        }
+    }
+
     render() {
         if (this.props.movie === undefined) return null;
 
         const listToMovieIds = Object.values(this.props.list_movies).map(list_movie => list_movie.movie_id)
         const checkedIcon = <i className="far fa-check-circle"></i>
         const addIcon = <i className="far fa-plus-square"></i>
-
+        debugger
         return(
-            <div className="movie-container">
+            <div id={this.props.key} className="movie-container" onMouseEnter={() => this.hoverDrop()}>
                 <div className="movie-box-art">
                     <Link to={`/play/${this.props.movie.id}`}>
                         <img className="movie-image" src={this.props.movie.imageUrl}/>
@@ -72,7 +72,7 @@ class MovieIndexItem extends React.Component {
                     </div>
 
 
-                    <div className="dropdown-info">
+                    <div className="dropdown-info" onClick={() => this.props.setDropDown(this.props.movie.id)}>
                         <i className="fas fa-chevron-down"></i>
                     </div>
                     
