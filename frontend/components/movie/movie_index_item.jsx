@@ -9,7 +9,6 @@ class MovieIndexItem extends React.Component {
 
         this.handleLike = this.handleLike.bind(this);
         this.hoverDrop = this.hoverDrop.bind(this);
-        // debugger
     }
 
 
