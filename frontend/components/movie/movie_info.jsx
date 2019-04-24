@@ -41,10 +41,10 @@ class MovieInfo extends React.Component {
 
                 <div className="movie-dropdown-image">
                     <img src={movie.imageUrl}/>
+                    <i className="fas fa-times" onClick={this.props.close}></i>
                 </div>
                 
-                <i className="fas fa-times" onClick={this.props.close}></i>
-                {/* <div className="movie-dropdown-lin-gradient"></div> */}
+                <div className="movie-dropdown-lin-gradient"></div>
             </div>
         )
     }
