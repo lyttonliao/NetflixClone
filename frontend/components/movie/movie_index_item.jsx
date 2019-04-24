@@ -40,7 +40,6 @@ class MovieIndexItem extends React.Component {
 
     render() {
         if (this.props.movie === undefined) return null;
-        debugger
         const listToMovieIds = Object.values(this.props.list_movies).map(list_movie => list_movie.movie_id)
         const checkedIcon = <i className="far fa-check-circle"></i>
         const addIcon = <i className="far fa-plus-square"></i>
