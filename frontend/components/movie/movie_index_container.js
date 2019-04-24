@@ -6,7 +6,6 @@ import { fetchList } from '../../actions/list_actions';
 import { createListMovie, removeListMovie } from '../../actions/list_movie_actions';
 
 const mapStateToProps = state => {
-    debugger
     const currentUser = state.entities.users[state.session.currentUserId]
     const listId = currentUser.list_id;
     const listMovieIds = currentUser.list_movie_ids;

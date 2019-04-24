@@ -17,6 +17,13 @@ class AllMovies extends React.Component {
         }
     }
 
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (prevProps.currentUser.movie_ids.length !== this.props.currentUser.movie_ids.length) {
+    //         this.props.fetchList(this.props.listId);
+    //     }
+    // }
+
     setDropDown(id) {
         const that = this;
         return (movieId) => {

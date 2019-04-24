@@ -12,30 +12,36 @@ class MovieInfo extends React.Component {
         const listMovie = this.props.movies[this.props.movieId].list_movie_ids.filter(id => this.props.listMovieIds.includes(id))
 
         return (
-            <div className="movie-dropdown">
-                <div className="movie-dropdown-details">
-                    <h1>{movie.title}</h1>
-                    <h2>{movie.year}</h2>
-                    <h2>{movie.description}</h2>
-                </div>
-                <div className="movie-dropdown-options">
-                    <i className="fas fa-play">
-                        <Link to={`/play/${movie.id}`}><p> &nbsp; Play</p></Link>
-                    </i>
+            <div className="movie-info-dropdown">
+                <div className="movie-dropdown">
+                    <div className="movie-dropdown-details">
+                        <h1>{movie.title}</h1>
+                        <h2>{movie.year}</h2>
+                        <h2>{movie.description}</h2>
+                    </div>
+                    <div className="movie-dropdown-options">
+                        <i id="dropdown-info-play" className="fas fa-play">
+                            <Link to={`/play/${movie.id}`}><p> &nbsp; Play</p></Link>
+                        </i>
 
-                    {listMovie.length === 1 ?
-                        <div className="movie-dropdown-my-list" onClick={() => this.props.removeListMovie(listMovie[0])}>
-                            <i className="fas fa-check">
-                                <p> &nbsp; My List</p>
-                            </i>
-                        </div>
-                        :
-                        <div className="movie-dropdown-my-list" onClick={() => this.props.createListMovie(frontPageMovie)}>
-                            <i className="fas fa-plus">
-                                <p> &nbsp; My List</p>
-                            </i>
-                        </div>
-                    }
+                        {listMovie.length === 1 ?
+                            <div className="movie-dropdown-my-list" onClick={() => this.props.removeListMovie(listMovie[0])}>
+                                <i id="dropdown-info-check" className="fas fa-check">
+                                    <p> &nbsp; My List</p>
+                                </i>
+                            </div>
+                            :
+                            <div className="movie-dropdown-my-list" onClick={() => this.props.createListMovie(frontPageMovie)}>
+                                <i id="dropdown-info-check" className="fas fa-plus">
+                                    <p> &nbsp; My List</p>
+                                </i>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div className="movie-dropdown-image">
+                    <img src={movie.imageUrl}/>
                 </div>
             </div>
         )
