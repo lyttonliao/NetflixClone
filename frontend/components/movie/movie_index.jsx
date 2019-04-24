@@ -13,7 +13,6 @@ class MovieIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
         if (prevProps.currentUser.list_movie_ids.length !== this.props.currentUser.list_movie_ids.length) {
             this.props.fetchList(this.props.listId);
         }
