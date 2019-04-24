@@ -12,18 +12,17 @@ class MovieIndex extends React.Component {
         this.props.fetchMovies().then(() => this.props.fetchList(this.props.listId));
     }
 
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (prevProps.currentUser.movie_ids.length !== this.props.currentUser.movie_ids.length) {
-    //         this.render();
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        debugger
+        if (prevProps.currentUser.list_movie_ids.length !== this.props.currentUser.list_movie_ids.length) {
+            this.props.fetchList(this.props.listId);
+        }
+    }
 
     render() {
         const movies = Object.values(this.props.movies);
         const { genres } = this.props;
         if (movies.length === 0 || this.props.list === undefined) return null;
-        debugger
         return (
             <div className="movies-index-genres">
                 <div>
@@ -38,6 +37,7 @@ class MovieIndex extends React.Component {
                         createListMovie={this.props.createListMovie}
                         removeListMovie={this.props.removeListMovie}
                         listMovieIds={this.props.listMovieIds}
+                        // listMovieIds={this.props.currentUser.list_movie_ids}
                         currentUser={this.props.currentUser}
                         list={this.props.list}/>
                 </div>

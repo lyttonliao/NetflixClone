@@ -45,7 +45,6 @@ class MovieIndexItem extends React.Component {
         const listToMovieIds = Object.values(this.props.list_movies).map(list_movie => list_movie.movie_id)
         const checkedIcon = <i className="far fa-check-circle"></i>
         const addIcon = <i className="far fa-plus-square"></i>
-        debugger
         return(
             <div id={this.props.key} className="movie-container" onMouseEnter={() => this.hoverDrop()}>
                 <div className="movie-box-art">
