@@ -13,11 +13,12 @@
     animation-name: move;
     
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,11,18,1) 40%, rgba(158,174,177,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,11,18,1) 45%, rgba(158,174,177,1) 100%);
 }
 .movie-dropdown {
     /* margin-bottom: 5%; */
     padding: 4% 4%;
+    width: 45%;
     /* display: flex; */
 }
 
@@ -75,7 +76,14 @@
 }
 
 .movie-dropdown-image {
-    text-align: right;
+    /* text-align: right; */
+    width: 60%;
+}
+
+.movie-dropdown-image img {
+    width: 100%;
+    height: 100%;
+    /* max-width: 1000px; */
 }
 
 /* .movie-dropdown-lin-gradient {
@@ -84,3 +92,20 @@
     width: 100%;
     height: 100%;
 } */
+
+.fa-times {
+    position: absolute;
+    right: 0;
+    padding: 1%;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        
+    font-size: 1em;
+}
+
+.fa-times:hover {
+    transform: scale(1.02);
+}
