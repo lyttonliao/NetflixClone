@@ -11,8 +11,6 @@ class MovieIndexItem extends React.Component {
         this.hoverDrop = this.hoverDrop.bind(this);
     }
 
-
-
     genreList() {
         if (this.props.genres === undefined) return null;
         return this.props.movie.genre_ids.map(id => {

@@ -12,6 +12,7 @@ const listMoviesReducer = (state = {}, action) => {
             if (action.data.list_movies === undefined) {
                 return state;
             }
+            debugger
             return action.data.list_movies;
         case RECEIVE_LIST_MOVIES:
             if (action.list_movies === undefined) {
@@ -19,6 +20,7 @@ const listMoviesReducer = (state = {}, action) => {
             }
             return action.list_movies;
         case RECEIVE_LIST_MOVIE:
+        debugger
             return Object.assign({}, state, { [action.list_movie.id]: action.list_movie })
         case REMOVE_LIST_MOVIE:
             let newState = Object.assign({}, state);

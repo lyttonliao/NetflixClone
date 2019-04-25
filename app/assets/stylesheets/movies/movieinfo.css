@@ -11,8 +11,8 @@
     -moz-animation-name: move;
     -o-animation-name: move;
     animation-name: move;
-    background: rgba(20, 19, 19, 0.466);
-    background: linear-gradient(to right, rgba(20, 19, 19, 0.466), rgba(11,11,18,1) 45%, rgba(158,174,177,1) 100%);
+    /* background: rgba(20, 19, 19, 0.466);
+    background: linear-gradient(to right, rgba(20, 19, 19, 0.466), rgba(11,11,18,1) 45%, rgba(158,174,177,1) 100%); */
     /* background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,11,18,1) 45%, rgba(158,174,177,1) 100%); */
 }

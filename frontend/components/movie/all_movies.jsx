@@ -19,12 +19,6 @@ class AllMovies extends React.Component {
         this.closeDropDown = this.closeDropDown.bind(this);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.currentUser.movie_ids.length !== this.props.currentUser.movie_ids.length) {
-    //         this.props.fetchList(this.props.listId);
-    //     }
-    // }
-
     setDropDown(id) {
         const that = this;
         return (movieId) => {
@@ -75,15 +69,9 @@ class AllMovies extends React.Component {
         const genres = this.genreList();
         
         if (this.props.movies.length === 0) return null;
-        const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => this.props.listMovieIds.includes(id))
+        const listMovieIds = Object.keys(this.props.listMovies);
         const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
-
-        // let playlistDrop = <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
-        // let actionDrop = <MovieInfo movies={this.props.movies} movieId={this.state.actionId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
-        // let disneyDrop = <MovieInfo movies={this.props.movies} movieId={this.state.disneyId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
-        // let scifiDrop = <MovieInfo movies={this.props.movies} movieId={this.state.scifiId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
-        // let dramaDrop = <MovieInfo movies={this.props.movies} movieId={this.state.dramaId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
-        // let superheroDrop = <MovieInfo movies={this.props.movies} movieId={this.state.superheroId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds}/>
+        const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => listMovieIds.includes(id))
 
         let playlistVideos = playlistMovies.map(movie => {
             return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId}/>;
@@ -103,6 +91,7 @@ class AllMovies extends React.Component {
         let superheroVideos = this.props.superheroVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={"5-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('superheroId')} droppedMovie={this.state.superheroId}/>;
         });
+        debugger
         return (
             <div>
                 <div className="movie-display">
@@ -147,7 +136,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-0" className="movie-row">
                             {playlistVideos}
                         </div>
-                        <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>
 
                     <div id="movie-categories-1" className="movie-categories-videos">
@@ -159,7 +148,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-1" className="movie-row">
                             {actionVideos}
                         </div>
-                        <MovieInfo movies={this.props.movies} movieId={this.state.actionId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.actionId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>                
 
                     <div id="movie-categories-2" className="movie-categories-videos">
@@ -171,7 +160,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-2" className="movie-row">
                             {disneyVideos}
                         </div>
-                            <MovieInfo movies={this.props.movies} movieId={this.state.disneyId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.disneyId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>
 
                     <div id="movie-categories-3" className="movie-categories-videos">
@@ -183,7 +172,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-3" className="movie-row">
                             {scifiVideos}
                         </div>
-                                <MovieInfo movies={this.props.movies} movieId={this.state.scifiId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.scifiId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>
 
                     <div id="movie-categories-4" className="movie-categories-videos">
@@ -195,7 +184,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-4" className="movie-row">
                             {dramaVideos}
                         </div>
-                                    <MovieInfo movies={this.props.movies} movieId={this.state.dramaId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.dramaId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>
 
                     <div id="movie-categories-5" className="movie-categories-videos">
@@ -207,7 +196,7 @@ class AllMovies extends React.Component {
                         <div id="movie-row-5" className="movie-row">
                             {superheroVideos}
                         </div>
-                                        <MovieInfo movies={this.props.movies} movieId={this.state.superheroId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={this.props.listMovieIds} close={this.closeDropDown}/>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.superheroId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown}/>
                     </div>
                 </div>
 
