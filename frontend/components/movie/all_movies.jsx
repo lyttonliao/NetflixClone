@@ -102,20 +102,20 @@ class AllMovies extends React.Component {
                             <div className="front-page-options">
                                 <div className="front-page-movie-play">
                                     <i className="fas fa-play">
-                                        <Link to={`/play/${frontPageMovie.id}`}><p>Play</p></Link>
+                                        <Link to={`/play/${frontPageMovie.id}`}><p> &nbsp; Play</p></Link>
                                     </i>
                                 </div>
 
                                 {frontPageListMovies.length === 1 ? 
                                     <div className="front-page-movie-my-list" onClick={() => this.props.removeListMovie(frontPageListMovies[0])}>
                                         <i className="fas fa-check">
-                                            <p>My List</p>
+                                            <p>&nbsp; My List</p>
                                         </i>
                                     </div>
                                     :
                                     <div className="front-page-movie-my-list" onClick={() => this.props.createListMovie(frontPageMovie)}>
                                         <i className="fas fa-plus">
-                                            <p>My List</p>
+                                            <p>&nbsp; My List</p>
                                         </i>
                                     </div> 
                                 }

@@ -26,13 +26,13 @@ class MovieInfo extends React.Component {
                         {listMovie.length === 1 ?
                             <div className="movie-dropdown-my-list" onClick={() => this.props.removeListMovie(listMovie[0])}>
                                 <i id="dropdown-info-check" className="fas fa-check">
-                                    <p> &nbsp; My List</p>
+                                    <p>&nbsp; My List</p>
                                 </i>
                             </div>
                             :
                             <div className="movie-dropdown-my-list" onClick={() => this.props.createListMovie(movie)}>
                                 <i id="dropdown-info-check" className="fas fa-plus">
-                                    <p> &nbsp; My List</p>
+                                    <p>&nbsp; My List</p>
                                 </i>
                             </div>
                         }
