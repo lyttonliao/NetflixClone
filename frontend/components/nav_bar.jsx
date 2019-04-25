@@ -23,19 +23,19 @@ class NavBar extends React.Component {
                     <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
                     <ul className="primary-nav">
                         <li><Link to='/browse'><p>Home</p></Link></li>
-                        <li><p>TV Shows</p></li>
+                        {/* <li><p>TV Shows</p></li>
                         <li><p>Movies</p></li>
-                        <li><p>Recently Added</p></li>
+                        <li><p>Recently Added</p></li> */}
                         <li><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
                     </ul>
                 </div>
 
                 <div className="sec-nav-dropdown">
                     <ul className="secondary-nav">
-                        <li><p>Search</p></li>
+                        {/* <li><p>Search</p></li>
                         <li><p>KIDS</p></li>
                         <li><p>DVD</p></li>
-                        <li><p>Notifications</p></li>
+                        <li><p>Notifications</p></li> */}
                         
                     </ul>
                     <div className="profile-dropdown">

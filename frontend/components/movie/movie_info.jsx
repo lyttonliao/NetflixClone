@@ -19,9 +19,9 @@ class MovieInfo extends React.Component {
                         <h2>{movie.description}</h2>
                     </div>
                     <div className="movie-dropdown-options">
-                        <i id="dropdown-info-play" className="fas fa-play">
-                            <Link to={`/play/${movie.id}`}><p> &nbsp; Play</p></Link>
-                        </i>
+                        <Link to={`/play/${movie.id}`}>
+                            <i id="dropdown-info-play" className="fas fa-play"><p> &nbsp; Play</p></i>
+                        </Link>
 
                         {listMovie.length === 1 ?
                             <div className="movie-dropdown-my-list" onClick={() => this.props.removeListMovie(listMovie[0])}>
@@ -41,7 +41,7 @@ class MovieInfo extends React.Component {
 
                 <div className="movie-dropdown-image">
                     <img src={movie.imageUrl}/>
-                    <i className="fas fa-times" onClick={this.props.close}></i>
+                    <Link to={`/play/${movie.id}`}><i className="fas fa-times" onClick={this.props.close}></i></Link>
                 </div>
                 
                 {/* <div className="movie-dropdown-lin-gradient"></div> */}

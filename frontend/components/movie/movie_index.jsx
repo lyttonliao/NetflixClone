@@ -12,11 +12,11 @@ class MovieIndex extends React.Component {
         this.props.fetchList(this.props.listId);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (Object.values(prevProps.listMovies).length !== Object.values(this.props.listMovies).length) {
-    //         this.props.fetchList(this.props.listId);
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (Object.values(prevProps.listMovies).length !== Object.values(this.props.listMovies).length) {
+            this.props.fetchList(this.props.listId);
+        }
+    }
 
     render() {
         const movies = Object.values(this.props.movies);

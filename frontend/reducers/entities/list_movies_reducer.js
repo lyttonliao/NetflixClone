@@ -9,10 +9,10 @@ const listMoviesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_LIST:
+            debugger
             if (action.data.list_movies === undefined) {
                 return state;
             }
-            debugger
             return action.data.list_movies;
         case RECEIVE_LIST_MOVIES:
             if (action.list_movies === undefined) {

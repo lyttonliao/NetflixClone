@@ -3,13 +3,14 @@ import { RECEIVE_LIST_MOVIE, REMOVE_LIST_MOVIE } from '../../actions/list_movie_
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-
+    debugger
     switch (action.type) {
-        case RECEIVE_LIST_MOVIE:
-            let newArr = Object.assign([], Object.values(newState)[0].list_movie_ids);
-            newArr.push(action.list_movie.id);
-            Object.values(newState)[0].list_movie_ids = newArr;
-            return newState;
+        // case RECEIVE_LIST_MOVIE:
+        //     let newArr = Object.assign([], Object.values(newState)[0].list_movie_ids);
+        //     newArr.push(action.list_movie.id);
+        //     Object.values(newState)[0].list_movie_ids = newArr;
+        //     debugger
+        //     return newState;
         case REMOVE_LIST_MOVIE:
             const index = Object.values(newState)[0].list_movie_ids.indexOf(action.id);
             delete Object.values(newState)[0].list_movie_ids[index];
