@@ -12,7 +12,6 @@ export const receiveListMovies = list => {
 }
 
 export const receiveListMovie = list_movie => {
-    debugger
     return {
         type: "RECEIVE_LIST_MOVIE",
         list_movie
@@ -37,7 +36,6 @@ export const fetchListMovie = () => dispatch => {
 
 
 export const createListMovie = (movie) => dispatch => {
-    debugger
     return ListMovieAPIUtil.createListMovie(movie).then(list_movie => dispatch(receiveListMovie(list_movie)))
 }
 

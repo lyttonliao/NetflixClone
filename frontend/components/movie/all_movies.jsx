@@ -91,7 +91,6 @@ class AllMovies extends React.Component {
         let superheroVideos = this.props.superheroVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={"5-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('superheroId')} droppedMovie={this.state.superheroId}/>;
         });
-        debugger
         return (
             <div>
                 <div className="movie-display">
