@@ -6,7 +6,6 @@ const listsReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
         // case RECEIVE_LIST_MOVIE:
-        //     debugger
         //     oldList = Object.values(newState)[0].list_movie_ids;
         //     oldList.push(action.list_movie.id);
         //     return newState;
