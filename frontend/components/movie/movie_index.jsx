@@ -15,6 +15,7 @@ class MovieIndex extends React.Component {
     componentDidUpdate(prevProps) {
         if (Object.values(prevProps.listMovies).length !== Object.values(this.props.listMovies).length) {
             this.props.fetchList(this.props.listId);
+            // this.props.fetchMovies();
         }
     }
 
