@@ -1,7 +1,7 @@
 import React from 'react';
 import AllMovies from './all_movies';
 import genreSelector from '../../reducers/selectors';
-// import AllMoviesPage from './all_movies_page'
+
 
 class MovieIndex extends React.Component {
     constructor(props) {
@@ -9,19 +9,13 @@ class MovieIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchList(this.props.listId);
-    }
-
-    componentDidUpdate(prevProps) {
-        if (Object.values(prevProps.listMovies).length !== Object.values(this.props.listMovies).length) {
-            this.props.fetchList(this.props.listId);
-            // this.props.fetchMovies();
-        }
+        this.props.fetchList(this.props.listId).then(() => this.props.fetchListMovies(this.props.list));
     }
 
     render() {
         const movies = Object.values(this.props.movies);
         const { genres } = this.props;
+        debugger
         if (movies.length === 0 || this.props.list === undefined) return null;
         return (
             <div className="movies-index-genres">
@@ -37,7 +31,7 @@ class MovieIndex extends React.Component {
                         createListMovie={this.props.createListMovie}
                         removeListMovie={this.props.removeListMovie}
                         currentUser={this.props.currentUser}
-                        listMovies={this.props.listMovies}
+                        list_movies={this.props.list_movies}
                         list={this.props.list}/>
                 </div>
             </div>

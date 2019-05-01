@@ -3,14 +3,6 @@ json.list do
     json.user_id current_user.id
 end
 
-json.list_movies do
-    @list_movies.each do |list_movie|
-        json.set! list_movie.id do
-            json.partial! 'api/list_movies/list_movie', list_movie: list_movie
-        end
-    end
-end
-
 json.movies do
     @movies.each do |movie|
         json.set! movie.id do

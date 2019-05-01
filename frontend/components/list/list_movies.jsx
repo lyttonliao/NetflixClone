@@ -1,5 +1,6 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
+import MovieInfo from '../movie/movie_info';
 import NavBar from '../nav_bar';
 import MovieIndexItem from '../movie/movie_index_item';
 
@@ -9,17 +10,19 @@ class ListMovies extends React.Component {
         this.state = {
             playlistId: null
         }
+        this.closeDropDown = this.closeDropDown.bind(this);
+
     }
 
     componentDidMount() {
         this.props.fetchList(this.props.match.params.listId).then(() => this.props.fetchListMovies(this.props.list))
     }
 
-    componentDidUpdate(prevProps) {
-        if (Object.values(prevProps.list_movies).length !== Object.values(this.props.list_movies).length) {
-            this.props.fetchListMovies(this.props.list)
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (Object.values(prevProps.list_movies).length !== Object.values(this.props.list_movies).length) {
+    //         this.props.fetchListMovies(this.props.list)
+    //     }
+    // }
     
     genreList() {
         return Object.values(this.props.genres).map(genre => {
@@ -36,6 +39,12 @@ class ListMovies extends React.Component {
         }
     }
 
+    closeDropDown() {
+        this.setState({
+            playlistId: null
+        })
+    }
+
     listMovies () {
         const { list_movies } = this.props;
         const movieIds = Object.values(list_movies).map(listMovie => listMovie.movie_id)
@@ -50,6 +59,8 @@ class ListMovies extends React.Component {
     render() {
         const { logout, currentUser, list } = this.props;
         if (list === undefined) return null;
+        const listMovieIds = Object.values(this.props.list_movies)
+
         if (list.list_movie_ids.length === 0) {
             return (
                 <div className="personal-list">
@@ -76,7 +87,7 @@ class ListMovies extends React.Component {
                             <div className="my-list-show-page-movies">
                                 {this.listMovies()}
                             </div>
-                            {/* <MovieInfo movies={this.props.movies{}}/> */}
+                            <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown} />                            
                         </div>
                     </div>
                 </div>

@@ -51,9 +51,9 @@ class MovieIndexItem extends React.Component {
 
                 <div className="movie-info-container">
                     <div className="movie-info">
-                        <div className="movie-play">
+                        <Link to={`/play/${this.props.movie.id}`}><div className="movie-play">
                             <i className="far fa-play-circle"></i>
-                        </div>
+                        </div></Link>
 
                         <div className="movie-title">
                             {this.props.movie.title}

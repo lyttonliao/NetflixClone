@@ -59,17 +59,26 @@ class AllMovies extends React.Component {
     }
 
     genreList() {
+        debugger
         return Object.values(this.props.genres).map(genre => {
             return genre.name;
         })
     }
 
+    // listMovies() {
+    //     const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
+
+    //     return playlistMovies.map(movie => {
+    //         return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={this.genres} list={this.props.list} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId} />;
+    //     })
+    // }
+
     render() { 
         const frontPageMovie = this.props.movies[1];
+        debugger
         const genres = this.genreList();
-        
         if (this.props.movies.length === 0) return null;
-        const listMovieIds = Object.keys(this.props.listMovies);
+        const listMovieIds = Object.keys(this.props.list_movies);
         const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
         const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => listMovieIds.includes(id))
 
@@ -95,7 +104,7 @@ class AllMovies extends React.Component {
             <div>
                 <div className="movie-display">
                     <div className="front-page-movie">
-                        <video src={frontPageMovie.movieUrl} autoPlay poster={frontPageMovie.imageUrl}/>
+                        <video src={frontPageMovie.imageUrl} autoPlay poster={frontPageMovie.imageUrl}/>
                         <div className="front-page-movie-info">
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>

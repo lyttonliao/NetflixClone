@@ -8,7 +8,6 @@ import { logout } from '../../actions/session_actions';
 const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.currentUserId];
     const list = state.entities.lists[ownProps.match.params.listId];
-
     return ({
         list,
         movies: state.entities.movies,
@@ -22,6 +21,8 @@ const mdp = dispatch => {
     return ({
         fetchList: (id) => dispatch(fetchList(id)),
         fetchListMovies: (list) => dispatch(fetchListMovies(list)),
+        createListMovie: movie => dispatch(createListMovie(movie)),
+        removeListMovie: id => dispatch(removeListMovie(id)),
         logout: () => dispatch(logout())
     })
 }

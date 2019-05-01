@@ -9,7 +9,7 @@ class Api::ListsController < ApplicationController
 
     def show
         @list = List.find(params[:id])
-        @list_movies = ListMovie.all
+        # @list_movies = ListMovie.all
         @movies = Movie.all
         @genres = Genre.all
     end
