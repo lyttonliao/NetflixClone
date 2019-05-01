@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ListMovies from './list_movies';
 // import { withRouter } from 'react-router-dom';
 import { fetchList } from '../../actions/list_actions';
-import { fetchListMovies } from '../../actions/list_movie_actions';
+import { fetchListMovies, createListMovie, removeListMovie } from '../../actions/list_movie_actions';
 import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {

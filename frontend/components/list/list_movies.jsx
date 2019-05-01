@@ -59,7 +59,7 @@ class ListMovies extends React.Component {
     render() {
         const { logout, currentUser, list } = this.props;
         if (list === undefined) return null;
-        const listMovieIds = Object.values(this.props.list_movies)
+        // const listMovieIds = Object.values(this.props.list_movies)
 
         if (list.list_movie_ids.length === 0) {
             return (
@@ -87,7 +87,7 @@ class ListMovies extends React.Component {
                             <div className="my-list-show-page-movies">
                                 {this.listMovies()}
                             </div>
-                            <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} listMovieIds={listMovieIds} close={this.closeDropDown} />                            
+                            <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />                            
                         </div>
                     </div>
                 </div>
