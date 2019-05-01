@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
     const listId = currentUser.list_id;
     const list = state.entities.lists[listId];
     const list_movies = state.entities.list_movies;
-    debugger
     return {
         movies: state.entities.movies,
         genres: state.entities.genres,

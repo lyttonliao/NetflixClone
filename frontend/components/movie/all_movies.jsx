@@ -59,7 +59,6 @@ class AllMovies extends React.Component {
     }
 
     genreList() {
-        debugger
         return Object.values(this.props.genres).map(genre => {
             return genre.name;
         })
@@ -78,9 +77,11 @@ class AllMovies extends React.Component {
         const genres = this.genreList();
         
         if (this.props.movies.length === 0) return null;
-        const listMovieIds = Object.keys(this.props.list_movies);
+        const listMovieIdsInStr = Object.keys(this.props.list_movies);
+        const listMovieIds = listMovieIdsInStr.map(num => parseInt(num))
         const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
         const frontPageListMovies = frontPageMovie.list_movie_ids.filter(id => listMovieIds.includes(id))
+
 
         let playlistVideos = playlistMovies.map(movie => {
             return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId}/>;
@@ -100,6 +101,7 @@ class AllMovies extends React.Component {
         let superheroVideos = this.props.superheroVideos.map(movie => {
             return <MovieIndexItem movie={movie} key={"5-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('superheroId')} droppedMovie={this.state.superheroId}/>;
         });
+
         return (
             <div>
                 <div className="movie-display">
