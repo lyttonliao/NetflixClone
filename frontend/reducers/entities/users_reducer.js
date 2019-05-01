@@ -4,14 +4,15 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
-        // case RECEIVE_LIST_MOVIE:
-        //     let newArr = Object.assign([], Object.values(newState)[0].list_movie_ids);
-        //     newArr.push(action.list_movie.id);
-        //     Object.values(newState)[0].list_movie_ids = newArr;
-        //     return newState;
+        case RECEIVE_LIST_MOVIE:
+            Object.values(newState)[0].list_movie_ids.push(action.list_movie.id)
+            Object.values(newState)[0].movie_ids.push(action.list_movie.movie_id);
+            return newState;
         case REMOVE_LIST_MOVIE:
-            const index = Object.values(newState)[0].list_movie_ids.indexOf(action.id);
-            delete Object.values(newState)[0].list_movie_ids[index];
+            const lmIndex = Object.values(newState)[0].list_movie_ids.indexOf(action.id);
+            const mIndex = Object.values(newState)[0].movie_ids.indexOf(action.movie_id);
+            Object.values(newState)[0].list_movie_ids.splice(lmIndex, 1);
+            Object.values(newState)[0].movie_ids.splice(mIndex, 1);
             return newState;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });

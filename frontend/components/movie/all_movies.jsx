@@ -75,8 +75,8 @@ class AllMovies extends React.Component {
 
     render() { 
         const frontPageMovie = this.props.movies[1];
-        debugger
         const genres = this.genreList();
+        
         if (this.props.movies.length === 0) return null;
         const listMovieIds = Object.keys(this.props.list_movies);
         const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
