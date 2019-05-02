@@ -106,7 +106,7 @@ class AllMovies extends React.Component {
             <div>
                 <div className="movie-display">
                     <div className="front-page-movie">
-                        <video src={frontPageMovie.imageUrl} autoPlay poster={frontPageMovie.imageUrl}/>
+                        <video src={frontPageMovie.movieUrl} autoPlay poster={frontPageMovie.imageUrl}/>
                         <div className="front-page-movie-info">
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>
