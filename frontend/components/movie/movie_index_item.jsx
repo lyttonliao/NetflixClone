@@ -24,6 +24,7 @@ class MovieIndexItem extends React.Component {
 
         if (listToMovieIds.includes(this.props.movie.id)) {
             const movieToDelete = userMovies.filter(list_movie => list_movie.movie_id === this.props.movie.id)
+            debugger
             return this.props.removeListMovie(movieToDelete[0].id)
         } else {
             return this.props.createListMovie(this.props.movie)

@@ -10,7 +10,8 @@ class MovieInfo extends React.Component {
         if (!this.props.movieId) return null;
         const movie = this.props.movies[this.props.movieId]
         const listMovie = Object.values(this.props.list_movies).filter(list_movie => list_movie.movie_id === movie.id)
-
+        // const listMovie = this.props.movies[this.props.movieId].list_movie_ids.filter(id => this.props.listMovieIds.includes(id))
+        // debugger
         return (
             <div className="movie-info-dropdown">
                 <div className="movie-dropdown">

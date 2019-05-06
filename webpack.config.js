@@ -1,4 +1,7 @@
 const path = require('path');
+// new HtmlWebpackPlugin({
+//     favicon: "./favicon.ico"
+// })
 
 module.exports = {
     context: __dirname,

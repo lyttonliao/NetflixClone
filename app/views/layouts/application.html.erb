@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppClone</title>
+    <title>Flixit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="<%= image_url("favicon-32x32.png") %>">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -20,6 +22,7 @@
       window.auth = "<%= image_url('Auth.png')  %>"
       window.show = "<%= image_url('Show.png')  %>"
     </script>
+
   </head>
 
   <body>

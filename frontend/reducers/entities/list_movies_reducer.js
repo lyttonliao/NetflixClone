@@ -22,6 +22,7 @@ const listMoviesReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.list_movie.id]: action.list_movie })
         case REMOVE_LIST_MOVIE:
             let newState = Object.assign({}, state);
+            debugger
             delete newState[action.id];
             return newState;
         default:

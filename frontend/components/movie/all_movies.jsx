@@ -111,11 +111,13 @@ class AllMovies extends React.Component {
                             <p className="front-page-movie-quote">A <strong>FLIXIT</strong> FILM</p>
                             <p className="front-page-movie-title">{frontPageMovie.title}</p>
                             <div className="front-page-options">
-                                <div className="front-page-movie-play">
-                                    <i className="fas fa-play">
-                                        <Link to={`/play/${frontPageMovie.id}`}><p> &nbsp; Play</p></Link>
-                                    </i>
-                                </div>
+                                <Link to={`/play/${frontPageMovie.id}`}>
+                                    <div className="front-page-movie-play">
+                                        <i className="fas fa-play">
+                                            <p> &nbsp; Play</p>
+                                        </i>
+                                    </div>
+                                </Link>
 
                                 {frontPageListMovies.length === 1 ? 
                                     <div className="front-page-movie-my-list" onClick={() => this.props.removeListMovie(frontPageListMovies[0].id)}>
