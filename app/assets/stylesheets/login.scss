@@ -118,10 +118,27 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 2560px) {
+  .session {
+    height: 1440px;
+  }
+}
+
+@media only screen and (max-width: 1960px) {
+  .session {
+    height: 1080px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .session {
+    height: 900px;
+  }
+}
+
 @media screen and (min-width: 600px) {
     input {
         width: 100%;
         margin-top: 0;
     }
 }
-

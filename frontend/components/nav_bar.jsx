@@ -46,8 +46,8 @@ class NavBar extends React.Component {
                             </div>
                             <li className="profile-dropdown-divider"></li>
                             <div className="dropdown-section-2">
-                                <li><p>Account</p></li>
-                                <li><p>Help Center</p></li>
+                                {/* <li><p>Account</p></li>
+                                <li><p>Help Center</p></li> */}
                                 <li><Link to="/" onClick={this.props.logout}><p>Sign out of Flixit</p></Link></li>
                             </div>
                         </div>
