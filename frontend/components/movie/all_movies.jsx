@@ -218,16 +218,17 @@ class AllMovies extends React.Component {
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
                     </div>
+
                     <div className="personal-info">
                         <p>Created by Lytton Liao</p>
                     </div>
 
                     <div className="personal-info">
-                        <p>Lytton Liao  |  lytton.liao@gmail.com</p>
+                        <a href="mailto:lytton.liao@gmail.com"><p>Email: lytton.liao@gmail.com</p></a>
                     </div>
-                                
+
                     <div className="personal-site">
-                        <p>Personal Site</p>
+                        <a href="https://lyttonliao.github.io" target="_blank"><p>Personal Site</p></a>
                     </div>
 
                     <div className="copyright">
