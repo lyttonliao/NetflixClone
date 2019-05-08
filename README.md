@@ -22,6 +22,8 @@ Every single movie has a dropdown menu that provides a description of the movies
 
 ![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown.png)
 
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/ddinfo.png)
+
 
 <!-- ## Slide Bars (Work in progress)
 
