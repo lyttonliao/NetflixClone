@@ -32,9 +32,9 @@ The user has the ability to add any video present from the database to their per
 
 ## Code Snippets
 
-<!-- Using SQL associations, I am able to track the playlist in the Redux store by checking if a movie belongs to the user's playlist.
+The core of the application is the MovieIndexItem component. Every single page will be passing props to the MovieIndexItem, which controls the information, and dropdown menus for each movie in its respective genre/type row. It's imperative that all movies have it's full description passed down as props. Using a combination of filtering and mapping arrays, I am able to create a playlist row on the front page.
 
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Reducers.png) -->
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/movieindexitem.png) -->
 
 Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist.
 
