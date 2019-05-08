@@ -20,7 +20,7 @@ Flixit uses the default video player framework with additional features (i.e., b
 
 Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist.
 
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown)
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown.png)
 
 
 <!-- ## Slide Bars (Work in progress)
@@ -37,7 +37,7 @@ The user has the ability to add any video present from the database to their per
 
 Using SQL associations, I am able to track the playlist in the Redux store by checking if a movie belongs to the user's playlist.
 
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Reducer)
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Reducers.png)
 
 <!-- ## Profiles (Bonus Feature)
 
