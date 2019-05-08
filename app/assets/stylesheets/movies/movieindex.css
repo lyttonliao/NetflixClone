@@ -134,27 +134,43 @@
 footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    padding: 0 12%;
 }
 
-.fa-github, .fa-linkedin {
+.fa-github, .fa-linkedin, .fa-angellist {
   font-size: 1.8em; 
   color: grey; 
   padding: 10px 20px 0px 0px; 
+  margin-bottom: 2%;
 }
 
 .personal-info {
   display: flex; 
+  margin-bottom: 1%;
   /* justify-content: flex-start;  */
 }
 
 .personal-info p {
   color: grey; 
   font-size: 15px; 
+  margin-bottom: 1%;
+}
+
+.personal-site p {
+  color: grey; 
+  font-size: 15px; 
+  margin-bottom: 1%;
+}
+
+.personal-site:hover {
+    cursor: pointer;
 }
 
 .copyright {
   /* padding: 0px 40px 10px 350px;  */
   color: grey; 
   font-size: 12px; 
+  margin-top: 1%;
+  margin-bottom: 1%;
 }

@@ -214,8 +214,9 @@ class AllMovies extends React.Component {
 
                 <footer>
                     <div className="social-media-icons">
-                        <a href="https://github.com/lyttonliao"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
                     </div>
                     <div className="personal-info">
                         <p>Created by Lytton Liao</p>
@@ -224,6 +225,11 @@ class AllMovies extends React.Component {
                     <div className="personal-info">
                         <p>Lytton Liao  |  lytton.liao@gmail.com</p>
                     </div>
+                                
+                    <div className="personal-site">
+                        <p>Personal Site</p>
+                    </div>
+
                     <div className="copyright">
                         <p>© 2019 Flixit, Inc.</p>
                     </div>

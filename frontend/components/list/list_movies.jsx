@@ -74,7 +74,29 @@ class ListMovies extends React.Component {
                     <div className="empty-personal-list">
                         <div><p>You haven't added any titles to your list yet.</p></div>
                     </div>
-                </div>
+                <footer>
+                    <div className="social-media-icons">
+                        <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
+                    </div>
+                    <div className="personal-info">
+                        <p>Created by Lytton Liao</p>
+                    </div>
+
+                    <div className="personal-info">
+                        <p>Lytton Liao  |  lytton.liao@gmail.com</p>
+                    </div>
+
+                    <div className="personal-site">
+                        <p>Personal Site</p>
+                    </div>
+
+                    <div className="copyright">
+                        <p>© 2019 Flixit, Inc.</p>
+                    </div>
+                </footer>
+            </div>
             )
         } else {
             return (
@@ -90,7 +112,30 @@ class ListMovies extends React.Component {
                             <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />                            
                         </div>
                     </div>
-                </div>
+                <footer>
+                    <div className="social-media-icons">
+                        <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
+                    </div>
+                    
+                    <div className="personal-info">
+                        <p>Created by Lytton Liao</p>
+                    </div>
+
+                    <div className="personal-info">
+                        <a href="mailto:lytton.liao@gmail.com"><p>Email: lytton.liao@gmail.com</p></a>
+                    </div>
+
+                    <div className="personal-site">
+                        <a href="https://lyttonliao.github.io" target="_blank"><p>Personal Site</p></a>
+                    </div>
+
+                    <div className="copyright">
+                        <p>© 2019 Flixit, Inc.</p>
+                    </div>
+                </footer>
+            </div>
             )
         }
     }
