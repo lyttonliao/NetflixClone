@@ -1,2 +1,2 @@
-json.extract! user, :id, :email, :list_movie_ids, :movie_ids
+json.extract! user, :id, :email
 json.list_id user.list.id

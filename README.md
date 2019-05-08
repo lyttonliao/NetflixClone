@@ -18,13 +18,6 @@ Flixit uses the default video player framework with additional features (i.e., b
 
 ![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Show.png)
 
-Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist.
-
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown.png)
-
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/ddinfo.png)
-
-
 <!-- ## Slide Bars (Work in progress)
 
 Each item on the slide bars are links to the video's play page. The sliding bars have an infinite scroll feature. When hovering over an item, the item expands and displays its title, genres, and year; as it expands, its sibling containers will move while maintaining its shape. There is also a drop-down button that will display an indepth description of the movie. -->
@@ -37,9 +30,17 @@ The search bar continuously detects live changes to the input field to look for 
 
 The user has the ability to add any video present from the database to their personalized page, 'My List'. Once the video has been added to their list, they can remove or view the video from their page.
 
-Using SQL associations, I am able to track the playlist in the Redux store by checking if a movie belongs to the user's playlist.
+## Code Snippets
 
-![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Reducers.png)
+<!-- Using SQL associations, I am able to track the playlist in the Redux store by checking if a movie belongs to the user's playlist.
+
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Reducers.png) -->
+
+Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist.
+
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown.png)
+
+![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/ddinfo.png)
 
 <!-- ## Profiles (Bonus Feature)
 

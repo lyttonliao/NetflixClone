@@ -64,14 +64,6 @@ class AllMovies extends React.Component {
         })
     }
 
-    // listMovies() {
-    //     const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
-
-    //     return playlistMovies.map(movie => {
-    //         return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={this.genres} list={this.props.list} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId} />;
-    //     })
-    // }
-
     render() { 
         const frontPageMovie = this.props.movies[1];
         const genres = this.genreList();
@@ -79,9 +71,9 @@ class AllMovies extends React.Component {
         if (this.props.movies.length === 0) return null;
         // const listMovieIdsInStr = Object.keys(this.props.list_movies);
         // const listMovieIds = listMovieIdsInStr.map(num => parseInt(num))
-        const playlistMovies = Object.values(this.props.movies).filter(movie => this.props.currentUser.movie_ids.includes(movie.id))
+        const listMovieIds = Object.values(this.props.list_movies).map(list_movie => list_movie.movie_id)
+        const playlistMovies = Object.values(this.props.movies).filter(movie => listMovieIds.includes(movie.id))
         const frontPageListMovies = Object.values(this.props.list_movies).filter(list_movie => list_movie.movie_id === frontPageMovie.id)
-        // .list_movie_ids.filter(id => listMovieIds.includes(id))
 
         let playlistVideos = playlistMovies.map(movie => {
             return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('playlistId')} droppedMovie={this.state.playlistId}/>;

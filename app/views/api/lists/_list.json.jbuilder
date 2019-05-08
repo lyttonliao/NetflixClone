@@ -1,5 +1,5 @@
 json.list do
-    json.extract! list, :id, :list_movie_ids
+    json.extract! list, :id
     json.user_id current_user.id
 end
 

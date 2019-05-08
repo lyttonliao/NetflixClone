@@ -59,9 +59,8 @@ class ListMovies extends React.Component {
     render() {
         const { logout, currentUser, list } = this.props;
         if (list === undefined) return null;
-        // const listMovieIds = Object.values(this.props.list_movies)
 
-        if (list.list_movie_ids.length === 0) {
+        if (Object.values(list).length === 0) {
             return (
                 <div className="personal-list">
                     <NavBar logout={logout} currentUser={currentUser} />
