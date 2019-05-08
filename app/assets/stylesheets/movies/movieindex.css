@@ -154,7 +154,7 @@ footer {
 .personal-info p {
   color: grey; 
   font-size: 15px; 
-  margin-bottom: 1%;
+  /* margin-bottom: 1%; */
 }
 
 .personal-site p {

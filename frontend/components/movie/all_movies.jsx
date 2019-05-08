@@ -216,7 +216,7 @@ class AllMovies extends React.Component {
                     <div className="social-media-icons">
                         <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
+                        <a href="https://angel.co/lytton-liao?public_profile=1" target="_blank"><i className="fab fa-angellist"></i></a>
                     </div>
 
                     <div className="personal-info">
