@@ -74,7 +74,7 @@ class ListMovies extends React.Component {
                     <div className="empty-personal-list">
                         <div><p>You haven't added any titles to your list yet.</p></div>
                     </div>
-                <footer>
+                {/* <footer>
                     <div className="social-media-icons">
                         <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
@@ -95,7 +95,7 @@ class ListMovies extends React.Component {
                     <div className="copyright">
                         <p>© 2019 Flixit, Inc.</p>
                     </div>
-                </footer>
+                </footer> */}
             </div>
             )
         } else {
@@ -112,13 +112,13 @@ class ListMovies extends React.Component {
                             <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />                            
                         </div>
                     </div>
-                <footer>
+                {/* <footer>
                     <div className="social-media-icons">
                         <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
                         <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
                     </div>
-                    
+
                     <div className="personal-info">
                         <p>Created by Lytton Liao</p>
                     </div>
@@ -134,7 +134,7 @@ class ListMovies extends React.Component {
                     <div className="copyright">
                         <p>© 2019 Flixit, Inc.</p>
                     </div>
-                </footer>
+                </footer> */}
             </div>
             )
         }

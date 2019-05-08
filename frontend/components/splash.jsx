@@ -18,7 +18,7 @@ const Splash = () => {
                 <Link className="auth-fp-signup" to={"/signup"}>Watch Free For 30 Days ></Link>
             </div>
 
-            <footer>
+            {/* <footer>
                 <div className="social-media-icons">
                     <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
@@ -40,7 +40,7 @@ const Splash = () => {
                 <div className="copyright">
                     <p>© 2019 Flixit, Inc.</p>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     )
 }
