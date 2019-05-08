@@ -36,7 +36,7 @@ The core of the application is the MovieIndexItem component. Every single page w
 
 ![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/movieindexitem.png) -->
 
-Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist.
+Every single movie has a dropdown menu that provides a description of the movies. Through this dropdown menu, you can also play or add the movie to your playlist. If you hover over movies in the same row, the dropdown information will change to the hovered movie.
 
 ![alt text](https://github.com/lyttonliao/NetflixClone/blob/master/app/assets/images/Dropdown.png)
 
