@@ -97,9 +97,9 @@ html {
     padding: 15px 45px 15px 45px;
 }
 
-@media only screen and (max-width: 2560px) {
+@media only screen and (max-width: 1440px) {
   .splashPage {
-    height: 1440px;
+    height: 900px;
   }
 }
 
@@ -109,8 +109,9 @@ html {
   }
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 2560px) {
   .splashPage {
-    height: 900px;
+    height: 1440px;
   }
 }
+
