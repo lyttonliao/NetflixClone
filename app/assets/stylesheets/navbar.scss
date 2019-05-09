@@ -82,6 +82,7 @@ p {
     white-space: nowrap;
     padding-bottom: 30px;
     padding-top: 30px;
+    width: 100%;
     // justify-content: space-around;
 }
 
@@ -121,6 +122,7 @@ p {
     right: 0;
     top: 95px;
     font-size: 82.5%;
+    overflow: hidden;
 }
 
 .dropdown-content .dropdown-section-1,
