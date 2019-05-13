@@ -1,6 +1,6 @@
 # README
 
-LIVE LINK - https://flixitclone.herokuapp.com/#/login
+[Live Site](https://flixitclone.herokuapp.com/#/login)
 
 Flixit is inspired by Netflix. I chose my top-5 genres to display on the site. Flixit has all the same basic functionalities as Netflix. Users manage personalized accounts by adding videos to their watch list. The application displays information in different forms to engage viewers. 
 
