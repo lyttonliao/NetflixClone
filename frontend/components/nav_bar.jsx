@@ -23,9 +23,7 @@ class NavBar extends React.Component {
                     <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
                     <ul className="primary-nav">
                         <li><Link to='/browse'><p>Home</p></Link></li>
-                        {/* <li><p>TV Shows</p></li>
-                        <li><p>Movies</p></li>
-                        <li><p>Recently Added</p></li> */}
+                        {/* <li><p>Recently Added</p></li> */}
                         <li><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
                     </ul>
                 </div>
@@ -33,10 +31,7 @@ class NavBar extends React.Component {
                 <div className="sec-nav-dropdown">
                     <ul className="secondary-nav">
                         {/* <li><p>Search</p></li>
-                        <li><p>KIDS</p></li>
-                        <li><p>DVD</p></li>
                         <li><p>Notifications</p></li> */}
-                        
                     </ul>
                     <div className="profile-dropdown">
                         <img className="profile-icon" src={window.icon} alt="icon"/>
@@ -46,8 +41,6 @@ class NavBar extends React.Component {
                             </div>
                             <li className="profile-dropdown-divider"></li>
                             <div className="dropdown-section-2">
-                                {/* <li><p>Account</p></li>
-                                <li><p>Help Center</p></li> */}
                                 <li><Link to="/" onClick={this.props.logout}><p>Sign out of Flixit</p></Link></li>
                             </div>
                         </div>
