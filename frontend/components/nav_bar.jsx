@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search_Container from './search/search_container'
 // import { ProtectedRoute } from '../../util/route_util';
-
 
 class NavBar extends React.Component {
     render() {
@@ -30,8 +30,10 @@ class NavBar extends React.Component {
 
                 <div className="sec-nav-dropdown">
                     <ul className="secondary-nav">
-                        {/* <li><p>Search</p></li>
-                        <li><p>Notifications</p></li> */}
+                        <Search_Container />
+                        {/* <li><p>Search</p></li> */}
+                        {/* <SearchBar /> */}
+                        {/* <li><p>Notifications</p></li> */}
                     </ul>
                     <div className="profile-dropdown">
                         <img className="profile-icon" src={window.icon} alt="icon"/>

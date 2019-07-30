@@ -14,10 +14,10 @@ class Browse extends React.Component {
         const { currentUser, logout } = this.props;
         return (
             <div className="LandingPage">
-                <NavBar logout={logout} currentUser={currentUser} />
+                {/* <NavBar logout={logout} currentUser={currentUser} /> */}
 
                 <div className="landing-page-movie-distribution">
-                    <MovieIndexContainer />
+                    <MovieIndexContainer logout={logout} currentUser={currentUser}/>
                 </div>
 
                 {/* <Route path='/browse/my-list/:listId' component={ListContainer} /> */}

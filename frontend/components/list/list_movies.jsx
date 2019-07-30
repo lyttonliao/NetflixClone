@@ -1,5 +1,4 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
 import MovieInfo from '../movie/movie_info';
 import NavBar from '../nav_bar';
 import MovieIndexItem from '../movie/movie_index_item';
@@ -17,12 +16,6 @@ class ListMovies extends React.Component {
     componentDidMount() {
         this.props.fetchList(this.props.match.params.listId).then(() => this.props.fetchListMovies(this.props.list))
     }
-
-    // componentDidUpdate(prevProps) {
-    //     if (Object.values(prevProps.list_movies).length !== Object.values(this.props.list_movies).length) {
-    //         this.props.fetchListMovies(this.props.list)
-    //     }
-    // }
     
     genreList() {
         return Object.values(this.props.genres).map(genre => {
@@ -73,28 +66,6 @@ class ListMovies extends React.Component {
                     <div className="empty-personal-list">
                         <div><p>You haven't added any titles to your list yet.</p></div>
                     </div>
-                {/* <footer>
-                    <div className="social-media-icons">
-                        <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
-                    </div>
-                    <div className="personal-info">
-                        <p>Created by Lytton Liao</p>
-                    </div>
-
-                    <div className="personal-info">
-                        <p>Lytton Liao  |  lytton.liao@gmail.com</p>
-                    </div>
-
-                    <div className="personal-site">
-                        <p>Personal Site</p>
-                    </div>
-
-                    <div className="copyright">
-                        <p>© 2019 Flixit, Inc.</p>
-                    </div>
-                </footer> */}
             </div>
             )
         } else {
@@ -111,29 +82,6 @@ class ListMovies extends React.Component {
                             <MovieInfo movies={this.props.movies} movieId={this.state.playlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />                            
                         </div>
                     </div>
-                {/* <footer>
-                    <div className="social-media-icons">
-                        <a href="https://github.com/lyttonliao" target="_blank"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/lytton-liao-55556710b" target="_blank"><i className="fab fa-angellist"></i></a>
-                    </div>
-
-                    <div className="personal-info">
-                        <p>Created by Lytton Liao</p>
-                    </div>
-
-                    <div className="personal-info">
-                        <a href="mailto:lytton.liao@gmail.com"><p>Email: lytton.liao@gmail.com</p></a>
-                    </div>
-
-                    <div className="personal-site">
-                        <a href="https://lyttonliao.github.io" target="_blank"><p>Personal Site</p></a>
-                    </div>
-
-                    <div className="copyright">
-                        <p>© 2019 Flixit, Inc.</p>
-                    </div>
-                </footer> */}
             </div>
             )
         }
