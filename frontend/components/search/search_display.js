@@ -8,13 +8,46 @@ class Search extends React.Component {
             text: ''
         }
 
-        this.handleChange = this.handleChange.bind(this);
-
         this.trie = new Trie();
         // movies.forEach(m => this.trie.insertRecur(m));
+        this.handleChange = this.handleChange.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
     }
 
+    setDropDown(id) {
+        const that = this;
+        return (movieId) => {
+            if (that.state[id]) {
+                that.setState({
+                    [id]: movieId
+                })
+            } else {
+                that.setState({
+                    playlistId: null,
+                    actionId: null,
+                    disneyId: null,
+                    scifiId: null,
+                    dramaId: null,
+                    superheroId: null,
+                });
+                that.setState({
+                    [id]: movieId
+                })
+            }
+        }
+    }
 
+    closeDropDown() {
+        this.setState({
+            playlistId: null,
+            actionId: null,
+            disneyId: null,
+            scifiId: null,
+            dramaId: null,
+            superheroId: null,
+        })
+    }
+    
     handleChange(e) {
         console.log(this.state);
         this.setState({ text: e.target.value });
