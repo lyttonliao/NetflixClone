@@ -1,15 +1,19 @@
 import React from 'react'
 import Trie from './trie'
+import MovieIndexItem from '../movie/movie_index_item';
+import MovieInfo from '../movie/movie_info';
 
 class Search extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: ''
+            text: '',
+            searchlistId: null,
         }
 
         this.trie = new Trie();
-        // movies.forEach(m => this.trie.insertRecur(m));
+        Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title));
+
         this.handleChange = this.handleChange.bind(this);
         this.closeDropDown = this.closeDropDown.bind(this);
     }
@@ -23,12 +27,7 @@ class Search extends React.Component {
                 })
             } else {
                 that.setState({
-                    playlistId: null,
-                    actionId: null,
-                    disneyId: null,
-                    scifiId: null,
-                    dramaId: null,
-                    superheroId: null,
+                    searchlistId: null
                 });
                 that.setState({
                     [id]: movieId
@@ -53,18 +52,31 @@ class Search extends React.Component {
         this.setState({ text: e.target.value });
     }
 
+    genreList() {
+        return Object.values(this.props.genres).map(genre => {
+            return genre.name;
+        })
+    }
+
     render() {
         // const moviesLIs = this.trie.wordsWithPrefix(this.state.text).map((m, i) => <li key={i}>{m}</li>);
+        const genres = this.genreList()
+        const searchlist = this.trie.wordsWithPrefix(this.state.text)
+        const searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title))
+        const fullsearch = searchedMovies.map(movie => {
+            return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('searchId')} droppedMovie={this.state.searchId} />;
+        })
 
         return (
             <div>
                 {/* <h1>Trie Search</h1> */}
                 <input type="text" onChange={this.handleChange} value={this.state.text}></input>
 
-                <div>
-                    <ul>
-                        {/* {moviesLIs} */}
-                    </ul>
+                <div id="movie-categories-0" className="movie-categories-videos">
+                    <div id="movie-row-0" className="movie-row">
+                        {fullsearch}
+                    </div>
+                    <MovieInfo movies={this.props.movies} movieId={this.state.searchId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />
                 </div>
             </div>
         );

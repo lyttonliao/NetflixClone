@@ -16,6 +16,13 @@ const msp = state => {
     }
 }
 
+const mdp = dispatch => {
+    return {
+        createListMovie: movie => dispatch(createListMovie(movie)),
+        removeListMovie: id => dispatch(removeListMovie(id))
+    }
+}
 
 
-export default connect(msp)(Search)
+
+export default connect(msp, mdp)(Search)
