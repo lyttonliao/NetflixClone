@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import Search from './search_display';
+import { createListMovie, removeListMovie } from '../../actions/list_movie_actions'
+
 
 const msp = state => {
     const currentUser = state.entities.users[state.session.currentUserId]
@@ -19,7 +21,8 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         createListMovie: movie => dispatch(createListMovie(movie)),
-        removeListMovie: id => dispatch(removeListMovie(id))
+        removeListMovie: id => dispatch(removeListMovie(id)),
+        filterSearch: movie_titles => dispatch(filterSearch(movie_titles))
     }
 }
 

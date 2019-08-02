@@ -7,11 +7,13 @@ import Splash from './splash';
 import BrowseContainer from './browse/browse_container';
 import MovieShowContainer from './movie/movie_show_container';
 import ListContainer from './list/list_container';
+import SearchContainer from './search/search_container'
 
 const App = () => (
     <HashRouter>
         <div>
             <Switch>
+                <Route path='/search' component={SearchContainer} />
                 <Route path='/browse/my-list/:listId' component={ListContainer} />
                 <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
                 <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -4,6 +4,19 @@ import Search_Container from './search/search_container'
 // import { ProtectedRoute } from '../../util/route_util';
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            text: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(e) {
+        // console.log(this.state);
+        this.setState({ text: e.target.value });
+    }
+
     render() {
         const listId = this.props.currentUser.list_id;
 
@@ -31,9 +44,11 @@ class NavBar extends React.Component {
                 <div className="sec-nav-dropdown">
                     <ul className="secondary-nav">
                         <Search_Container />
-                        {/* <li><p>Search</p></li> */}
-                        {/* <SearchBar /> */}
-                        {/* <li><p>Notifications</p></li> */}
+                        {/* {this.state.text == "" ? <input type="text" onChange={this.handleChange} value={this.state.text}></input>
+                            : 
+                            // <Search_Container text={this.state.text}/>
+                            <Link to='/search'></Link>
+                        } */}
                     </ul>
                     <div className="profile-dropdown">
                         <img className="profile-icon" src={window.icon} alt="icon"/>

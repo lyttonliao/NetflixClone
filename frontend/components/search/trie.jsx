@@ -26,6 +26,7 @@ class Trie {
     }
 
     wordsWithPrefix(prefix, root = this.root) {
+
         if (prefix.length === 0) {
             let allWords = [];
 
