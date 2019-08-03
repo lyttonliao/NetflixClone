@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Search_Display from './search_display';
 import { createListMovie, removeListMovie } from '../../actions/list_movie_actions'
-import filterSearch from '../../actions/search_actions'
 
 
 const msp = state => {
@@ -9,8 +8,9 @@ const msp = state => {
     const listId = currentUser.list_id;
     const list = state.entities.lists[listId];
     const list_movies = state.entities.list_movies;
+    debugger
     return {
-        movies: state.entities.movies,
+        movie_titles: state.entities.search,
         genres: state.entities.genres,
         list,
         listId,
@@ -23,10 +23,9 @@ const mdp = dispatch => {
     return {
         createListMovie: movie => dispatch(createListMovie(movie)),
         removeListMovie: id => dispatch(removeListMovie(id)),
-        filterSearch: movie_titles => dispatch(filterSearch(movie_titles))
     }
 }
 
 
 
-export default connect(msp, mdp)(Search)
+export default connect(msp, mdp)(Search_Display)
