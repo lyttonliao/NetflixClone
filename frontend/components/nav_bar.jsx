@@ -44,11 +44,6 @@ class NavBar extends React.Component {
                 <div className="sec-nav-dropdown">
                     <ul className="secondary-nav">
                         <Search_Container />
-                        {/* {this.state.text == "" ? <input type="text" onChange={this.handleChange} value={this.state.text}></input>
-                            : 
-                            // <Search_Container text={this.state.text}/>
-                            <Link to='/search'></Link>
-                        } */}
                     </ul>
                     <div className="profile-dropdown">
                         <img className="profile-icon" src={window.icon} alt="icon"/>

@@ -1,14 +1,14 @@
 import React from 'react'
 import Trie from './trie'
-import MovieIndexItem from '../movie/movie_index_item';
-import MovieInfo from '../movie/movie_info';
+// import MovieIndexItem from '../movie/movie_index_item';
+// import MovieInfo from '../movie/movie_info';
 
 class Search extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             text: "",
-            searchlistId: null,
+            // searchlistId: null,
         }
 
         this.trie = new Trie();
@@ -49,7 +49,11 @@ class Search extends React.Component {
     
     handleChange(e) {
         console.log(this.state);
+
+        const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
+        const searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
         this.setState({ text: e.target.value });
+        this.props.addFilter(searchedMovies)
     }
 
     genreList() {
@@ -60,10 +64,14 @@ class Search extends React.Component {
 
     render() {
         // const moviesLIs = this.trie.wordsWithPrefix(this.state.text).map((m, i) => <li key={i}>{m}</li>);
-        const genres = this.genreList()
+        // const genres = this.genreList()
 
-        const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
-        const searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
+        // const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
+        // const searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
+        return (
+            <input type="text" onChange={this.handleChange} value={this.state.text}></input>
+        )
+
         // const fullsearch = searchedMovies.map(movie => {
         //     return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('searchId')} droppedMovie={this.state.searchId} />;
         // })
