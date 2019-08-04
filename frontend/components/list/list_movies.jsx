@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieInfo from '../movie/movie_info';
-import NavBar from '../nav_bar';
+import NavBarContainer from '../nav_bar_container';
 import MovieIndexItem from '../movie/movie_index_item';
 
 class ListMovies extends React.Component {
@@ -56,7 +56,7 @@ class ListMovies extends React.Component {
         if (Object.values(list).length === 0) {
             return (
                 <div className="personal-list">
-                    <NavBar logout={logout} currentUser={currentUser} />
+                    <NavBarContainer />
                     <div className="movie-categories my-list-show-page">
                         <div className="movie-categories-videos">
                             <h1><p className="my-list-title">My List</p></h1>
@@ -71,7 +71,7 @@ class ListMovies extends React.Component {
         } else {
             return (
                 <div className="personal-list">
-                    <NavBar logout={logout} currentUser={currentUser} />
+                    <NavBarContainer />
 
                     <div className="movie-categories my-list-show-page">
                         <div className="movie-categories-videos">

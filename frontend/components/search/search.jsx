@@ -16,13 +16,28 @@ class Search extends React.Component {
     
     handleChange(e) {
         this.setState({ text: e.target.value });
+        // const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
+        // let searchedMovies = []
+        // if (this.state.text.length == 0) {
+        //     searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
+        // }
+        // this.props.filterContent(searchedMovies)
+    }
+
+    handleSearch() {
         const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
-        const searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
-        debugger
+        let searchedMovies = []
+        if (this.state.text.length > 0) {
+            searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
+        } else {
+            searchedMovies = []
+        }
         this.props.filterContent(searchedMovies)
+        this.props.currentSearch(this.state.text)
     }
 
     render() {
+        this.handleSearch()
         return (
             <input type="text" onChange={this.handleChange} value={this.state.text}></input>
         )

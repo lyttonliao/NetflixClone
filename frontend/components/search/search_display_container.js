@@ -8,9 +8,8 @@ const msp = state => {
     const listId = currentUser.list_id;
     const list = state.entities.lists[listId];
     const list_movies = state.entities.list_movies;
-    debugger
     return {
-        movie_titles: state.entities.search,
+        movie_titles: state.ui.search,
         genres: state.entities.genres,
         list,
         listId,

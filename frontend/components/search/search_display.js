@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieIndexItem from '../../components/movie/movie_index_item'
 import MovieInfo from '../../components/movie/movie_info'
+import NavBarContainer from '../nav_bar_container'
 
 class SearchDisplay extends React.Component {
     constructor(props) {
@@ -47,6 +48,7 @@ class SearchDisplay extends React.Component {
         })
         return (
             <div>
+
                 <div id="movie-categories-0" className="movie-categories-videos">
                     <div id="movie-row-0" className="movie-row">
                         {fullsearch}

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { filterContent } from '../../actions/search_actions'
+import { filterContent, currentSearch } from '../../actions/search_actions'
 
 const msp = state => {
     return {
@@ -10,7 +10,8 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        filterContent: movie_titles => dispatch(filterContent(movie_titles))
+        filterContent: movie_titles => dispatch(filterContent(movie_titles)),
+        currentSearch: search => dispatch(currentSearch(search))
     }
 }
 
