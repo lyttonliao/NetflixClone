@@ -16,7 +16,6 @@ class App extends React.Component {
     }
 
     render() {
-        debugger
         if (this.props.active_search) {
             return (
                 <div>

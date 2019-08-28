@@ -47,7 +47,6 @@ class SearchDisplay extends React.Component {
         const fullsearch = this.props.movie_titles.map(movie => {
             return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('searchlistId')} droppedMovie={this.state.searchlistId} />;
         })
-        debugger
         return (
             <div className="searched-movies">
                 <div className="movie-categories">
