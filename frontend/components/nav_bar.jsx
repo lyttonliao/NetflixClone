@@ -6,19 +6,13 @@ import Search_Container from './search/search_container'
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     text: ""
-        // }
-        // this.handleChange = this.handleChange.bind(this)
     }
 
-    // handleChange(e) {
-    //     // console.log(this.state);
-    //     this.setState({ text: e.target.value });
-    // }
-
     render() {
-        const listId = this.props.currentUser.list_id;
+        const { currentUser, logout } = this.props;
+
+        if (!currentUser) return null;
+        const listId = currentUser.list_id;
 
         $(window).scroll(function () {
             const header = $(".main-header");
@@ -48,11 +42,11 @@ class NavBar extends React.Component {
                         <img className="profile-icon" src={window.icon} alt="icon"/>
                         <div className="dropdown-content">
                             <div className="dropdown-section-1">
-                                <li><p>{this.props.currentUser.email}</p></li>
+                                <li><p>{currentUser.email}</p></li>
                             </div>
                             <li className="profile-dropdown-divider"></li>
                             <div className="dropdown-section-2">
-                                <li><Link to="/" onClick={this.props.logout}><p>Sign out of Flixit</p></Link></li>
+                                <li><Link to="/" onClick={logout}><p>Sign out of Flixit</p></Link></li>
                             </div>
                         </div>
                     </div>
