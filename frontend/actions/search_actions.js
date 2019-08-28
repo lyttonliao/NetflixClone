@@ -1,5 +1,6 @@
 export const SEARCH = "SEARCH"
 export const ADD_SEARCH = "ADD_SEARCH"
+export const REMOVE_SEARCH = "REMOVE_SEARCH"
 
 export const search = movie_titles => {
     return ({
@@ -15,6 +16,13 @@ export const addSearch = search => {
     })
 }
 
+export const removeSearch = () => {
+    return ({
+        type: REMOVE_SEARCH,
+        current_search: ''
+    })
+}
+
 export const filterContent = movie_titles => dispatch => {
     return (
         dispatch(search(movie_titles))
@@ -24,5 +32,11 @@ export const filterContent = movie_titles => dispatch => {
 export const currentSearch = search => dispatch => {
     return (
         dispatch(addSearch(search))
+    )
+}
+
+export const clearSearch = () => dispatch => {
+    return (
+        dispatch(removeSearch())
     )
 }

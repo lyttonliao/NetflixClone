@@ -27,10 +27,10 @@ class NavBar extends React.Component {
         return(
             <nav className="main-header">
                 <div className="prim-nav-logo">
-                    <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
+                    <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" onClick={this.props.clearSearch} /></Link>
                     <ul className="primary-nav">
-                        <li><Link to='/browse'><p>Home</p></Link></li>
-                        <li><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
+                        <li onClick={this.props.clearSearch} ><Link to='/browse'><p>Home</p></Link></li>
+                        <li onClick={this.props.clearSearch} ><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
                     </ul>
                 </div>
 
