@@ -10,10 +10,12 @@ class Search extends React.Component {
         
         this.trie = new Trie();
         this.handleChange = this.handleChange.bind(this);
+        // this.handleSearch.call(this);
     }
     
     handleChange(e) {
         this.setState({ text: e.target.value });
+        this.handleSearch();
     }
 
     handleSearch() {
@@ -29,11 +31,15 @@ class Search extends React.Component {
     }
 
     render() {
-        this.handleSearch()
+        // return (
+        //     <div>Hello!</div>
+        // )
+        // this.handleSearch();
         if (Object.values(this.props.movies).length == 0) return null;
         if (Object.values(this.trie.root.children).length == 0) {
             Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title.toLowerCase()));
         }
+
         return (
             <form id="search-bar">
                 <input className="search" type="text" onChange={this.handleChange} value={this.state.text} placeholder="Search for Movies"></input>

@@ -42,6 +42,7 @@ class SearchDisplay extends React.Component {
         })
     }
 
+
     render() {
         const genres = this.genreList()
         const fullsearch = this.props.movie_titles.map(movie => {
