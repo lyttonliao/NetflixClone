@@ -13,9 +13,12 @@ class Search extends React.Component {
         // this.handleSearch.call(this);
     }
     
+    componentDidUpdate() {
+        this.handleSearch();
+    }
+
     handleChange(e) {
         this.setState({ text: e.target.value });
-        this.handleSearch();
     }
 
     handleSearch() {
