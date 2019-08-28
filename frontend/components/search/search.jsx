@@ -30,6 +30,7 @@ class Search extends React.Component {
 
     render() {
         this.handleSearch()
+        if (Object.values(this.props.movies).length == 0) return null;
         if (Object.values(this.trie.root.children).length == 0) {
             Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title.toLowerCase()));
         }
