@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
@@ -16,6 +16,7 @@ class App extends React.Component {
     }
 
     render() {
+        debugger
         if (this.props.active_search) {
             return (
                 <div>
@@ -26,23 +27,20 @@ class App extends React.Component {
         } else {
             return (
                 <div>
-                    {/* <Switch> */}
-                        {/* <div> */}
-                            <NavBarContainer />
-                            <Switch>
-                                <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
-                                <ProtectedRoute path='/browse/my-list/:listId' component={ListContainer} />
-                                <AuthRoute exact path="/login" component={LoginFormContainer} />
-                                <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                                <ProtectedRoute exact path="/browse" component={BrowseContainer} />
-                                <AuthRoute exact path="/" component={Splash} />
-                            </Switch>
-                        {/* </div>
-                    </Switch> */}
+                    {this.props.location.pathname.slice(0,5) !== "/play" && <NavBarContainer />}
+                    {/* <NavBarContainer /> */}
+                    <Switch>
+                        <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
+                        <ProtectedRoute path='/browse/my-list/:listId' component={ListContainer} />
+                        <AuthRoute exact path="/login" component={LoginFormContainer} />
+                        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                        <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+                        <AuthRoute exact path="/" component={Splash} />
+                    </Switch>
                 </div>
             )
         }
     }
 };
 
-export default App;
+export default withRouter(App);

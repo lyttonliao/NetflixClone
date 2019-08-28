@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieIndexItem from '../movie/movie_index_item'
 import MovieInfo from '../movie/movie_info'
-// import NavBarContainer from '../nav_bar_container'
 
 class SearchDisplay extends React.Component {
     constructor(props) {
