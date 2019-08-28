@@ -5,6 +5,7 @@ import { filterContent, currentSearch } from '../../actions/search_actions'
 const msp = state => {
     return {
         movies: state.entities.movies,
+        current_search: state.ui.current_search
     }
 }
 

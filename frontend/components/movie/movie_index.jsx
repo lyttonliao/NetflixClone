@@ -1,7 +1,7 @@
 import React from 'react';
 import AllMovies from './all_movies';
 import genreSelector from '../../reducers/selectors';
-import NavBarContainer from './../nav_bar_container'
+// import NavBarContainer from './../nav_bar_container'
 
 class MovieIndex extends React.Component {
     constructor(props) {
@@ -14,11 +14,11 @@ class MovieIndex extends React.Component {
 
     render() {
         const movies = Object.values(this.props.movies);
-        const { genres, logout, currentUser } = this.props;
+        const { genres } = this.props;
         if (movies.length === 0 || this.props.list === undefined) return null;
         return (
             <div className="movies-index-genres">
-                <NavBarContainer />
+                {/* <NavBarContainer /> */}
 
                 <div>
                     <AllMovies

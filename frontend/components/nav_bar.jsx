@@ -6,16 +6,16 @@ import Search_Container from './search/search_container'
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            text: ""
-        }
-        this.handleChange = this.handleChange.bind(this)
+        // this.state = {
+        //     text: ""
+        // }
+        // this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(e) {
-        // console.log(this.state);
-        this.setState({ text: e.target.value });
-    }
+    // handleChange(e) {
+    //     // console.log(this.state);
+    //     this.setState({ text: e.target.value });
+    // }
 
     render() {
         const listId = this.props.currentUser.list_id;
@@ -36,7 +36,6 @@ class NavBar extends React.Component {
                     <Link to='/browse'><img className="landing-page-logo" src={window.logo1} alt="LandingPage Logo" /></Link>
                     <ul className="primary-nav">
                         <li><Link to='/browse'><p>Home</p></Link></li>
-                        {/* <li><p>Recently Added</p></li> */}
                         <li><Link to={`/browse/my-list/${listId}`}><p>My List</p></Link></li>
                     </ul>
                 </div>

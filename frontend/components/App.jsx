@@ -8,7 +8,7 @@ import BrowseContainer from './browse/browse_container';
 import MovieShowContainer from './movie/movie_show_container';
 import ListContainer from './list/list_container';
 import SearchDisplayContainer from './search/search_display_container'
-// import NavBar from './nav_bar'
+import NavBarContainer from './nav_bar_container';
 
 class App extends React.Component {
     constructor(props) {
@@ -16,23 +16,29 @@ class App extends React.Component {
     }
 
     render() {
-        if (this.props.movie_titles.length != 0) {
+        if (this.props.active_search) {
             return (
                 <div>
-                    <Route to="/search" component={SearchDisplayContainer} />
+                    <NavBarContainer />
+                    <SearchDisplayContainer />
                 </div>
             )
         } else {
             return (
                 <div>
-                    <Switch>
-                        <ProtectedRoute path='/browse/my-list/:listId' component={ListContainer} />
-                        <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
-                        <AuthRoute exact path="/login" component={LoginFormContainer} />
-                        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                        <ProtectedRoute exact path="/browse" component={BrowseContainer} />
-                        <AuthRoute exact path="/" component={Splash} />
-                    </Switch>
+                    {/* <Switch> */}
+                        {/* <div> */}
+                            <NavBarContainer />
+                            <Switch>
+                                <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
+                                <ProtectedRoute path='/browse/my-list/:listId' component={ListContainer} />
+                                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                                <ProtectedRoute exact path="/browse" component={BrowseContainer} />
+                                <AuthRoute exact path="/" component={Splash} />
+                            </Switch>
+                        {/* </div>
+                    </Switch> */}
                 </div>
             )
         }

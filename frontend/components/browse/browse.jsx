@@ -1,8 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import NavBar from '../nav_bar';
 import MovieIndexContainer from '../movie/movie_index_container';
-import ListContainer from '../list/list_container';
 
 class Browse extends React.Component {
     constructor(props) {
@@ -14,13 +11,9 @@ class Browse extends React.Component {
         const { currentUser, logout } = this.props;
         return (
             <div className="LandingPage">
-                {/* <NavBar logout={logout} currentUser={currentUser} /> */}
-
                 <div className="landing-page-movie-distribution">
-                    <MovieIndexContainer logout={logout} currentUser={currentUser}/>
+                    <MovieIndexContainer />
                 </div>
-
-                {/* <Route path='/browse/my-list/:listId' component={ListContainer} /> */}
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
-import MovieIndexItem from '../../components/movie/movie_index_item'
-import MovieInfo from '../../components/movie/movie_info'
-import NavBarContainer from '../nav_bar_container'
+import MovieIndexItem from '../movie/movie_index_item'
+import MovieInfo from '../movie/movie_info'
+// import NavBarContainer from '../nav_bar_container'
 
 class SearchDisplay extends React.Component {
     constructor(props) {
@@ -9,6 +9,8 @@ class SearchDisplay extends React.Component {
         this.state = {
             searchlistId: null,
         }
+        this.closeDropDown = this.closeDropDown.bind(this)
+
     }
 
    setDropDown(id) {
@@ -44,16 +46,18 @@ class SearchDisplay extends React.Component {
     render() {
         const genres = this.genreList()
         const fullsearch = this.props.movie_titles.map(movie => {
-            return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('searchId')} droppedMovie={this.state.searchId} />;
+            return <MovieIndexItem movie={movie} key={"0-" + movie.title} genres={genres} list={this.props.list} setDropDown={this.setDropDown('searchlistId')} droppedMovie={this.state.searchlistId} />;
         })
+        debugger
         return (
-            <div>
-
-                <div id="movie-categories-0" className="movie-categories-videos">
-                    <div id="movie-row-0" className="movie-row">
-                        {fullsearch}
+            <div className="searched-movies">
+                <div className="movie-categories">
+                    <div id="movie-categories-0" className="movie-categories-videos">
+                        <div id="movie-row-0" className="movie-row">
+                            {fullsearch}
+                        </div>
+                        <MovieInfo movies={this.props.movies} movieId={this.state.searchlistId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />
                     </div>
-                    <MovieInfo movies={this.props.movies} movieId={this.state.searchId} createListMovie={this.props.createListMovie} removeListMovie={this.props.removeListMovie} list_movies={this.props.list_movies} close={this.closeDropDown} />
                 </div>
             </div>
         );

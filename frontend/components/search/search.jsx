@@ -5,23 +5,15 @@ class Search extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: "",
+            text: this.props.current_search,
         }
-
+        
         this.trie = new Trie();
-        Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title.toLowerCase()));
-
         this.handleChange = this.handleChange.bind(this);
     }
     
     handleChange(e) {
         this.setState({ text: e.target.value });
-        // const searchlist = this.trie.wordsWithPrefix(this.state.text.toLowerCase())
-        // let searchedMovies = []
-        // if (this.state.text.length == 0) {
-        //     searchedMovies = Object.values(this.props.movies).filter(movie => searchlist.includes(movie.title.toLowerCase()))
-        // }
-        // this.props.filterContent(searchedMovies)
     }
 
     handleSearch() {
@@ -38,8 +30,13 @@ class Search extends React.Component {
 
     render() {
         this.handleSearch()
+        if (Object.values(this.trie.root.children).length == 0) {
+            Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title.toLowerCase()));
+        }
         return (
-            <input type="text" onChange={this.handleChange} value={this.state.text}></input>
+            <form id="search-bar">
+                <input className="search" type="text" onChange={this.handleChange} value={this.state.text} placeholder="Search for Movies"></input>
+            </form>
         )
     }
 }
