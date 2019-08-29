@@ -5,7 +5,6 @@ class MovieShow extends React.Component {
     constructor(props) {
         super(props)
     }
-
     componentDidMount() {
         this.props.fetchMovie(this.props.match.params.movieId)
     }
@@ -13,7 +12,7 @@ class MovieShow extends React.Component {
     render() {
         if (this.props.movie === undefined) return null;
         return (
-            <div className="video-container">
+            <div className="video-container" >
                 <video controls>
                     <source src={this.props.movie.movieUrl} poster={this.props.movie.imageUrl}/>
                 </video>

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Search_Display from './search_display';
+import { clearSearch } from '../../actions/search_actions'
 import { createListMovie, removeListMovie } from '../../actions/list_movie_actions'
 
 
@@ -23,6 +24,7 @@ const mdp = dispatch => {
     return {
         createListMovie: movie => dispatch(createListMovie(movie)),
         removeListMovie: id => dispatch(removeListMovie(id)),
+        clearSearch: () => dispatch(clearSearch())
     }
 }
 

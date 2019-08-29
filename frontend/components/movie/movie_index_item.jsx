@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createListMovie, removeListMovie } from '../../actions/list_movie_actions';
+import { clearSearch } from '../../actions/search_actions';
 import { connect } from 'react-redux';
 
 class MovieIndexItem extends React.Component {
@@ -43,14 +44,14 @@ class MovieIndexItem extends React.Component {
         const addIcon = <i className="far fa-plus-square"></i>
         return(
             <div id={this.props.key} className="movie-container" onMouseEnter={() => this.hoverDrop()}>
-                <div className="movie-box-art">
+                <div className="movie-box-art" onClick={this.props.clearSearch}>
                     <Link to={`/play/${this.props.movie.id}`}>
                         <img className="movie-image" src={this.props.movie.imageUrl}/>
                     </Link>
                 </div>
 
                 <div className="movie-info-container">
-                    <div className="movie-info">
+                    <div className="movie-info" onClick={this.props.clearSearch}>
                         <Link to={`/play/${this.props.movie.id}`}><div className="movie-play">
                             <i className="far fa-play-circle"></i>
                         </div></Link>
@@ -96,6 +97,7 @@ const mdp = dispatch => {
     return {
         createListMovie: (movie) => dispatch(createListMovie(movie)),
         removeListMovie: id => dispatch(removeListMovie(id)),
+        clearSearch: () => dispatch(clearSearch())
     }
 }
 

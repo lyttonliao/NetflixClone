@@ -14,13 +14,11 @@ class Search extends React.Component {
 
     }
 
-    componentDidUpdate(prevProps, nextProps) {
+    componentDidUpdate(prevProps) {
         const { current_search } = this.props
-        debugger
         if (!(current_search === "" && current_search !== prevProps.current_search)) {
             this.handleSearch();
         } else {
-            debugger
             this.setState({text: current_search})
         }
     }
