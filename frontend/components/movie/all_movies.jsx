@@ -69,8 +69,6 @@ class AllMovies extends React.Component {
         const genres = this.genreList();
         
         if (this.props.movies.length === 0) return null;
-        // const listMovieIdsInStr = Object.keys(this.props.list_movies);
-        // const listMovieIds = listMovieIdsInStr.map(num => parseInt(num))
         const listMovieIds = Object.values(this.props.list_movies).map(list_movie => list_movie.movie_id)
         const playlistMovies = Object.values(this.props.movies).filter(movie => listMovieIds.includes(movie.id))
         const frontPageListMovies = Object.values(this.props.list_movies).filter(list_movie => list_movie.movie_id === frontPageMovie.id)

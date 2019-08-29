@@ -27,7 +27,6 @@ class App extends React.Component {
             return (
                 <div>
                     {this.props.location.pathname.slice(0,5) !== "/play" && <NavBarContainer />}
-                    {/* <NavBarContainer /> */}
                     <Switch>
                         <ProtectedRoute path="/play/:movieId" component={MovieShowContainer} />
                         <ProtectedRoute path='/browse/my-list/:listId' component={ListContainer} />

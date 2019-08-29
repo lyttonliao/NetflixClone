@@ -6,7 +6,6 @@ class Search extends React.Component {
         super(props)
         this.state = {
             text: props.current_search
-            // text: this.props.current_search,
         }
         
         this.trie = new Trie();
@@ -40,11 +39,9 @@ class Search extends React.Component {
     }
 
     render() {
-        // if (Object.values(this.props.movies).length == 0) return null;
         if (Object.values(this.trie.root.children).length == 0) {
             Object.values(this.props.movies).forEach(movie => this.trie.insertRecur(movie.title.toLowerCase()));
         }
-        debugger
         return (
             <form id="search-bar">
                 <input className="search" type="text" onChange={this.handleChange} value={this.state.text} placeholder="Search for Movies"></input>
