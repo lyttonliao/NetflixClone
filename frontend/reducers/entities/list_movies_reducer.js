@@ -10,12 +10,12 @@ const listMoviesReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_LIST:
             if (action.data.list_movies === undefined) {
-                return state;
+                return {};
             }
             return action.data.list_movies;
         case RECEIVE_LIST_MOVIES:
             if (action.list_movies === undefined) {
-                return state;
+                return {};
             }
             return action.list_movies;
         case RECEIVE_LIST_MOVIE:
